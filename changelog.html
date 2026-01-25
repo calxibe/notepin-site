@@ -36,13 +36,14 @@
         <div class="version-card">
             <div class="version-header">
                 <span class="version-number">v1.0.1</span>
-                <span class="version-badge badge-dev">In Development</span>
-                <span class="version-date">Coming Soon</span>
+                <span class="version-badge badge-latest">Latest</span>
+                <span class="version-date">January 25, 2026</span>
             </div>
             
             <div class="version-section">
                 <h3>✨ New Features</h3>
                 <ul class="feature-list">
+                    <li><strong>RSS/Atom Feed Support</strong> — New file format support for <code>.rss</code> and <code>.atom</code> files with syntax highlighting, auto-formatting, code folding for XML elements, clickable URLs (with entity decoding), and feed statistics (tags, attributes, namespaces, etc.).</li>
                     <li><strong>Code Folding (JS)</strong> — Collapse/expand functions, classes, objects, and code blocks. Hover over a foldable line to see the fold toggle. Use Collapse All / Expand All buttons in the toolbar. Can be enabled/disabled in settings.</li>
                     <li><strong>Bracket Matching (JS)</strong> — Hover over <code>{</code>, <code>(</code>, or <code>[</code> to highlight its matching pair. Both brackets are highlighted with visual feedback. Can be enabled/disabled in settings.</li>
                     <li><strong>Code Folding Setting (JSON)</strong> — Added a setting to enable/disable the collapsible JSON feature.</li>
@@ -50,15 +51,21 @@
                     <li><strong>Hex/RGB Color Preview (CSS)</strong> — Color swatches appear next to color values. Click to copy color in different formats. Includes a color picker.</li>
                     <li><strong>Breadcrumb Navigation (JSON)</strong> — Shows path like <code>root › data › users[0] › name</code> when hovering/clicking. Click any breadcrumb to jump to that level.</li>
                     <li><strong>Clickable URLs & Imports</strong> — URLs in strings and import/require paths are now clickable links.</li>
-                    <li><strong>RSS/Atom Feed Support</strong> — New file format support for <code>.rss</code> and <code>.atom</code> files with syntax highlighting, auto-formatting, code folding for XML elements, clickable URLs (with entity decoding), and feed statistics (tags, attributes, namespaces, etc.).</li>
                 </ul>
             </div>
             
             <div class="version-section">
                 <h3>🔧 Improvements</h3>
                 <ul class="feature-list">
-                    <li><strong>Unified Layout</strong> — All modal windows, toolbars, and UI elements now use CSS variables instead of hardcoded colors for consistent theming.</li>
-                    <li><strong>Enhanced Syntax Checker</strong> — Replaced vanilla JavaScript validation with a sandboxed environment for safer and more accurate syntax checking.</li>
+                    <li><strong>Unified Layout</strong> — Adjusted all modal windows, toolbars, and UI elements to use CSS variables instead of hardcoded colors for consistent theming.</li>
+                    <li><strong>Enhanced Syntax Checker</strong> — Removed vanilla JavaScript validation and replaced it with a sandboxed environment for safer and more accurate syntax checking.</li>
+                </ul>
+            </div>
+            
+            <div class="version-section">
+                <h3>🐛 Bug Fixes</h3>
+                <ul class="feature-list">
+                    <li><strong>RSS Feed Rendering</strong> — Fixed issue where RSS feeds opened in a background tab (XHTML mode) failed to render correctly or caused high CPU usage. Now waits for tab visibility before rendering.</li>
                 </ul>
             </div>
         </div>
