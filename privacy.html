@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - CodePrettify</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="img/code_32.png">
+    <title>Privacy Policy - NotePin</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,89 +14,84 @@
     <header>
       <div class="header-inner">
         <a href="index.html" class="logo">
-          <img src="img/code_32.png" alt="CodePrettify" class="logo-icon" />
-          Code<span>Prettify</span>
+          <img src="img/icon48.png" alt="NotePin" class="logo-icon" />
+          Note<span>Pin</span>
         </a>
         <nav>
           <a href="index.html#features">Features</a>
           <a href="index.html#shortcuts">Shortcuts</a>
           <a href="changelog.html">Changelog</a>
           <a href="privacy.html" class="active">Privacy</a>
-          <a
-            href="https://github.com/calxibe/code-prettify-site"
-            target="_blank"
-            >GitHub</a
-          >
         </nav>
       </div>
     </header>
 
     <main class="content">
       <h1>Privacy Policy</h1>
-      <p class="last-updated">Last Updated: January 20, 2026</p>
+      <p class="last-updated">Last Updated: February 19, 2026</p>
       <p>
-        This Privacy Policy describes how CodePrettify ("we", "us", or "our")
+        This Privacy Policy describes how NotePin ("we", "us", or "our")
         handles your information when you use our browser extension.
       </p>
 
       <div class="highlight">
         <strong>Summary:</strong> We do not collect, store, or transmit your
-        code. All formatting and processing happens locally on your device.
+        notes to any external server. All data stays in your browser's built-in storage.
       </div>
 
       <h2>1. Data Collection</h2>
-      <p><strong>CodePrettify does not collect any personal data.</strong></p>
+      <p><strong>NotePin does not collect any personal data.</strong></p>
       <p>
-        When you open a JavaScript (.js), JSON (.json), or CSS (.css) file in
-        your browser, our extension reads the content of that specific tab to
-        apply formatting and syntax highlighting. This process is performed
-        entirely within your browser's memory (Client-Side).
+        When you create a note, it is saved locally in your browser using
+        <code>chrome.storage.sync</code>. This data is synced only across your
+        own signed-in browser instances via Chrome's built-in sync mechanism.
+        We have no access to this data.
       </p>
       <ul>
-        <li>We do not send your code to any external server.</li>
+        <li>We do not send your notes to any external server.</li>
         <li>We do not track your browsing history.</li>
-        <li>We do not store your files.</li>
+        <li>We do not collect analytics or usage data.</li>
       </ul>
 
-      <h2>2. Local Storage</h2>
+      <h2>2. Data Storage</h2>
       <p>
-        We use your browser's local storage (<code>chrome.storage</code>) solely
-        to save your user preferences, such as:
+        NotePin uses <code>chrome.storage.sync</code> to store your notes. This means:
       </p>
       <ul>
-        <li>Theme choice (Light/Dark/Auto)</li>
-        <li>Indent size preference</li>
-        <li>Whether line numbers are enabled</li>
+        <li>Notes are stored locally in your browser profile</li>
+        <li>If Chrome sync is enabled, notes sync across your signed-in devices</li>
+        <li>Data is subject to Chrome's storage quotas (~100 KB total)</li>
+        <li>You can export or delete all your data at any time from the fullscreen view</li>
       </ul>
-      <p>
-        These settings are stored locally on your device and are synced only
-        across your own signed-in browser instances (if browser sync is
-        enabled).
-      </p>
 
-      <h2>3. Third-Party Services</h2>
+      <h2>3. Permissions</h2>
       <p>
-        The extension utilizes open-source libraries (Prism.js, js-beautify)
+        NotePin requests the following browser permissions:
+      </p>
+      <ul>
+        <li><strong>storage</strong> — To save and sync your notes across devices</li>
+        <li><strong>activeTab</strong> — To read the current tab's URL for domain-based note filtering and badge counts</li>
+        <li><strong>contextMenus</strong> — To provide the right-click "Save to NotePin" menu item</li>
+      </ul>
+
+      <h2>4. Third-Party Services</h2>
+      <p>
+        The extension uses open-source libraries (Bootstrap 5.3, jQuery 4.0.0)
         that are bundled directly within the extension. No external CDNs or
         third-party tracking scripts are loaded.
       </p>
 
-      <h2>4. Changes to This Policy</h2>
+      <h2>5. Changes to This Policy</h2>
       <p>
         We may update our Privacy Policy from time to time. We will notify you
         of any changes by posting the new Privacy Policy on this page.
       </p>
 
-      <h2>5. Contact Us</h2>
+      <h2>6. Contact Us</h2>
       <p>
-        If you have any questions about this Privacy Policy, please open an
-        issue on our GitHub repository:
+        If you have any questions about this Privacy Policy, please contact us:
       </p>
       <p>
-        <strong>Repository:</strong>
-        <a href="https://github.com/calxibe/code-prettify-site"
-          >github.com/calxibe/code-prettify-site</a
-        ><br />
         <strong>Publisher:</strong> Steinar Talmoen
       </p>
     </main>
@@ -106,11 +101,6 @@
         <div class="footer-links">
           <a href="privacy.html">Privacy Policy</a>
           <a href="changelog.html">Changelog</a>
-          <a href="https://github.com/calxibe/code-prettify-site/issues"
-            >Support</a
-          >
-          <a href="https://www.reddit.com/user/calxibe/" target="_blank">Reddit</a>
-          <a href="https://github.com/calxibe/code-prettify-site">GitHub</a>
         </div>
         <p class="copyright">
           &copy; 2026 Steinar Talmoen. All rights reserved.

@@ -1,13 +1,13 @@
 /* ===================================
-   CodePrettify - Main Stylesheet
+   NotePin - Main Stylesheet
    =================================== */
 
 /* CSS Variables */
 :root {
-    --primary: #6366f1;
-    --primary-light: #818cf8;
-    --primary-dark: #4f46e5;
-    --accent: #22d3ee;
+    --primary: #f59e0b;
+    --primary-light: #fbbf24;
+    --primary-dark: #d97706;
+    --accent: #fb923c;
     --bg: #0a0b0f;
     --bg-gradient: linear-gradient(135deg, #0a0b0f 0%, #12141c 50%, #0a0b0f 100%);
     --text: #e4e4e7;
