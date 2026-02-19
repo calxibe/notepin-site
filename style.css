@@ -86,7 +86,11 @@ header {
     gap: 8px;
 }
 
-.logo span {
+.logo-text {
+    color: #fff;
+}
+
+.logo-text span {
     color: var(--primary-light);
 }
 

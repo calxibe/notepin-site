@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
+    <script>document.fonts.ready.then(()=>document.body.classList.add('fonts-loaded'));</script>
 </head>
 <body>
     <div class="bg-glow"></div>
@@ -18,7 +20,7 @@
         <div class="header-inner">
             <a href="#" class="logo">
                 <img src="img/icon48.png" alt="NotePin" class="logo-icon">
-                Note<span>Pin</span>
+                <span class="logo-text">Note<span>Pin</span></span>
             </a>
             <nav>
                 <a href="#features">Features</a>
