@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotePin - Contextual Note-Taking Chrome Extension</title>
+    <meta name="description" content="Save notes tied to specific web pages. Notes sync across devices, support 8 colors, pinning, search, and more. A fast, private Chrome extension for contextual note-taking.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="canonical" href="https://calxibe.github.io/notepin-site/">
+    <meta name="google-site-verification" content="14OfSmxPs5-EXpOJ6Cx9AvpeZSgXMOnxvYtgm21ykQY" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NotePin">
+    <meta property="og:title" content="NotePin - Contextual Note-Taking Chrome Extension">
+    <meta property="og:description" content="Save notes tied to specific web pages. Notes sync across devices, support 8 colors, pinning, search, and more.">
+    <meta property="og:url" content="https://calxibe.github.io/notepin-site/">
+    <meta property="og:image" content="https://calxibe.github.io/notepin-site/img/icon256.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="NotePin - Contextual Note-Taking Chrome Extension">
+    <meta name="twitter:description" content="Save notes tied to specific web pages. Notes sync across devices, support 8 colors, pinning, search, and more.">
+    <meta name="twitter:image" content="https://calxibe.github.io/notepin-site/img/icon256.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
+    <script>document.fonts.ready.then(()=>document.body.classList.add('fonts-loaded'));</script>
+</head>
+<body>
+    <div class="bg-glow"></div>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <img src="img/icon48.png" alt="NotePin" class="logo-icon">
+                <span class="logo-text">Note<span>Pin</span></span>
+            </a>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#shortcuts">Shortcuts</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="https://github.com/calxibe/notepin-site/issues" target="_blank">Issues</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="badge">
+                    <span>📌</span> Coming Soon to Chrome & Edge!
+                </div>
+                
+                <h1>Save Notes Tied to<br>Any Web Page</h1>
+                
+                <p class="subtitle">
+                    NotePin lets you create contextual notes linked to specific websites. Pin important info, search across notes, and sync everything across devices — all from a lightweight Chrome extension.
+                </p>
+                
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-secondary" style="pointer-events: none; opacity: 0.7;">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        Chrome — Coming Soon
+                    </a>
+                    <a href="#" class="btn btn-secondary" style="pointer-events: none; opacity: 0.7;">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M21.86 17.86q.14 0 .25.12.1.13.1.25t-.11.33l-.32.46-.43.53-.44.5q-.21.25-.38.42l-.22.23q-.58.53-1.34 1.04-.76.51-1.6.91-.86.4-1.74.64t-1.67.24q-.9 0-1.69-.28-.8-.28-1.48-.78-.68-.5-1.22-1.17-.53-.66-.92-1.44-.38-.77-.58-1.6-.2-.83-.2-1.67 0-1 .32-1.96.33-.97.87-1.8.14.95.55 1.77.41.82 1.02 1.5.6.68 1.38 1.21.78.54 1.64.9.86.36 1.77.56.92.2 1.8.2 1.12 0 2.18-.24 1.06-.23 2.06-.72l-.06.43q-.07.43-.07.87z"/><path d="M6.5 12.5q0-1.12.33-2.16.32-1.05.91-1.93.59-.89 1.41-1.56.81-.67 1.77-1.07.96-.4 2-.54 1.03-.13 2.07.02-.9.54-1.6 1.31-.7.78-1.17 1.7-.47.92-.7 1.94-.22 1.02-.17 2.07-1.56-.06-2.95-.55-1.38-.49-2.52-1.35-1.13-.86-1.94-2.03-.81-1.18-1.18-2.53.03 1.14.39 2.2.36 1.07.99 1.98.63.9 1.49 1.62.86.71 1.88 1.16-1.41.11-2.67-.25t-2.31-1.08q-1.06-.73-1.81-1.75-.75-1.02-1.13-2.24.36 1.38 1.07 2.54.72 1.16 1.7 2.06.98.9 2.17 1.52 1.19.61 2.5.89-.5.18-1.03.27-.53.1-1.07.1-.57 0-1.13-.1-.55-.11-1.08-.31-.52-.2-1.01-.5-.48-.29-.9-.66-.43-.38-.77-.84-.35-.45-.6-.98-.24-.53-.37-1.1-.13-.56-.13-1.15z"/></svg>
+                        Edge — Coming Soon
+                    </a>
+                </div>
+
+                <div class="supported-section">
+                    <div class="supported-box">
+                        <h4>📝 Note Features</h4>
+                        <div class="format-tags">
+                            <span class="format-tag">8 Colors</span>
+                            <span class="format-tag">Pin / Star</span>
+                            <span class="format-tag">Inline Editing</span>
+                            <span class="format-tag">Expand / Collapse</span>
+                        </div>
+                    </div>
+                    <div class="supported-box">
+                        <h4>🔄 Smart Sync</h4>
+                        <div class="format-tags">
+                            <span class="format-tag">Cross-Device Sync</span>
+                            <span class="format-tag">Chunked Storage</span>
+                            <span class="format-tag">Export / Import</span>
+                            <span class="format-tag">Auto-Save Draft</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="screenshots">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Preview</span>
+                    <h2>See It in Action</h2>
+                    <p class="section-desc">A lightweight popup for quick notes, and a fullscreen view for deeper organization.</p>
+                </div>
+
+                <div class="screenshot-tabs">
+                    <button class="screenshot-tab active" data-view="popup">Popup</button>
+                    <button class="screenshot-tab" data-view="fullscreen">Fullscreen</button>
+                </div>
+
+                <div class="screenshot-showcase" id="screenshotShowcase">
+                    <div class="screenshot-pair active" data-view="popup">
+                        <div class="screenshot-card">
+                            <span class="screenshot-label">☀️ Light</span>
+                            <img src="img/popup_light_1280x800.png" alt="NotePin popup in light mode" loading="lazy">
+                        </div>
+                        <div class="screenshot-card">
+                            <span class="screenshot-label">🌙 Dark</span>
+                            <img src="img/popup_dark_1280x800.png" alt="NotePin popup in dark mode" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="screenshot-pair" data-view="fullscreen">
+                        <div class="screenshot-card">
+                            <span class="screenshot-label">☀️ Light</span>
+                            <img src="img/fullscreen_light_1280x800.png" alt="NotePin fullscreen in light mode" loading="lazy">
+                        </div>
+                        <div class="screenshot-card">
+                            <span class="screenshot-label">🌙 Dark</span>
+                            <img src="img/fullscreen_dark_1280x800.png" alt="NotePin fullscreen in dark mode" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Features</span>
+                    <h2>Everything You Need</h2>
+                    <p class="section-desc">From quick notes to full organization—NotePin keeps your ideas tied to the pages that matter.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon auto">📌</div>
+                        <h3>Contextual Notes</h3>
+                        <p>Save notes linked to specific web pages. Always find your notes right where you left them.</p>
+                        <ul class="feature-list">
+                            <li>Notes store URL, domain, color, and timestamps</li>
+                            <li>Filter by All Notes, Current Site, or Search</li>
+                            <li>Right-click selected text to save instantly</li>
+                            <li>Badge count shows notes for the current domain</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon validate">🎨</div>
+                        <h3>8 Note Colors</h3>
+                        <p>Organize your notes visually with a color that matches the context.</p>
+                        <ul class="feature-list">
+                            <li>Red, Yellow, Blue, Green, Purple, Orange, Pink, Teal</li>
+                            <li>Color accent on the note form matches your pick</li>
+                            <li>Change colors inline while editing</li>
+                            <li>Border preview updates in real-time</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon json">📂</div>
+                        <h3>Two Powerful Views</h3>
+                        <p>Switch between a quick popup and a full-screen tab for deeper note management.</p>
+                        <ul class="feature-list">
+                            <li>Popup (360×600) for quick access from the toolbar</li>
+                            <li>Fullscreen tab with domain sidebar and sorting</li>
+                            <li>6 sort options: Created, Updated, A–Z / Z–A</li>
+                            <li>Domain filtering with note counts</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon tools">🔍</div>
+                        <h3>Search & Filter</h3>
+                        <p>Find any note instantly across text, URLs, and domains.</p>
+                        <ul class="feature-list">
+                            <li>Searches across note text, URL, and domain</li>
+                            <li>Debounced input (300ms) for smooth filtering</li>
+                            <li>Domain sidebar with filter input (fullscreen)</li>
+                            <li>Filter selection remembered across sessions</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon customize">⚙️</div>
+                        <h3>Smart Storage</h3>
+                        <p>Notes sync across devices with intelligent chunked storage that respects Chrome's quotas.</p>
+                        <ul class="feature-list">
+                            <li>chrome.storage.sync for cross-device access</li>
+                            <li>Chunked JSON storage (7,500 bytes per chunk)</li>
+                            <li>Export/Import notes as JSON</li>
+                            <li>Backward-compatible migration from legacy format</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon keyboard">🔒</div>
+                        <h3>100% Privacy First</h3>
+                        <p>Your notes stay on your machine and Chrome sync. No external servers involved.</p>
+                        <ul class="feature-list">
+                            <li>Everything runs client-side in your browser</li>
+                            <li>No servers, no tracking, no API calls</li>
+                            <li>No data collection whatsoever</li>
+                            <li>Minimal permissions: storage, activeTab, contextMenus</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="shortcuts">
+            <div class="container">
+                <div class="shortcuts-section">
+                    <div class="section-header">
+                        <span class="section-badge">Efficiency</span>
+                        <h2>⌨️ Keyboard Shortcuts</h2>
+                        <p class="section-desc">Work faster with these quick commands</p>
+                    </div>
+                    
+                    <div class="shortcuts-grid">
+                        <div class="shortcut-item">
+                            <span class="kbd">Ctrl + Enter</span>
+                            <span class="shortcut-label">Save Note</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <span class="kbd">Escape</span>
+                            <span class="shortcut-label">Cancel Editing</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <span class="kbd">Right-Click</span>
+                            <span class="shortcut-label">Save Selected Text</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <span class="kbd">Custom</span>
+                            <span class="shortcut-label">Open NotePin (configurable)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <span class="icon">💡</span>
+                    <div>
+                        <h4>More Features</h4>
+                        <p>NotePin also includes auto-save drafts, undo delete with a 5-second toast, copy to clipboard, pin/star notes to the top, expand/collapse with line break support, and automatic dark mode synced with your system theme.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Screenshot Lightbox -->
+    <div class="lightbox-overlay" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="https://github.com/calxibe/notepin-site/issues">Support</a>
+                <a href="https://github.com/calxibe/notepin-site">GitHub</a>
+            </div>
+            <p class="copyright">&copy; 2026 FixQuotes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Screenshot tab switching
+        document.querySelectorAll('.screenshot-tab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const view = btn.dataset.view;
+                document.querySelectorAll('.screenshot-tab').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                document.querySelectorAll('.screenshot-pair').forEach(p => {
+                    p.classList.toggle('active', p.dataset.view === view);
+                });
+            });
+        });
+        // Screenshot lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        document.querySelectorAll('.screenshot-card img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') lightbox.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

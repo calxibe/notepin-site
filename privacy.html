@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - NotePin</title>
+    <meta name="description" content="NotePin privacy policy. We collect zero personal data. All notes stay in your browser's built-in storage.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="canonical" href="https://calxibe.github.io/notepin-site/privacy.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NotePin">
+    <meta property="og:title" content="Privacy Policy - NotePin">
+    <meta property="og:description" content="NotePin privacy policy. We collect zero personal data. All notes stay in your browser's built-in storage.">
+    <meta property="og:url" content="https://calxibe.github.io/notepin-site/privacy.html">
+    <meta property="og:image" content="https://calxibe.github.io/notepin-site/img/icon256.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Privacy Policy - NotePin">
+    <meta name="twitter:description" content="NotePin privacy policy. We collect zero personal data. All notes stay in your browser's built-in storage.">
+    <meta name="twitter:image" content="https://calxibe.github.io/notepin-site/img/icon256.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
+    <script>document.fonts.ready.then(()=>document.body.classList.add('fonts-loaded'));</script>
+</head>
+<body>
+    <header>
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="img/icon48.png" alt="NotePin" class="logo-icon" />
+          <span class="logo-text">Note<span>Pin</span></span>
+        </a>
+        <nav>
+          <a href="index.html#features">Features</a>
+          <a href="index.html#shortcuts">Shortcuts</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="privacy.html" class="active">Privacy</a>
+          <a href="https://github.com/calxibe/notepin-site/issues" target="_blank">Issues</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="content">
+      <h1>Privacy Policy</h1>
+      <p class="last-updated">Last Updated: March 25, 2026</p>
+      <p>
+        This Privacy Policy describes how NotePin ("we", "us", or "our")
+        handles your information when you use our browser extension.
+      </p>
+
+      <div class="highlight">
+        <strong>Summary:</strong> We do not collect, store, or transmit your
+        notes to any external server. All data stays in your browser's built-in storage.
+      </div>
+
+      <h2>1. Data Collection</h2>
+      <p><strong>NotePin does not collect any personal data.</strong></p>
+      <p>
+        When you create a note, it is saved locally in your browser using
+        <code>chrome.storage.sync</code>. This data is synced only across your
+        own signed-in browser instances via Chrome's built-in sync mechanism.
+        We have no access to this data.
+      </p>
+      <ul>
+        <li>We do not send your notes to any external server.</li>
+        <li>We do not track your browsing history.</li>
+        <li>We do not collect analytics or usage data.</li>
+      </ul>
+
+      <h2>2. Data Storage</h2>
+      <p>
+        NotePin uses <code>chrome.storage.sync</code> to store your notes. This means:
+      </p>
+      <ul>
+        <li>Notes are stored locally in your browser profile</li>
+        <li>If Chrome sync is enabled, notes sync across your signed-in devices</li>
+        <li>Data is subject to Chrome's storage quotas (~100 KB total)</li>
+        <li>You can export or delete all your data at any time from the fullscreen view</li>
+      </ul>
+
+      <h2>3. Permissions</h2>
+      <p>
+        NotePin requests the following browser permissions:
+      </p>
+      <ul>
+        <li><strong>storage</strong> — To save and sync your notes across devices</li>
+        <li><strong>activeTab</strong> — To read the current tab's URL for domain-based note filtering and badge counts</li>
+        <li><strong>contextMenus</strong> — To provide the right-click "Save to NotePin" menu item</li>
+      </ul>
+
+      <h2>4. Third-Party Services</h2>
+      <p>
+        The extension uses open-source libraries (Bootstrap 5.3, jQuery 4.0.0)
+        that are bundled directly within the extension. No external CDNs or
+        third-party tracking scripts are loaded.
+      </p>
+
+      <h2>5. Changes to This Policy</h2>
+      <p>
+        We may update our Privacy Policy from time to time. We will notify you
+        of any changes by posting the new Privacy Policy on this page.
+      </p>
+
+      <h2>6. Contact Us</h2>
+      <p>
+        If you have any questions about this Privacy Policy, please open an issue on our
+        <a href="https://github.com/calxibe/notepin-site/issues" target="_blank">GitHub Issues</a> page.
+      </p>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="changelog.html">Changelog</a>
+        </div>
+        <p class="copyright">
+          &copy; 2026 <a href="https://fixquotes.com/" target="_blank">FixQuotes</a>. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

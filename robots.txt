@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://calxibe.github.io/notepin-site/sitemap.xml

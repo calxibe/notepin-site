@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - NotePin</title>
+    <meta name="description" content="All notable changes to the NotePin Chrome extension. See new features, improvements, and fixes for each release.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="canonical" href="https://calxibe.github.io/notepin-site/changelog.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NotePin">
+    <meta property="og:title" content="Changelog - NotePin">
+    <meta property="og:description" content="All notable changes to the NotePin Chrome extension. See new features, improvements, and fixes for each release.">
+    <meta property="og:url" content="https://calxibe.github.io/notepin-site/changelog.html">
+    <meta property="og:image" content="https://calxibe.github.io/notepin-site/img/icon256.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Changelog - NotePin">
+    <meta name="twitter:description" content="All notable changes to the NotePin Chrome extension. See new features, improvements, and fixes for each release.">
+    <meta name="twitter:image" content="https://calxibe.github.io/notepin-site/img/icon256.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
+    <script>document.fonts.ready.then(()=>document.body.classList.add('fonts-loaded'));</script>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="img/icon48.png" alt="NotePin" class="logo-icon">
+                <span class="logo-text">Note<span>Pin</span></span>
+            </a>
+            <nav>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#shortcuts">Shortcuts</a>
+                <a href="changelog.html" class="active">Changelog</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="https://github.com/calxibe/notepin-site/issues" target="_blank">Issues</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1>Changelog</h1>
+        <p class="intro">All notable changes to NotePin are documented here.</p>
+
+        <!-- Version 1.0.0 -->
+        <div class="version-card">
+            <div class="version-header">
+                <span class="version-number">v1.0.0</span>
+                <span class="version-badge badge-initial">Initial Release</span>
+                <span class="version-date">March 25, 2026</span>
+            </div>
+            
+            <div class="feature-category">
+                <h4>📌 Core Note-Taking</h4>
+                <ul>
+                    <li><strong>Create, Edit & Delete:</strong> Full CRUD for notes with up to 2,000 characters each</li>
+                    <li><strong>8 Note Colors:</strong> Red, Yellow, Blue, Green, Purple, Orange, Pink, Teal</li>
+                    <li><strong>Inline Editing:</strong> Edit text, color, and URL directly on each note with live border preview</li>
+                    <li><strong>Pin / Star Notes:</strong> Pinned notes always sort to the top</li>
+                    <li><strong>Expand / Collapse:</strong> Click to toggle note text; line breaks preserved when expanded</li>
+                    <li><strong>Character Counter:</strong> Appears when text exceeds 1,000 characters</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
+                <h4>🖥️ Views</h4>
+                <ul>
+                    <li><strong>Popup View (360×600):</strong> Quick access from the toolbar with inline note form, three filter tabs (All Notes, Current Site, Search), and view note modal</li>
+                    <li><strong>Fullscreen Tab:</strong> Domain sidebar with note counts, 6-option sort selector, expand/collapse toggle, and New Note modal</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
+                <h4>🔍 Search & Filtering</h4>
+                <ul>
+                    <li><strong>Full-Text Search:</strong> Searches across note text, URL, and domain</li>
+                    <li><strong>Debounced Input:</strong> 300ms debounce for smooth filtering</li>
+                    <li><strong>Domain Sidebar:</strong> Filter by domain with note counts (fullscreen)</li>
+                    <li><strong>Persistent Filters:</strong> Filter selection remembered across sessions</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
+                <h4>🔄 Storage & Sync</h4>
+                <ul>
+                    <li><strong>Cross-Device Sync:</strong> Uses chrome.storage.sync with chunked JSON (7,500 bytes per chunk)</li>
+                    <li><strong>Legacy Migration:</strong> Backward-compatible migration from single-key format</li>
+                    <li><strong>Real-Time Sync:</strong> Storage changes trigger automatic UI refresh</li>
+                    <li><strong>Export / Import:</strong> Export all notes as JSON; import with duplicate skipping</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
+                <h4>⚡ Productivity</h4>
+                <ul>
+                    <li><strong>Context Menu:</strong> Right-click selected text → "Save to NotePin" with auto-captured URL and domain</li>
+                    <li><strong>Badge Count:</strong> Extension icon shows note count for the current site's domain</li>
+                    <li><strong>Auto-Save Draft:</strong> Textarea content and selected color saved to sessionStorage</li>
+                    <li><strong>Copy to Clipboard:</strong> Copy button in the view note modal with "Copied!" feedback</li>
+                    <li><strong>Undo Delete:</strong> 5-second toast with Undo button; bulk clear shows confirmation first</li>
+                    <li><strong>Keyboard Shortcuts:</strong> Ctrl+Enter to save, Escape to cancel, custom shortcut configurable</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
+                <h4>🎨 Design & Accessibility</h4>
+                <ul>
+                    <li><strong>Auto Dark Mode:</strong> Syncs with system via prefers-color-scheme and Bootstrap 5.3 data-bs-theme</li>
+                    <li><strong>Smart Dates:</strong> Time-only for today, date-only for older notes, full date/time on hover</li>
+                    <li><strong>Accessibility:</strong> Proper aria-hidden fix for modals, title attributes on buttons and timestamps</li>
+                    <li><strong>CSS Variables:</strong> Refactored to use Bootstrap CSS variables (~60% reduction)</li>
+                    <li><strong>Lucide Icons:</strong> Clean, consistent icon set for all UI elements</li>
+                    <li><strong>Smooth Animations:</strong> Slide-up animation when deleting notes for a polished feel</li>
+                    <li><strong>Timestamped Exports:</strong> Export filenames include date and time (notes-YYYYMMDD-HHMMSS.json)</li>
+                    <li><strong>Smart Domain Filter:</strong> Auto-selects "All notes" when a new note's domain doesn't match the active filter</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="changelog.html">Changelog</a>
+            </div>
+            <p class="copyright">&copy; 2026 FixQuotes. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
