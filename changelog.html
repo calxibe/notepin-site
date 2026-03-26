@@ -59,12 +59,45 @@
         <h1>Changelog</h1>
         <p class="intro">All notable changes to NotePin are documented here.</p>
 
+        <!-- Version 1.0.2 -->
+        <div class="version-card">
+            <div class="version-header">
+                <span class="version-number">v1.0.2</span>
+                <span class="version-badge badge-initial">Bug Fix</span>
+                <span class="version-date">March 26, 2026</span>
+            </div>
+
+            <div class="feature-category">
+                <h4>🐛 Fixes</h4>
+                <ul>
+                    <li><strong>Sync Storage:</strong> Fixed chrome.storage.sync chunking for emoji and other non-ASCII text</li>
+                    <li><strong>Inline Editing:</strong> Fixed repeated save and cancel handlers from stacking on the same note</li>
+                    <li><strong>Current Site Filter:</strong> Popup filtering now matches the exact domain instead of using substring search</li>
+                    <li><strong>Badge Count:</strong> Badge counting now normalizes legacy notes that were missing a stored domain</li>
+                    <li><strong>Dark Mode Compatibility:</strong> Improved theme change listener support for older browser implementations</li>
+                    <li><strong>Fullscreen Search:</strong> Search terms now stay active when notes reload after sorting, filtering, or saving</li>
+                    <li><strong>Import / Export:</strong> Export and import failures now surface properly, and import can retry the same file after an error</li>
+                    <li><strong>Note Actions:</strong> Pin, delete, clear, copy, and undo actions now fail more gracefully instead of silently</li>
+                    <li><strong>Context Menu:</strong> Registration is now refreshed safely on install and browser startup</li>
+                    <li><strong>Import Duplicates:</strong> Imports now skip duplicates by note ID only, matching the documented behavior</li>
+                    <li><strong>Write Safety:</strong> Overlapping note actions in the same extension view are now serialized to reduce lost updates during quick successive changes</li>
+                    <li><strong>Badge Refresh:</strong> The active tab badge now refreshes on browser startup and uses a safer active-tab fallback after sync changes</li>
+                    <li><strong>Fullscreen State:</strong> Fullscreen search text now persists for the current session, and editing a note URL also clears mismatched domain filters</li>
+                    <li><strong>Import Validation:</strong> Imports now skip malformed entries with empty note text</li>
+                    <li><strong>Storage Resilience:</strong> Note reads now fall back to the last valid in-session notes if sync chunks are temporarily incomplete or unreadable</li>
+                    <li><strong>Legacy Migration:</strong> Older single-key notes are now migrated consistently from background tasks as well as extension pages</li>
+                    <li><strong>Domain Filters:</strong> Fullscreen domain filters now reset to All notes when the selected domain no longer has any notes</li>
+                    <li><strong>Popup Search:</strong> The search tab now stays empty until you type a query instead of showing all notes for a blank search</li>
+                </ul>
+            </div>
+        </div>
+
         <!-- Version 1.0.1 -->
         <div class="version-card">
             <div class="version-header">
                 <span class="version-number">v1.0.1</span>
                 <span class="version-badge badge-initial">Bug Fix</span>
-                <span class="version-date">March 26, 2026</span>
+                <span class="version-date">March 25, 2026</span>
             </div>
             
             <div class="feature-category">
@@ -80,7 +113,7 @@
             <div class="version-header">
                 <span class="version-number">v1.0.0</span>
                 <span class="version-badge badge-initial">Initial Release</span>
-                <span class="version-date">March 25, 2026</span>
+                <span class="version-date">March 24, 2026</span>
             </div>
             
             <div class="feature-category">
