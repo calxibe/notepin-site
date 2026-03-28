@@ -593,6 +593,13 @@ code {
     color: var(--primary-light);
 }
 
+.screenshot-note {
+    margin: -8px auto 28px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
 /* Screenshot Showcase (Light / Dark pairs) */
 .screenshot-showcase {
     max-width: 1100px;
@@ -611,12 +618,18 @@ code {
 
 .screenshot-card {
     position: relative;
+    width: 100%;
+    padding: 0;
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid var(--border);
     background: var(--surface);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    appearance: none;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
 }
 
 .screenshot-card:hover {
@@ -624,13 +637,12 @@ code {
     box-shadow: 0 28px 80px rgba(0, 0, 0, calc(var(--shadow-strength) + 0.1));
 }
 
-.screenshot-card {
-    cursor: pointer;
-}
-
 .screenshot-card img {
     width: 100%;
     display: block;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background: var(--surface-light);
 }
 
 .screenshot-label {
@@ -644,6 +656,20 @@ code {
     font-weight: 600;
     padding: 5px 12px;
     border-radius: 6px;
+    pointer-events: none;
+}
+
+.screenshot-hint {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(10, 11, 15, 0.72);
+    color: #f4f4f5;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
     pointer-events: none;
 }
 
@@ -1108,6 +1134,10 @@ footer {
 /* ===================================
    Screenshot Lightbox Modal
    =================================== */
+body.lightbox-open {
+    overflow: hidden;
+}
+
 .lightbox-overlay {
     display: none;
     position: fixed;
@@ -1130,7 +1160,7 @@ footer {
     max-height: 85vh;
     border-radius: 12px;
     box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
-    cursor: default;
+    cursor: zoom-out;
     animation: lightbox-in 0.2s ease;
 }
 
@@ -1145,6 +1175,7 @@ footer {
     right: 24px;
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0;
     color: #fff;
     font-size: 1.4rem;
     width: 40px;
