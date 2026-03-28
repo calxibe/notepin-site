@@ -17,13 +17,13 @@
     <meta property="og:title" content="NotePin - Contextual Note-Taking Chrome Extension">
     <meta property="og:description" content="Save notes tied to specific web pages. Notes sync across devices, support 8 colors, pinning, search, and more.">
     <meta property="og:url" content="https://notepin.fixquotes.com">
-    <meta property="og:image" content="https://notepin.fixquotes.com/img/icon256.png">
+    <meta property="og:image" content="https://notepin.fixquotes.com/img/popup_light_1280x800.png">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="NotePin - Contextual Note-Taking Chrome Extension">
     <meta name="twitter:description" content="Save notes tied to specific web pages. Notes sync across devices, support 8 colors, pinning, search, and more.">
-    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/icon256.png">
+    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/popup_light_1280x800.png">
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -118,26 +118,32 @@
                     <button class="screenshot-tab" data-view="fullscreen">Fullscreen</button>
                 </div>
 
+                <p class="screenshot-note">Each preview uses a lightweight thumbnail and opens the full 1280 x 800 marketplace capture.</p>
+
                 <div class="screenshot-showcase" id="screenshotShowcase">
                     <div class="screenshot-pair active" data-view="popup">
-                        <div class="screenshot-card">
-                            <span class="screenshot-label">☀️ Light</span>
-                            <img src="img/popup_light_1280x800.png" alt="NotePin popup in light mode" loading="lazy">
-                        </div>
-                        <div class="screenshot-card">
-                            <span class="screenshot-label">🌙 Dark</span>
-                            <img src="img/popup_dark_1280x800.png" alt="NotePin popup in dark mode" loading="lazy">
-                        </div>
+                        <button class="screenshot-card" type="button" data-fullsrc="img/popup_light_1280x800.png" aria-label="Open full-size NotePin popup screenshot in light mode">
+                            <span class="screenshot-label">Light</span>
+                            <img src="img/popup_light_1280x800_thumb.png" alt="NotePin popup in light mode" width="640" height="400" loading="lazy" decoding="async">
+                            <span class="screenshot-hint">Open 1280 x 800</span>
+                        </button>
+                        <button class="screenshot-card" type="button" data-fullsrc="img/popup_dark_1280x800.png" aria-label="Open full-size NotePin popup screenshot in dark mode">
+                            <span class="screenshot-label">Dark</span>
+                            <img src="img/popup_dark_1280x800_thumb.png" alt="NotePin popup in dark mode" width="640" height="400" loading="lazy" decoding="async">
+                            <span class="screenshot-hint">Open 1280 x 800</span>
+                        </button>
                     </div>
                     <div class="screenshot-pair" data-view="fullscreen">
-                        <div class="screenshot-card">
-                            <span class="screenshot-label">☀️ Light</span>
-                            <img src="img/fullscreen_light_1280x800.png" alt="NotePin fullscreen in light mode" loading="lazy">
-                        </div>
-                        <div class="screenshot-card">
-                            <span class="screenshot-label">🌙 Dark</span>
-                            <img src="img/fullscreen_dark_1280x800.png" alt="NotePin fullscreen in dark mode" loading="lazy">
-                        </div>
+                        <button class="screenshot-card" type="button" data-fullsrc="img/fullscreen_light_1280x800.png" aria-label="Open full-size NotePin fullscreen screenshot in light mode">
+                            <span class="screenshot-label">Light</span>
+                            <img src="img/fullscreen_light_1280x800_thumb.png" alt="NotePin fullscreen in light mode" width="640" height="400" loading="lazy" decoding="async">
+                            <span class="screenshot-hint">Open 1280 x 800</span>
+                        </button>
+                        <button class="screenshot-card" type="button" data-fullsrc="img/fullscreen_dark_1280x800.png" aria-label="Open full-size NotePin fullscreen screenshot in dark mode">
+                            <span class="screenshot-label">Dark</span>
+                            <img src="img/fullscreen_dark_1280x800_thumb.png" alt="NotePin fullscreen in dark mode" width="640" height="400" loading="lazy" decoding="async">
+                            <span class="screenshot-hint">Open 1280 x 800</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -297,8 +303,8 @@
     </main>
 
     <!-- Screenshot Lightbox -->
-    <div class="lightbox-overlay" id="lightbox">
-        <button class="lightbox-close" aria-label="Close">&times;</button>
+    <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="lightbox-close" type="button" aria-label="Close image preview">&times;</button>
         <img id="lightboxImg" src="" alt="">
     </div>
 
@@ -340,20 +346,30 @@
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
 
-        document.querySelectorAll('.screenshot-card img').forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightboxImg.alt = img.alt;
+        function closeLightbox() {
+            if (!lightbox.classList.contains('active')) {
+                return;
+            }
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('lightbox-open');
+        }
+
+        document.querySelectorAll('.screenshot-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const preview = card.querySelector('img');
+                lightboxImg.src = card.dataset.fullsrc;
+                lightboxImg.alt = preview.alt;
                 lightbox.classList.add('active');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('lightbox-open');
             });
         });
 
-        lightbox.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-        });
+        lightbox.addEventListener('click', closeLightbox);
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') lightbox.classList.remove('active');
+            if (e.key === 'Escape') closeLightbox();
         });
     </script>
 </body>
