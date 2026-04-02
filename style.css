@@ -355,9 +355,12 @@ code {
     text-decoration: none;
 }
 
-.btn svg {
+.btn svg,
+.btn .btn-icon {
     width: 20px;
     height: 20px;
+    display: block;
+    flex-shrink: 0;
 }
 
 /* CTA Buttons */
@@ -374,7 +377,8 @@ code {
     font-size: 1.1rem;
 }
 
-.cta-buttons .btn svg {
+.cta-buttons .btn svg,
+.cta-buttons .btn .btn-icon {
     margin-right: 8px;
 }
 
