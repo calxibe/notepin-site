@@ -1,17 +1,3 @@
-const gaScript = document.createElement('script');
-gaScript.async = true;
-gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-YX08PG386W';
-document.head.appendChild(gaScript);
-
-window.dataLayer = window.dataLayer || [];
-
-function gtag() {
-    window.dataLayer.push(arguments);
-}
-
-gtag('js', new Date());
-gtag('config', 'G-YX08PG386W');
-
 document.fonts.ready.then(() => {
     document.body.classList.add('fonts-loaded');
 });
