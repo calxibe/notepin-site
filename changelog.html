@@ -3,15 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YX08PG386W"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-YX08PG386W');
-        </script>
     <title>Changelog - NotePin</title>
     <meta name="description" content="All notable changes to the NotePin Chrome extension. See new features, improvements, and fixes for each release.">
     <meta name="robots" content="index, follow">
@@ -59,7 +50,7 @@
                 <a href="index.html#shortcuts">Shortcuts</a>
                 <a href="changelog.html" class="active">Changelog</a>
                 <a href="privacy.html">Privacy</a>
-                <a href="https://github.com/calxibe/notepin-site/issues" target="_blank">GitHub</a>
+                <a href="https://fixquotes.com/docs/contact/?category=notepin" target="_blank">GitHub</a>
             </nav>
         </div>
     </header>
@@ -67,6 +58,24 @@
     <main class="content">
         <h1>Changelog</h1>
         <p class="intro">All notable changes to NotePin are documented here.</p>
+
+        <!-- Version 1.0.3 -->
+        <div class="version-card">
+            <div class="version-header">
+                <span class="version-number">v1.0.3</span>
+                <span class="version-badge badge-initial">Bug Fix</span>
+                <span class="version-date">April 2, 2026</span>
+            </div>
+
+            <div class="feature-category">
+                <h4>🐛 Fixes</h4>
+                <ul>
+                    <li><strong>Missing Metadata Recovery:</strong> Chunked sync storage now recovers notes from existing chunks when the metadata key is temporarily missing</li>
+                    <li><strong>Safer Sync Writes:</strong> Note writes now store the new chunk snapshot before cleaning up stale chunks, reducing partial-sync data loss risk</li>
+                    <li><strong>Overwrite Protection:</strong> Note changes are now blocked when Chrome sync returns an incomplete or unreadable snapshot, preventing empty overwrites</li>
+                </ul>
+            </div>
+        </div>
 
         <!-- Version 1.0.2 -->
         <div class="version-card">
@@ -198,9 +207,9 @@
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="changelog.html">Changelog</a>
-                <a href="https://github.com/calxibe/notepin-site/issues">Feedback &amp; Issues</a>
+                <a href="https://fixquotes.com/docs/contact/?category=notepin">Feedback &amp; Issues</a>
             </div>
-            <p class="copyright">&copy; 2026 FixQuotes. All rights reserved.</p>
+            <p class="copyright">© 2026 FixQuotes. NotePin is a browser extension by FixQuotes.</p>
         </div>
     </footer>
 
