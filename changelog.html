@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Changelog - NotePin</title>
-    <meta name="description" content="All notable changes to the NotePin Chrome extension. See new features, improvements, and fixes for each release.">
+    <meta name="description" content="All notable changes to the NotePin browser extension. See new features, improvements, and fixes for each release.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0a0f">
@@ -14,14 +14,14 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="NotePin">
     <meta property="og:title" content="Changelog - NotePin">
-    <meta property="og:description" content="All notable changes to the NotePin Chrome extension. See new features, improvements, and fixes for each release.">
+    <meta property="og:description" content="All notable changes to the NotePin browser extension. See new features, improvements, and fixes for each release.">
     <meta property="og:url" content="https://notepin.fixquotes.com/changelog.html">
     <meta property="og:image" content="https://notepin.fixquotes.com/img/popup_light_1280x800.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Changelog - NotePin">
-    <meta name="twitter:description" content="All notable changes to the NotePin Chrome extension. See new features, improvements, and fixes for each release.">
+    <meta name="twitter:description" content="All notable changes to the NotePin browser extension. See new features, improvements, and fixes for each release.">
     <meta name="twitter:image" content="https://notepin.fixquotes.com/img/popup_light_1280x800.png">
 
     <!-- Favicon -->
@@ -62,16 +62,21 @@
         <div class="version-card">
             <div class="version-header">
                 <span class="version-number">v1.0.3</span>
-                <span class="version-badge badge-initial">Bug Fix</span>
+                <span class="version-badge badge-initial">Update</span>
                 <span class="version-date">April 2, 2026</span>
+            </div>
+
+            <div class="feature-category">
+                <h4>✨ Added</h4>
+                <ul>
+                    <li><strong>Microsoft Edge Release:</strong> NotePin is now available on Microsoft Edge Add-ons</li>
+                </ul>
             </div>
 
             <div class="feature-category">
                 <h4>🐛 Fixes</h4>
                 <ul>
-                    <li><strong>Missing Metadata Recovery:</strong> Chunked sync storage now recovers notes from existing chunks when the metadata key is temporarily missing</li>
-                    <li><strong>Safer Sync Writes:</strong> Note writes now store the new chunk snapshot before cleaning up stale chunks, reducing partial-sync data loss risk</li>
-                    <li><strong>Overwrite Protection:</strong> Note changes are now blocked when Chrome sync returns an incomplete or unreadable snapshot, preventing empty overwrites</li>
+                    <li><strong>Sync Reliability:</strong> Improved sync recovery helps preserve existing notes and prevents accidental overwrites when browser sync data is temporarily incomplete</li>
                 </ul>
             </div>
         </div>
@@ -88,23 +93,11 @@
                 <h4>🐛 Fixes</h4>
                 <ul>
                     <li><strong>Sync Storage:</strong> Fixed chrome.storage.sync chunking for emoji and other non-ASCII text</li>
-                    <li><strong>Inline Editing:</strong> Fixed repeated save and cancel handlers from stacking on the same note</li>
-                    <li><strong>Current Site Filter:</strong> Popup filtering now matches the exact domain instead of using substring search</li>
-                    <li><strong>Badge Count:</strong> Badge counting now normalizes legacy notes that were missing a stored domain</li>
-                    <li><strong>Dark Mode Compatibility:</strong> Improved theme change listener support for older browser implementations</li>
-                    <li><strong>Fullscreen Search:</strong> Search terms now stay active when notes reload after sorting, filtering, or saving</li>
-                    <li><strong>Import / Export:</strong> Export and import failures now surface properly, and import can retry the same file after an error</li>
-                    <li><strong>Note Actions:</strong> Pin, delete, clear, copy, and undo actions now fail more gracefully instead of silently</li>
-                    <li><strong>Context Menu:</strong> Registration is now refreshed safely on install and browser startup</li>
-                    <li><strong>Import Duplicates:</strong> Imports now skip duplicates by note ID only, matching the documented behavior</li>
-                    <li><strong>Write Safety:</strong> Overlapping note actions in the same extension view are now serialized to reduce lost updates during quick successive changes</li>
-                    <li><strong>Badge Refresh:</strong> The active tab badge now refreshes on browser startup and uses a safer active-tab fallback after sync changes</li>
-                    <li><strong>Fullscreen State:</strong> Fullscreen search text now persists for the current session, and editing a note URL also clears mismatched domain filters</li>
-                    <li><strong>Import Validation:</strong> Imports now skip malformed entries with empty note text</li>
-                    <li><strong>Storage Resilience:</strong> Note reads now fall back to the last valid in-session notes if sync chunks are temporarily incomplete or unreadable</li>
-                    <li><strong>Legacy Migration:</strong> Older single-key notes are now migrated consistently from background tasks as well as extension pages</li>
-                    <li><strong>Domain Filters:</strong> Fullscreen domain filters now reset to All notes when the selected domain no longer has any notes</li>
-                    <li><strong>Popup Search:</strong> The search tab now stays empty until you type a query instead of showing all notes for a blank search</li>
+                    <li><strong>Search and Filtering:</strong> Popup and fullscreen search and filtering now behave more reliably, including better Current Site matching and search persistence</li>
+                    <li><strong>Import / Export:</strong> Errors now surface more clearly, failed imports can be retried, and malformed entries are skipped</li>
+                    <li><strong>Note Actions:</strong> Pin, delete, clear, copy, and undo actions are more reliable during rapid changes</li>
+                    <li><strong>Badge and Context Menu:</strong> Badge counts, domain filters, and context menu registration now refresh more reliably across startup and sync changes</li>
+                    <li><strong>Storage Recovery:</strong> Improved recovery and migration for older notes reduces the risk of notes disappearing during temporary sync issues</li>
                 </ul>
             </div>
         </div>
