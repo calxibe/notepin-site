@@ -1073,6 +1073,21 @@ section {
     margin-bottom: 16px;
 }
 
+.extension-icon--image {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+}
+
+.extension-logo {
+    display: block;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
 .extension-card h3 {
     font-size: 1.15rem;
     font-weight: 700;
