@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NotePin - Contextual Note-Taking Browser Extension</title>
-    <meta name="description" content="Save notes tied to specific web pages. Notes sync across devices, support 8 colors, pinning, search, and more on Chrome and Edge.">
+    <meta name="description"
+        content="Save notes tied to specific web pages. Notes sync across devices, support 8 colors, pinning, search, and more on Chrome and Edge.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0a0f">
@@ -15,14 +17,16 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="NotePin">
     <meta property="og:title" content="NotePin - Contextual Note-Taking Browser Extension">
-    <meta property="og:description" content="Save notes tied to specific web pages. Notes sync across devices, support 8 colors, pinning, search, and more on Chrome and Edge.">
+    <meta property="og:description"
+        content="Save notes tied to specific web pages. Notes sync across devices, support 8 colors, pinning, search, and more on Chrome and Edge.">
     <meta property="og:url" content="https://notepin.fixquotes.com">
     <meta property="og:image" content="https://notepin.fixquotes.com/img/popup_light_1280x800.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="NotePin - Contextual Note-Taking Browser Extension">
-    <meta name="twitter:description" content="Save notes tied to specific web pages. Notes sync across devices, support 8 colors, pinning, search, and more on Chrome and Edge.">
+    <meta name="twitter:description"
+        content="Save notes tied to specific web pages. Notes sync across devices, support 8 colors, pinning, search, and more on Chrome and Edge.">
     <meta name="twitter:image" content="https://notepin.fixquotes.com/img/popup_light_1280x800.png">
 
     <!-- Favicon -->
@@ -33,11 +37,23 @@
     <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
+    <style>
+        body {
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+
+        body.fonts-loaded {
+            opacity: 1;
+        }
+    </style>
     <script src="index.js" defer></script>
 </head>
+
 <body>
     <div class="bg-glow"></div>
 
@@ -60,17 +76,21 @@
         <section class="hero">
             <div class="container">
                 <h1>Save Notes Tied to<br>Any Web Page</h1>
-                
+
                 <p class="subtitle">
-                    NotePin lets you create contextual notes for the page you are on or any URL you want to save for later. Pin important info, search fast, and keep notes synced instantly across devices in a lightweight browser extension for Chrome and Edge.
+                    NotePin lets you create contextual notes for the page you are on or any URL you want to save for
+                    later. Pin important info, search fast, and keep notes synced instantly across devices in a
+                    lightweight browser extension for Chrome and Edge.
                 </p>
-                
+
                 <div class="cta-buttons">
-                    <a href="https://chromewebstore.google.com/detail/notepin-web-page-notes-st/fonaehlalnjinfdkjpicffebenbhhnbj" class="btn btn-primary" target="_blank" rel="noopener">
+                    <a href="https://chromewebstore.google.com/detail/notepin-web-page-notes-st/fonaehlalnjinfdkjpicffebenbhhnbj"
+                        class="btn btn-primary" target="_blank" rel="noopener">
                         <img src="img/chrome.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
                         Add to Chrome — Free
                     </a>
-                    <a href="https://microsoftedge.microsoft.com/addons/detail/notepin-web-page-notes-/neeciljnpmmlcfahncjdeffnclconjck" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <a href="https://microsoftedge.microsoft.com/addons/detail/notepin-web-page-notes-/neeciljnpmmlcfahncjdeffnclconjck"
+                        class="btn btn-secondary" target="_blank" rel="noopener">
                         <img src="img/edge.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
                         Add to Edge — Free
                     </a>
@@ -105,7 +125,8 @@
                 <div class="section-header">
                     <span class="section-badge">Preview</span>
                     <h2>See It in Action</h2>
-                    <p class="section-desc">A lightweight popup for quick notes, and a fullscreen view for deeper organization.</p>
+                    <p class="section-desc">A lightweight popup for quick notes, and a fullscreen view for deeper
+                        organization.</p>
                 </div>
 
                 <div class="screenshot-tabs">
@@ -113,30 +134,39 @@
                     <button class="screenshot-tab" data-view="fullscreen">Fullscreen</button>
                 </div>
 
-                <p class="screenshot-note">Each preview uses a lightweight thumbnail and opens the full 1280 x 800 marketplace capture.</p>
+                <p class="screenshot-note">Each preview uses a lightweight thumbnail and opens the full 1280 x 800
+                    marketplace capture.</p>
 
                 <div class="screenshot-showcase" id="screenshotShowcase">
                     <div class="screenshot-pair active" data-view="popup">
-                        <button class="screenshot-card" type="button" data-fullsrc="img/popup_light_1280x800.png" aria-label="Open full-size NotePin popup screenshot in light mode">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/popup_light_1280x800.png"
+                            aria-label="Open full-size NotePin popup screenshot in light mode">
                             <span class="screenshot-label">Light</span>
-                            <img src="img/popup_light_1280x800_thumb.png" alt="NotePin popup in light mode" width="640" height="400" loading="lazy" decoding="async">
+                            <img src="img/popup_light_1280x800_thumb.png" alt="NotePin popup in light mode" width="640"
+                                height="400" loading="lazy" decoding="async">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
-                        <button class="screenshot-card" type="button" data-fullsrc="img/popup_dark_1280x800.png" aria-label="Open full-size NotePin popup screenshot in dark mode">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/popup_dark_1280x800.png"
+                            aria-label="Open full-size NotePin popup screenshot in dark mode">
                             <span class="screenshot-label">Dark</span>
-                            <img src="img/popup_dark_1280x800_thumb.png" alt="NotePin popup in dark mode" width="640" height="400" loading="lazy" decoding="async">
+                            <img src="img/popup_dark_1280x800_thumb.png" alt="NotePin popup in dark mode" width="640"
+                                height="400" loading="lazy" decoding="async">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
                     </div>
                     <div class="screenshot-pair" data-view="fullscreen">
-                        <button class="screenshot-card" type="button" data-fullsrc="img/fullscreen_light_1280x800.png" aria-label="Open full-size NotePin fullscreen screenshot in light mode">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/fullscreen_light_1280x800.png"
+                            aria-label="Open full-size NotePin fullscreen screenshot in light mode">
                             <span class="screenshot-label">Light</span>
-                            <img src="img/fullscreen_light_1280x800_thumb.png" alt="NotePin fullscreen in light mode" width="640" height="400" loading="lazy" decoding="async">
+                            <img src="img/fullscreen_light_1280x800_thumb.png" alt="NotePin fullscreen in light mode"
+                                width="640" height="400" loading="lazy" decoding="async">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
-                        <button class="screenshot-card" type="button" data-fullsrc="img/fullscreen_dark_1280x800.png" aria-label="Open full-size NotePin fullscreen screenshot in dark mode">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/fullscreen_dark_1280x800.png"
+                            aria-label="Open full-size NotePin fullscreen screenshot in dark mode">
                             <span class="screenshot-label">Dark</span>
-                            <img src="img/fullscreen_dark_1280x800_thumb.png" alt="NotePin fullscreen in dark mode" width="640" height="400" loading="lazy" decoding="async">
+                            <img src="img/fullscreen_dark_1280x800_thumb.png" alt="NotePin fullscreen in dark mode"
+                                width="640" height="400" loading="lazy" decoding="async">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
                     </div>
@@ -149,14 +179,16 @@
                 <div class="section-header">
                     <span class="section-badge">Features</span>
                     <h2>Everything You Need</h2>
-                    <p class="section-desc">From quick notes to full organization—NotePin keeps your ideas tied to the pages that matter.</p>
+                    <p class="section-desc">From quick notes to full organization—NotePin keeps your ideas tied to the
+                        pages that matter.</p>
                 </div>
 
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon auto">📌</div>
                         <h3>Contextual Notes</h3>
-                        <p>Save notes linked to specific web pages. Always find your notes right where you left them.</p>
+                        <p>Save notes linked to specific web pages. Always find your notes right where you left them.
+                        </p>
                         <ul class="feature-list">
                             <li>Notes store URL, domain, color, and created / edited timestamps</li>
                             <li>Create notes for the current page or manually enter any URL</li>
@@ -205,7 +237,8 @@
                     <div class="feature-card">
                         <div class="feature-icon customize">⚙️</div>
                         <h3>Smart Storage</h3>
-                        <p>Notes sync across devices with intelligent chunked storage that respects browser sync quotas.</p>
+                        <p>Notes sync across devices with intelligent chunked storage that respects browser sync quotas.
+                        </p>
                         <ul class="feature-list">
                             <li>Browser sync storage for cross-device access</li>
                             <li>Chunked JSON storage (7,500 bytes per chunk)</li>
@@ -218,7 +251,8 @@
                     <div class="feature-card">
                         <div class="feature-icon keyboard">🔒</div>
                         <h3>100% Privacy First</h3>
-                        <p>Your notes stay on your machine and your browser sync profile. No external servers involved.</p>
+                        <p>Your notes stay on your machine and your browser sync profile. No external servers involved.
+                        </p>
                         <ul class="feature-list">
                             <li>Everything runs client-side in your browser</li>
                             <li>No note data is sent to third-party servers</li>
@@ -238,7 +272,7 @@
                         <h2>⌨️ Keyboard Shortcuts</h2>
                         <p class="section-desc">Work faster with these quick commands</p>
                     </div>
-                    
+
                     <div class="shortcuts-grid">
                         <div class="shortcut-item">
                             <span class="kbd">Ctrl + Enter</span>
@@ -263,7 +297,9 @@
                     <span class="icon">💡</span>
                     <div>
                         <h4>More Features</h4>
-                        <p>NotePin also includes 2,000-character notes with a live counter, auto-save drafts, undo delete with a 5-second toast, copy to clipboard, pin/star notes to the top, expand/collapse with line break support, and automatic dark mode synced with your system theme.</p>
+                        <p>NotePin also includes 2,000-character notes with a live counter, auto-save drafts, undo
+                            delete with a 5-second toast, copy to clipboard, pin/star notes to the top, expand/collapse
+                            with line break support, and automatic dark mode synced with your system theme.</p>
                     </div>
                 </div>
             </div>
@@ -278,32 +314,37 @@
                 </div>
                 <div class="extensions-grid">
                     <a href="https://prettify.cloud" class="extension-card" target="_blank" rel="noopener">
-                            <div class="extension-icon extension-icon--image">
-                                <img src="img/plugins/codeprettify-logo.svg" alt="" class="extension-logo" width="48" height="48" aria-hidden="true">
-                            </div>
-                            <h3>CodePrettify</h3>
-                            <p>Format JS, JSON, CSS, YAML, XML, and RSS right in your browser.</p>
+                        <div class="extension-icon extension-icon--image">
+                            <img src="img/plugins/codeprettify-logo.svg" alt="" class="extension-logo" width="48"
+                                height="48" aria-hidden="true">
+                        </div>
+                        <h3>CodePrettify</h3>
+                        <p>Format JS, JSON, CSS, YAML, XML, and RSS right in your browser.</p>
                     </a>
                     <a href="https://fixguard.org/" class="extension-card" target="_blank" rel="noopener">
                         <div class="extension-icon extension-icon--image">
-                                <img src="img/plugins/fixguard-logo.svg" alt="" class="extension-logo" width="48" height="48" aria-hidden="true">
+                            <img src="img/plugins/fixguard-logo.svg" alt="" class="extension-logo" width="48"
+                                height="48" aria-hidden="true">
                         </div>
                         <h3>FixGuard</h3>
-                            <p>Block ads, hide cookie banners, and browse clean with zero tracking.</p>
+                        <p>Block ads, hide cookie banners, and browse clean with zero tracking.</p>
                     </a>
-                    <a href="https://fixquotes.com/docs/browser-extension/" class="extension-card" target="_blank" rel="noopener">
-                            <div class="extension-icon extension-icon--image">
-                                <img src="img/plugins/fixquotes-logo.svg" alt="" class="extension-logo" width="48" height="48" aria-hidden="true">
-                            </div>
+                    <a href="https://fixquotes.com/docs/browser-extension/" class="extension-card" target="_blank"
+                        rel="noopener">
+                        <div class="extension-icon extension-icon--image">
+                            <img src="img/plugins/fixquotes-logo.svg" alt="" class="extension-logo" width="48"
+                                height="48" aria-hidden="true">
+                        </div>
                         <h3>FixQuotes</h3>
-                            <p>Daily quotes, striking backgrounds, and dark mode on every new tab.</p>
-                        </a>
-                        <a href="https://tabconnect.app/" class="extension-card" target="_blank" rel="noopener">
-                            <div class="extension-icon extension-icon--image">
-                                <img src="img/plugins/tabconnect-logo.svg" alt="" class="extension-logo" width="48" height="48" aria-hidden="true">
-                            </div>
-                            <h3>TabConnect</h3>
-                            <p>Share browser tabs with short passwords and encrypted remote viewing.</p>
+                        <p>Daily quotes, striking backgrounds, and dark mode on every new tab.</p>
+                    </a>
+                    <a href="https://tabconnect.app/" class="extension-card" target="_blank" rel="noopener">
+                        <div class="extension-icon extension-icon--image">
+                            <img src="img/plugins/tabconnect-logo.svg" alt="" class="extension-logo" width="48"
+                                height="48" aria-hidden="true">
+                        </div>
+                        <h3>TabConnect</h3>
+                        <p>Share browser tabs with short passwords and encrypted remote viewing.</p>
                     </a>
                 </div>
             </div>
@@ -327,4 +368,5 @@
         </div>
     </footer>
 </body>
+
 </html>
