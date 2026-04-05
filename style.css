@@ -620,6 +620,12 @@ code {
     display: grid;
 }
 
+.screenshot-pair-single {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 760px;
+    margin: 0 auto;
+}
+
 .screenshot-card {
     position: relative;
     width: 100%;
