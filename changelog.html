@@ -67,16 +67,29 @@
             </div>
 
             <div class="feature-category">
+                <h4>✨ Added</h4>
+                <ul>
+                    <li><strong>Privacy Settings:</strong> You can now strip query strings and hash fragments from newly saved note URLs</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
                 <h4>🔄 Changed</h4>
                 <ul>
-                    <li><strong>Context Menu Flow:</strong> Right-clicking selected text now opens NotePin with the text prefilled so you can review or edit it before saving</li>
+                    <li><strong>Context Menu Flow:</strong> Saving selected text from the page context menu now opens NotePin with the text prefilled so you can review it before saving</li>
+                    <li><strong>Shared UI Refresh:</strong> Popup and fullscreen now share a more polished UI layer, and fullscreen works better on narrower screens</li>
+                    <li><strong>Save and Sync Feedback:</strong> Save and sync handling is more reliable and now surfaces clearer non-blocking feedback when sync has problems</li>
                 </ul>
             </div>
 
             <div class="feature-category">
                 <h4>🐛 Fixes</h4>
                 <ul>
-                    <li><strong>Source URL Retention:</strong> Notes started from the page context menu now keep the original page URL and domain when they are saved from the popup</li>
+                    <li><strong>Source URL Retention:</strong> Notes started from the page context menu now keep the original page URL and domain when saved from the popup</li>
+                    <li><strong>URL Validation:</strong> Invalid or unsupported page URLs are no longer attached to new notes or context-menu prefills</li>
+                    <li><strong>Accessibility:</strong> Improved keyboard and screen-reader support for note controls and status announcements</li>
+                    <li><strong>Mobile Layout and Startup:</strong> Fixed mobile fullscreen and popup issues affecting viewport sizing, header and footer layout, scrolling, and first-load stability</li>
+                    <li><strong>Search Control Borders:</strong> Popup and fullscreen search inputs now render cleanly as a single control</li>
                 </ul>
             </div>
         </div>
@@ -116,11 +129,8 @@
                 <h4>🐛 Fixes</h4>
                 <ul>
                     <li><strong>Sync Storage:</strong> Fixed chrome.storage.sync chunking for emoji and other non-ASCII text</li>
-                    <li><strong>Search and Filtering:</strong> Popup and fullscreen search and filtering now behave more reliably, including better Current Site matching and search persistence</li>
-                    <li><strong>Import / Export:</strong> Errors now surface more clearly, failed imports can be retried, and malformed entries are skipped</li>
-                    <li><strong>Note Actions:</strong> Pin, delete, clear, copy, and undo actions are more reliable during rapid changes</li>
-                    <li><strong>Badge and Context Menu:</strong> Badge counts, domain filters, and context menu registration now refresh more reliably across startup and sync changes</li>
-                    <li><strong>Storage Recovery:</strong> Improved recovery and migration for older notes reduces the risk of notes disappearing during temporary sync issues</li>
+                    <li><strong>Search and Note Actions:</strong> Search, filtering, note actions, and import/export flows are more reliable in popup and fullscreen</li>
+                    <li><strong>Storage and Refresh:</strong> Improved storage recovery, badge counts, domain filters, and context menu refresh during startup and sync changes</li>
                 </ul>
             </div>
         </div>
@@ -132,7 +142,7 @@
                 <span class="version-badge badge-initial">Bug Fix</span>
                 <span class="version-date">March 25, 2026</span>
             </div>
-            
+
             <div class="feature-category">
                 <h4>🐛 Fixes</h4>
                 <ul>
@@ -148,70 +158,15 @@
                 <span class="version-badge badge-initial">Initial Release</span>
                 <span class="version-date">March 24, 2026</span>
             </div>
-            
-            <div class="feature-category">
-                <h4>📌 Core Note-Taking</h4>
-                <ul>
-                    <li><strong>Create, Edit & Delete:</strong> Full CRUD for notes with up to 2,000 characters each</li>
-                    <li><strong>8 Note Colors:</strong> Red, Yellow, Blue, Green, Purple, Orange, Pink, Teal</li>
-                    <li><strong>Inline Editing:</strong> Edit text, color, and URL directly on each note with live border preview</li>
-                    <li><strong>Pin / Star Notes:</strong> Pinned notes always sort to the top</li>
-                    <li><strong>Expand / Collapse:</strong> Click to toggle note text; line breaks preserved when expanded</li>
-                    <li><strong>Character Counter:</strong> Appears when text exceeds 1,000 characters</li>
-                </ul>
-            </div>
 
             <div class="feature-category">
-                <h4>🖥️ Views</h4>
+                <h4>✨ Added</h4>
                 <ul>
-                    <li><strong>Popup View (360×600):</strong> Quick access from the toolbar with inline note form, three filter tabs (All Notes, Current Site, Search), and view note modal</li>
-                    <li><strong>Fullscreen Tab:</strong> Domain sidebar with note counts, 6-option sort selector, expand/collapse toggle, and New Note modal</li>
-                </ul>
-            </div>
-
-            <div class="feature-category">
-                <h4>🔍 Search & Filtering</h4>
-                <ul>
-                    <li><strong>Full-Text Search:</strong> Searches across note text, URL, and domain</li>
-                    <li><strong>Debounced Input:</strong> 300ms debounce for smooth filtering</li>
-                    <li><strong>Domain Sidebar:</strong> Filter by domain with note counts (fullscreen)</li>
-                    <li><strong>Persistent Filters:</strong> Filter selection remembered across sessions</li>
-                </ul>
-            </div>
-
-            <div class="feature-category">
-                <h4>🔄 Storage & Sync</h4>
-                <ul>
-                    <li><strong>Cross-Device Sync:</strong> Uses chrome.storage.sync with chunked JSON (7,500 bytes per chunk)</li>
-                    <li><strong>Legacy Migration:</strong> Backward-compatible migration from single-key format</li>
-                    <li><strong>Real-Time Sync:</strong> Storage changes trigger automatic UI refresh</li>
-                    <li><strong>Export / Import:</strong> Export all notes as JSON; import with duplicate skipping</li>
-                </ul>
-            </div>
-
-            <div class="feature-category">
-                <h4>⚡ Productivity</h4>
-                <ul>
-                    <li><strong>Context Menu:</strong> Right-click selected text → "Save to NotePin" with auto-captured URL and domain</li>
-                    <li><strong>Badge Count:</strong> Extension icon shows note count for the current site's domain</li>
-                    <li><strong>Auto-Save Draft:</strong> Textarea content and selected color saved to sessionStorage</li>
-                    <li><strong>Copy to Clipboard:</strong> Copy button in the view note modal with "Copied!" feedback</li>
-                    <li><strong>Undo Delete:</strong> 5-second toast with Undo button; bulk clear shows confirmation first</li>
-                    <li><strong>Keyboard Shortcuts:</strong> Ctrl+Enter to save, Escape to cancel, custom shortcut configurable</li>
-                </ul>
-            </div>
-
-            <div class="feature-category">
-                <h4>🎨 Design & Accessibility</h4>
-                <ul>
-                    <li><strong>Auto Dark Mode:</strong> Syncs with system via prefers-color-scheme and Bootstrap 5.3 data-bs-theme</li>
-                    <li><strong>Smart Dates:</strong> Time-only for today, date-only for older notes, full date/time on hover</li>
-                    <li><strong>Accessibility:</strong> Proper aria-hidden fix for modals, title attributes on buttons and timestamps</li>
-                    <li><strong>CSS Variables:</strong> Refactored to use Bootstrap CSS variables (~60% reduction)</li>
-                    <li><strong>Lucide Icons:</strong> Clean, consistent icon set for all UI elements</li>
-                    <li><strong>Smooth Animations:</strong> Slide-up animation when deleting notes for a polished feel</li>
-                    <li><strong>Timestamped Exports:</strong> Export filenames include date and time (notes-YYYYMMDD-HHMMSS.json)</li>
-                    <li><strong>Smart Domain Filter:</strong> Auto-selects "All notes" when a new note's domain doesn't match the active filter</li>
+                    <li><strong>Initial Release:</strong> NotePin launched with page-based notes you can create, edit, delete, pin, color, and expand inline</li>
+                    <li><strong>Popup and Fullscreen Views:</strong> Search, domain filtering, sorting, and note previews are available in both compact and full-page layouts</li>
+                    <li><strong>Sync and Drafts:</strong> Notes sync across devices and support import/export plus draft autosave</li>
+                    <li><strong>Quick Actions:</strong> Save selected text from the page context menu, view badge counts for the current site, and use copy, undo delete, and keyboard shortcuts</li>
+                    <li><strong>Design and Accessibility:</strong> Includes automatic dark mode, smart dates, shared theme variables, Lucide icons, and accessibility improvements</li>
                 </ul>
             </div>
         </div>
