@@ -125,12 +125,13 @@
                 <div class="section-header">
                     <span class="section-badge">Preview</span>
                     <h2>See It in Action</h2>
-                    <p class="section-desc">A lightweight popup for quick notes, and a fullscreen view for deeper
-                        organization.</p>
+                    <p class="section-desc">Capture selected text from the page, save quick popup notes, or switch to the
+                        fullscreen organizer when you need more room.</p>
                 </div>
 
                 <div class="screenshot-tabs">
                     <button class="screenshot-tab active" data-view="popup">Popup</button>
+                    <button class="screenshot-tab" data-view="context-menu">Context Menu</button>
                     <button class="screenshot-tab" data-view="fullscreen">Fullscreen</button>
                 </div>
 
@@ -151,6 +152,16 @@
                             <span class="screenshot-label">Dark</span>
                             <img src="img/popup_dark_1280x800_thumb.png" alt="NotePin popup in dark mode" width="640"
                                 height="400" loading="lazy" decoding="async">
+                            <span class="screenshot-hint">Open 1280 x 800</span>
+                        </button>
+                    </div>
+                    <div class="screenshot-pair screenshot-pair-single" data-view="context-menu">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/context_menu_capture_1280x800.png"
+                            aria-label="Open full-size NotePin context menu capture screenshot">
+                            <span class="screenshot-label">Quick Capture</span>
+                            <img src="img/context_menu_capture_1280x800_thumb.png"
+                                alt="NotePin context menu capture flow with selected text and prefilled popup"
+                                width="640" height="400" loading="lazy" decoding="async">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
                     </div>
@@ -193,7 +204,7 @@
                             <li>Notes store URL, domain, color, and created / edited timestamps</li>
                             <li>Create notes for the current page or manually enter any URL</li>
                             <li>Filter by All Notes, Current Site, or Search</li>
-                            <li>Right-click selected text to save instantly</li>
+                            <li>Right-click selected text to open NotePin with the note prefilled</li>
                             <li>Badge count shows notes for the current domain</li>
                         </ul>
                     </div>
