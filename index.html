@@ -139,51 +139,76 @@
                     <button class="screenshot-tab" data-view="fullscreen">Fullscreen</button>
                 </div>
 
-                <p class="screenshot-note">Each preview uses a lightweight thumbnail and opens the full 1280 x 800
-                    marketplace capture.</p>
+                <p class="screenshot-note">Each preview uses the full 1280 x 800 capture directly, and you can open the same image in the fullscreen preview.</p>
 
                 <div class="screenshot-showcase" id="screenshotShowcase">
-                    <div class="screenshot-pair active" data-view="popup">
-                        <button class="screenshot-card" type="button" data-fullsrc="img/popup_light_1280x800.png"
+                    <div class="screenshot-panel active" data-view="popup">
+                        <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/popup_light_1280x800.png"
                             aria-label="Open full-size NotePin popup screenshot in light mode">
                             <span class="screenshot-label">Light</span>
-                            <img src="img/popup_light_1280x800_thumb.png" alt="NotePin popup in light mode" width="640"
-                                height="400" loading="lazy" decoding="async">
+                            <img src="img/popup_light_1280x800.png" alt="NotePin popup in light mode" width="1280"
+                                height="800" loading="lazy" decoding="async">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
-                        <button class="screenshot-card" type="button" data-fullsrc="img/popup_dark_1280x800.png"
-                            aria-label="Open full-size NotePin popup screenshot in dark mode">
-                            <span class="screenshot-label">Dark</span>
-                            <img src="img/popup_dark_1280x800_thumb.png" alt="NotePin popup in dark mode" width="640"
-                                height="400" loading="lazy" decoding="async">
-                            <span class="screenshot-hint">Open 1280 x 800</span>
-                        </button>
+                        <div class="screenshot-variants">
+                            <button class="screenshot-variant active" type="button"
+                                data-previewsrc="img/popup_light_1280x800.png"
+                                data-fullsrc="img/popup_light_1280x800.png"
+                                data-alt="NotePin popup in light mode"
+                                data-label="Light"
+                                data-aria-label="Open full-size NotePin popup screenshot in light mode"
+                                aria-pressed="true">
+                                <span class="screenshot-variant-name">Light</span>
+                            </button>
+                            <button class="screenshot-variant" type="button"
+                                data-previewsrc="img/popup_dark_1280x800.png"
+                                data-fullsrc="img/popup_dark_1280x800.png"
+                                data-alt="NotePin popup in dark mode"
+                                data-label="Dark"
+                                data-aria-label="Open full-size NotePin popup screenshot in dark mode"
+                                aria-pressed="false">
+                                <span class="screenshot-variant-name">Dark</span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="screenshot-pair screenshot-pair-single" data-view="context-menu">
-                        <button class="screenshot-card" type="button" data-fullsrc="img/context_menu_capture_1280x800.png"
+                    <div class="screenshot-panel screenshot-panel-single" data-view="context-menu">
+                        <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/context_menu_capture_1280x800.png"
                             aria-label="Open full-size NotePin context menu capture screenshot">
                             <span class="screenshot-label">Quick Capture</span>
-                            <img src="img/context_menu_capture_1280x800_thumb.png"
+                            <img src="img/context_menu_capture_1280x800.png"
                                 alt="NotePin context menu capture flow with selected text and prefilled popup"
-                                width="640" height="400" loading="lazy" decoding="async">
+                                width="1280" height="800" loading="lazy" decoding="async">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
                     </div>
-                    <div class="screenshot-pair" data-view="fullscreen">
-                        <button class="screenshot-card" type="button" data-fullsrc="img/fullscreen_light_1280x800.png"
+                    <div class="screenshot-panel" data-view="fullscreen">
+                        <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/fullscreen_light_1280x800.png"
                             aria-label="Open full-size NotePin fullscreen screenshot in light mode">
                             <span class="screenshot-label">Light</span>
-                            <img src="img/fullscreen_light_1280x800_thumb.png" alt="NotePin fullscreen in light mode"
-                                width="640" height="400" loading="lazy" decoding="async">
+                            <img src="img/fullscreen_light_1280x800.png" alt="NotePin fullscreen in light mode"
+                                width="1280" height="800" loading="lazy" decoding="async">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
-                        <button class="screenshot-card" type="button" data-fullsrc="img/fullscreen_dark_1280x800.png"
-                            aria-label="Open full-size NotePin fullscreen screenshot in dark mode">
-                            <span class="screenshot-label">Dark</span>
-                            <img src="img/fullscreen_dark_1280x800_thumb.png" alt="NotePin fullscreen in dark mode"
-                                width="640" height="400" loading="lazy" decoding="async">
-                            <span class="screenshot-hint">Open 1280 x 800</span>
-                        </button>
+                        <div class="screenshot-variants">
+                            <button class="screenshot-variant active" type="button"
+                                data-previewsrc="img/fullscreen_light_1280x800.png"
+                                data-fullsrc="img/fullscreen_light_1280x800.png"
+                                data-alt="NotePin fullscreen in light mode"
+                                data-label="Light"
+                                data-aria-label="Open full-size NotePin fullscreen screenshot in light mode"
+                                aria-pressed="true">
+                                <span class="screenshot-variant-name">Light</span>
+                            </button>
+                            <button class="screenshot-variant" type="button"
+                                data-previewsrc="img/fullscreen_dark_1280x800.png"
+                                data-fullsrc="img/fullscreen_dark_1280x800.png"
+                                data-alt="NotePin fullscreen in dark mode"
+                                data-label="Dark"
+                                data-aria-label="Open full-size NotePin fullscreen screenshot in dark mode"
+                                aria-pressed="false">
+                                <span class="screenshot-variant-name">Dark</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
