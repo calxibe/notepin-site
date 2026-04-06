@@ -23,8 +23,38 @@ document.querySelectorAll('.screenshot-tab').forEach((button) => {
 
         button.classList.add('active');
 
-        document.querySelectorAll('.screenshot-pair').forEach((pair) => {
-            pair.classList.toggle('active', pair.dataset.view === view);
+        document.querySelectorAll('.screenshot-panel').forEach((panel) => {
+            panel.classList.toggle('active', panel.dataset.view === view);
+        });
+    });
+});
+
+document.querySelectorAll('.screenshot-panel').forEach((panel) => {
+    const featureCard = panel.querySelector('.screenshot-feature');
+    const featureImage = featureCard?.querySelector('img');
+    const featureLabel = featureCard?.querySelector('.screenshot-label');
+    const variants = panel.querySelectorAll('.screenshot-variant');
+
+    if (!featureCard || !featureImage || variants.length === 0) {
+        return;
+    }
+
+    variants.forEach((variant) => {
+        variant.addEventListener('click', () => {
+            variants.forEach((button) => {
+                const isActive = button === variant;
+                button.classList.toggle('active', isActive);
+                button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            });
+
+            featureCard.dataset.fullsrc = variant.dataset.fullsrc || featureCard.dataset.fullsrc;
+            featureCard.setAttribute('aria-label', variant.dataset.ariaLabel || featureCard.getAttribute('aria-label') || '');
+            featureImage.src = variant.dataset.previewsrc || featureImage.src;
+            featureImage.alt = variant.dataset.alt || featureImage.alt;
+
+            if (featureLabel && variant.dataset.label) {
+                featureLabel.textContent = variant.dataset.label;
+            }
         });
     });
 });
