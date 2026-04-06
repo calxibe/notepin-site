@@ -58,6 +58,48 @@
         <h1>Changelog</h1>
         <p class="intro">All notable changes to NotePin are documented here.</p>
 
+        <!-- Version 1.0.6 -->
+        <div class="version-card">
+            <div class="version-header">
+                <span class="version-number">v1.0.6</span>
+                <span class="version-badge badge-initial">Update</span>
+                <span class="version-date">April 6, 2026</span>
+            </div>
+
+            <div class="feature-category">
+                <h4>✨ Added</h4>
+                <ul>
+                    <li><strong>Quick Copy:</strong> Every note card now includes a copy-to-clipboard button with success and error notifications when NotePin writes to the clipboard</li>
+                    <li><strong>Fullscreen Help:</strong> Fullscreen now includes an in-app Help &amp; FAQ modal with quick answers and a large Feedback &amp; Issues button</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
+                <h4>🔄 Changed</h4>
+                <ul>
+                    <li><strong>Browser Language:</strong> NotePin now follows Chrome's UI language for English, Spanish, Brazilian Portuguese, French, German, Japanese, and Norwegian Bokmål, with English as the fallback when your browser language is not supported</li>
+                    <li><strong>Uninstall Feedback:</strong> Removing NotePin now opens a short feedback form so you can share why the extension did not fit your workflow</li>
+                    <li><strong>Shared Settings:</strong> Popup and fullscreen now use the same settings modal, with popup size and fullscreen sort moved to the top, import/export kept fullscreen-only, popup size presets previewing live, and settings saving as soon as you change them</li>
+                    <li><strong>Fullscreen Header:</strong> Header action icons are larger for easier scanning and clicking, and the old direct report button is now a help entry point with the feedback form one click away</li>
+                    <li><strong>Clear Placement:</strong> The fullscreen clear button now sits right-aligned below the note list and only shows when the current view has more than five notes</li>
+                    <li><strong>Expand Toggle:</strong> The fullscreen expand-all button now stays available whenever the current view includes notes long enough to collapse, and only hides when every visible note already fits within two lines</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
+                <h4>🐛 Fixes</h4>
+                <ul>
+                    <li><strong>Norwegian Chrome:</strong> Chrome profiles using Norwegian locale variants now pick up the localized Bokmål NotePin interface instead of falling back to English</li>
+                    <li><strong>Popup Draft Restore:</strong> Draft text now comes back the next time you open the popup if you closed it by mistake</li>
+                    <li><strong>Popup Settings Scroll:</strong> The popup settings modal now scrolls when its content is taller than the popup</li>
+                    <li><strong>Settings Modal:</strong> Fixed a shared settings error that could block the modal from opening in popup or fullscreen</li>
+                    <li><strong>Unsaved Draft Warning:</strong> Fullscreen now warns before you close the tab if a new note is still unsaved</li>
+                    <li><strong>Fullscreen Expand Toggle:</strong> Fixed browsers where line-clamped note text could keep the fullscreen expand-all button hidden or make it disappear after expanding everything</li>
+                    <li><strong>Status Placement:</strong> Shared success and error notifications now appear centered at the top instead of pinned to the right edge</li>
+                </ul>
+            </div>
+        </div>
+
         <!-- Version 1.0.5 -->
         <div class="version-card">
             <div class="version-header">
