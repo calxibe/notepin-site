@@ -35,7 +35,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
-    <script>document.fonts.ready.then(()=>document.body.classList.add('fonts-loaded'));</script>
+    <script src="index.js" defer></script>
 </head>
 <body>
 
@@ -45,7 +45,12 @@
                 <img src="img/icon48.png" alt="NotePin" class="logo-icon">
                 <span class="logo-text">Note<span>Pin</span></span>
             </a>
-            <nav>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav id="site-nav">
                 <a href="index.html#features">Features</a>
                 <a href="index.html#shortcuts">Shortcuts</a>
                 <a href="changelog.html" class="active">Changelog</a>
@@ -70,6 +75,7 @@
                 <h4>🔄 Changed</h4>
                 <ul>
                     <li><strong>Copy Feedback:</strong> Inline copy buttons now turn green with a checkmark for 3 seconds after a successful copy</li>
+                    <li><strong>Website Navigation:</strong> The site header now collapses into a burger menu on mobile so the main pages stay easy to navigate on smaller screens</li>
                 </ul>
             </div>
 
@@ -80,6 +86,8 @@
                     <li><strong>Popup Handoff:</strong> Sending a draft from popup to fullscreen now moves it cleanly, so canceling fullscreen does not leave the old draft waiting back in popup</li>
                     <li><strong>Reloaded Drafts:</strong> Fullscreen now ignores stray browser-restored New Note values unless NotePin actually saved a draft to restore</li>
                     <li><strong>Bulk Clear:</strong> Clearing every visible note in fullscreen now works reliably even after importing larger note collections</li>
+                    <li><strong>Release Packaging:</strong> The build now flags reserved and system-generated files such as <code>_metadata</code> before creating the upload zip, so packaging issues show up locally instead of during upload</li>
+                    <li><strong>Website Contrast:</strong> Dark-mode secondary text is now brighter, especially in changelog details and other supporting copy</li>
                 </ul>
             </div>
         </div>

@@ -11,7 +11,7 @@
     --bg: #0a0b0f;
     --bg-gradient: linear-gradient(135deg, #0a0b0f 0%, #12141c 50%, #0a0b0f 100%);
     --text: #e4e4e7;
-    --text-muted: #71717a;
+    --text-muted: #a1a1aa;
     --surface: #18181b;
     --surface-light: #27272a;
     --border: #3f3f46;
@@ -107,6 +107,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -139,6 +140,54 @@ nav {
     gap: 32px;
 }
 
+.nav-toggle {
+    display: none;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: rgba(24, 24, 27, 0.82);
+    color: var(--heading);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-toggle:hover {
+    border-color: rgba(245, 158, 11, 0.5);
+    background: rgba(39, 39, 42, 0.96);
+}
+
+.nav-toggle:focus-visible {
+    outline: 2px solid rgba(251, 191, 36, 0.65);
+    outline-offset: 3px;
+}
+
+.nav-toggle-bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.header-inner[data-nav-open="true"] .nav-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.header-inner[data-nav-open="true"] .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.header-inner[data-nav-open="true"] .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 nav a {
     color: var(--text-muted);
     text-decoration: none;
@@ -153,6 +202,16 @@ nav a:hover {
 
 nav a.active {
     color: var(--primary-light);
+}
+
+@media (prefers-color-scheme: light) {
+    .nav-toggle {
+        background: rgba(255, 255, 255, 0.88);
+    }
+
+    .nav-toggle:hover {
+        background: rgba(243, 244, 246, 0.98);
+    }
 }
 
 /* ===================================
@@ -1382,8 +1441,50 @@ body.lightbox-open {
    Responsive
    =================================== */
 @media (max-width: 768px) {
+    body.nav-open {
+        overflow: hidden;
+    }
+
+    .header-inner {
+        padding: 14px 20px;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+
     nav {
-        gap: 16px;
+        display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 20px;
+        right: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 12px;
+        border: 1px solid rgba(63, 63, 70, 0.72);
+        border-radius: 18px;
+        background: rgba(24, 24, 27, 0.97);
+        box-shadow: 0 24px 54px rgba(0, 0, 0, calc(var(--shadow-strength) + 0.2));
+    }
+
+    .header-inner[data-nav-open="true"] nav {
+        display: flex;
+    }
+
+    nav a {
+        display: block;
+        padding: 11px 14px;
+        border-radius: 12px;
+        color: var(--text);
+    }
+    nav a:hover,
+    nav a.active {
+        background: rgba(245, 158, 11, 0.1);
+        color: var(--heading);
+        text-decoration: none;
     }
     
     .hero {
@@ -1451,5 +1552,12 @@ body.lightbox-open {
     .footer-inner {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+@media (prefers-color-scheme: light) and (max-width: 768px) {
+    nav {
+        background: rgba(255, 255, 255, 0.98);
+        border-color: rgba(209, 213, 219, 0.92);
     }
 }
