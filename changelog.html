@@ -63,11 +63,27 @@
         <h1>Changelog</h1>
         <p class="intro">All notable changes to NotePin are documented here.</p>
 
+        <!-- Version 1.0.8 -->
+        <div class="version-card">
+            <div class="version-header">
+                <span class="version-number">v1.0.8</span>
+                <span class="version-badge badge-initial">Update</span>
+                <span class="version-date">April 8, 2026</span>
+            </div>
+
+            <div class="feature-category">
+                <h4>✨ Added</h4>
+                <ul>
+                    <li><strong>Color Filters:</strong> Fullscreen now lets you filter notes by color from the sidebar and combine that with domain filters for tighter review passes</li>
+                </ul>
+            </div>
+        </div>
+
         <!-- Version 1.0.7 -->
         <div class="version-card">
             <div class="version-header">
                 <span class="version-number">v1.0.7</span>
-                <span class="version-badge badge-initial">Bug Fix</span>
+                <span class="version-badge badge-initial">Update</span>
                 <span class="version-date">April 7, 2026</span>
             </div>
 
@@ -76,12 +92,14 @@
                 <ul>
                     <li><strong>Copy Feedback:</strong> Inline copy buttons now turn green with a checkmark for 3 seconds after a successful copy</li>
                     <li><strong>Website Navigation:</strong> The site header now collapses into a burger menu on mobile so the main pages stay easy to navigate on smaller screens</li>
+                    <li><strong>Filter Guidance:</strong> Fullscreen empty states and Help &amp; FAQ copy now explain the new color-filter workflow instead of treating colors as visual-only labels</li>
                 </ul>
             </div>
 
             <div class="feature-category">
                 <h4>🐛 Fixes</h4>
                 <ul>
+                    <li><strong>Filter Header Spacing:</strong> Fullscreen filter section headings now keep the intended spacing above the color and domain lists</li>
                     <li><strong>New Note Cancel:</strong> Canceling a fullscreen draft now clears it immediately so it does not reopen unexpectedly or keep the refresh warning around</li>
                     <li><strong>Popup Handoff:</strong> Sending a draft from popup to fullscreen now moves it cleanly, so canceling fullscreen does not leave the old draft waiting back in popup</li>
                     <li><strong>Reloaded Drafts:</strong> Fullscreen now ignores stray browser-restored New Note values unless NotePin actually saved a draft to restore</li>
