@@ -63,6 +63,42 @@
         <h1>Changelog</h1>
         <p class="intro">All notable changes to NotePin are documented here.</p>
 
+        <!-- Version 1.0.15 -->
+        <div class="version-card">
+            <div class="version-header">
+                <span class="version-number">v1.0.15</span>
+                <span class="version-badge badge-initial">Update</span>
+                <span class="version-date">April 2026</span>
+            </div>
+
+            <div class="feature-category">
+                <h4>&#10024; Added</h4>
+                <ul>
+                    <li><strong>Fullscreen Bulk Workflows:</strong> The fullscreen board now supports selecting visible notes, applying colors, pinning or unpinning, exporting selected notes, deleting selected notes with undo, and cleaning duplicate notes</li>
+                    <li><strong>Smarter Page Stickies:</strong> In-page sticky notes now remember position and collapsed state per site, include a compact note filter, and let you hide the overlay for the current site temporarily</li>
+                    <li><strong>Local Preview Harness:</strong> Popup, fullscreen, welcome, and edit pages can now be inspected outside the extension runtime with a lightweight mocked <code>chrome.*</code> API</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
+                <h4>&#128260; Changed</h4>
+                <ul>
+                    <li><strong>More Resilient Settings:</strong> Settings now open immediately with cached values when the background runtime is unavailable, then show a warning instead of blocking the modal</li>
+                    <li><strong>Cleaner Fullscreen Onboarding:</strong> The first-run empty state now points to the fullscreen <strong>New Note</strong> button</li>
+                    <li><strong>Compact Bulk Color Picker:</strong> Bulk color actions now use a custom dropdown instead of an always-visible swatch row</li>
+                    <li><strong>Quieter Sticky Controls:</strong> Sticky search and hide-site controls stay hidden until the current site has at least five matching notes</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
+                <h4>&#128027; Fixes</h4>
+                <ul>
+                    <li><strong>Safer Undo Restore:</strong> Restoring deleted notes now skips IDs that already exist, avoiding duplicate notes after sync or race-condition restores</li>
+                    <li><strong>Documentation Sync:</strong> Popup documentation now matches the current search-first filter layout with the <strong>Current Site</strong> checkbox</li>
+                </ul>
+            </div>
+        </div>
+
         <!-- Version 1.0.14 -->
         <div class="version-card">
             <div class="version-header">
