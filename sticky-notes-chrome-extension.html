@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Notes Chrome Extension for Any Website</title>
+    <meta name="description"
+        content="Pin digital sticky notes to the websites they belong to. Notes reappear when you return, snap to any corner, and never show up when you print the page.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="canonical" href="https://notepin.fixquotes.com/sticky-notes-chrome-extension.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotePin">
+    <meta property="og:title" content="Sticky Notes on Any Website">
+    <meta property="og:description"
+        content="Pin digital sticky notes to the websites they belong to. Notes reappear when you return, snap to any corner, and never show up when you print.">
+    <meta property="og:url" content="https://notepin.fixquotes.com/sticky-notes-chrome-extension.html">
+    <meta property="og:image" content="https://notepin.fixquotes.com/img/screenshots/sticky_notes_1280x800.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sticky Notes on Any Website">
+    <meta name="twitter:description"
+        content="Pin digital sticky notes to the websites they belong to, in Chrome and Edge.">
+    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/screenshots/sticky_notes_1280x800.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260813-1">
+    <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
+    <noscript><style>body { opacity: 1 !important; }</style></noscript>
+    <script src="index.js" defer></script>
+    <script src="manual.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Sticky Notes on Any Website",
+      "description": "How in-page sticky notes work in Chrome and Edge: turning them on, the panel controls, per-site versus per-page matching, and the permissions involved.",
+      "inLanguage": "en",
+      "url": "https://notepin.fixquotes.com/sticky-notes-chrome-extension.html",
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "NotePin",
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Chrome, Microsoft Edge"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FixQuotes",
+        "url": "https://fixquotes.com/docs/about/"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you put sticky notes on a website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, with a browser extension. NotePin shows your saved notes for a site in a small floating panel on that site. The notes are yours and live in your browser — nothing is added to the website itself, and no other visitor sees them. Turn the feature on in Settings under In-page sticky notes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a sticky notes extension for Chrome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Several exist, and they split into two kinds. Some are a scratchpad that floats over every page regardless of where you are. Others, including NotePin, tie each note to the address it was written on, so notes about one site only appear on that site. The second kind is more useful if the note is about the page rather than just written while you happened to be there."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do sticky notes show up when I print a page?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The sticky panel is hidden from print output and from Save as PDF, so a page you print looks exactly as it would without the extension installed. This is deliberate — private annotations should not leak into a document you send to someone else."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does a sticky notes extension need access to website content?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Drawing a panel onto a page requires permission to run on that page. NotePin does not request this at install — it asks only if you switch in-page sticky notes on, and turning the feature off removes the script again. Every other part of NotePin works without it."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="manual-page">
+    <a class="skip-link" href="#guide-content">Skip to the guide</a>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="img/icon48.png" alt="NotePin" class="logo-icon">
+                <span class="logo-text">Note<span>Pin</span></span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav id="site-nav">
+                <a href="index.html#features">Features</a>
+                <a href="manual.html">Manual</a>
+                <a href="guides.html" class="active" aria-current="page">Guides</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="guide-content">
+        <section class="manual-hero">
+            <div class="container">
+                <span class="section-badge"><a href="guides.html">Guides</a></span>
+                <h1>Sticky Notes on Any Website</h1>
+                <p class="manual-hero-lede">
+                    A digital sticky note stuck to your monitor is in the wrong place. It is on the screen, not on
+                    the thing it is about. These stick to the <em>website</em> — write a note on a supplier's pricing
+                    page and it is waiting there the next time you open it, three weeks later.
+                </p>
+                <div class="cta-buttons manual-hero-actions">
+                    <a class="btn btn-primary" href="#turning-on">Turn them on</a>
+                    <a class="btn btn-secondary" href="#vs-desktop">vs desktop sticky notes</a>
+                </div>
+                <ul class="manual-facts">
+                    <li>Off by default</li>
+                    <li>Never appears in printouts</li>
+                    <li>Only you can see them</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="container manual-layout">
+            <aside class="manual-sidebar" aria-label="Guide navigation">
+                <button class="manual-toc-toggle" id="manual-toc-toggle" type="button" aria-controls="manual-toc"
+                    aria-expanded="true">
+                    <span>On this page</span>
+                    <span class="manual-toc-toggle-state">Hide sections</span>
+                </button>
+                <nav class="manual-toc" id="manual-toc" aria-label="Guide sections">
+                    <p>On this page</p>
+                    <ol>
+                        <li><a href="#what-they-are">What in-page sticky notes are</a></li>
+                        <li><a href="#turning-on">Turning them on</a></li>
+                        <li><a href="#the-panel">The panel, control by control</a></li>
+                        <li><a href="#site-vs-page">Whole site or one exact page</a></li>
+                        <li><a href="#printing">Why they never print</a></li>
+                        <li><a href="#vs-desktop">Against desktop sticky notes</a></li>
+                        <li><a href="#permissions">Permissions and privacy</a></li>
+                        <li><a href="#uses">What people use them for</a></li>
+                        <li><a href="#faq">Common questions</a></li>
+                    </ol>
+                </nav>
+            </aside>
+
+            <article class="manual-article">
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="what-they-are">
+                    <p class="eyebrow">The idea</p>
+                    <h2>What in-page sticky notes are</h2>
+                    <p class="manual-lede">
+                        Your notes for a site, shown on that site, in a small floating panel.
+                    </p>
+
+                    <figure class="manual-screenshot">
+                        <img src="img/manual/manual-stickies-page.png"
+                            alt="Three NotePin sticky notes floating on a product page, showing price, screen, and return window notes"
+                            width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption>Sticky notes on the page they were written about.</figcaption>
+                    </figure>
+
+                    <p>
+                        Nothing is added to the website. The panel is drawn by the extension inside your own browser,
+                        from notes stored in your own browser profile. The site's owner cannot see it, other visitors
+                        cannot see it, and the page's own code is not modified.
+                    </p>
+                    <p>
+                        What makes it useful is the matching. You do not place a note at a position on a page; you
+                        save a note against an address, and the panel shows every note whose address matches wherever
+                        you currently are. Come back in a month and the note is there because the address is the same,
+                        not because a paragraph happened to stay in the same place.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="turning-on">
+                    <p class="eyebrow">Setup</p>
+                    <h2>Turning them on</h2>
+                    <p>
+                        The feature ships switched off. Nothing appears on any page until you deliberately enable it.
+                    </p>
+
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-settings-stickies.png"
+                            alt="The in-page sticky notes section of NotePin settings with both checkboxes"
+                            width="820" height="420" loading="lazy" decoding="async">
+                        <figcaption>Settings → In-page sticky notes. Both options live here.</figcaption>
+                    </figure>
+
+                    <ol class="manual-steps">
+                        <li>Open <strong>Settings</strong> from the popup or the board.</li>
+                        <li>Tick <strong>Show sticky notes on matching sites</strong>.</li>
+                        <li>Your browser asks for permission to read and change data on websites. This is what lets
+                            NotePin draw the panel on a page. Accept it to continue.</li>
+                        <li>The panel appears on any site where you already have notes, including tabs that are
+                            already open.</li>
+                    </ol>
+
+                    <div class="manual-callout info">
+                        This is the only feature that needs website access, and it is off by default. NotePin never
+                        asks for it at install. Turning the feature off removes the script again.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="the-panel">
+                    <p class="eyebrow">The interface</p>
+                    <h2>The panel, control by control</h2>
+
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-sticky-panel.png"
+                            alt="The NotePin sticky note panel showing three notes with color labels, dates, and edit buttons"
+                            width="720" height="640" loading="lazy" decoding="async">
+                        <figcaption>A header with Hide site and collapse, then one card per note.</figcaption>
+                    </figure>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Sticky panel controls</caption>
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Drag the header</td><td>Snaps the panel to any of the four screen corners. Your choice is remembered per browser.</td></tr>
+                                <tr><td>− / +</td><td>Collapses the panel to its header, or expands it again. Remembered per site.</td></tr>
+                                <tr><td>Hide site</td><td>Hides the panel on this site for 24 hours.</td></tr>
+                                <tr><td>Filter box</td><td>Appears once a site has five or more notes. Narrows the panel's list.</td></tr>
+                                <tr><td>Pencil on a card</td><td>Opens a dedicated editor window for that note.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        <strong>Hide site</strong> is the pressure valve. If the panel is in the way during a task —
+                        filling in a long form, reading something carefully — one click gets you a day of quiet without
+                        turning the feature off or deleting anything. It comes back by itself tomorrow.
+                    </p>
+                    <p>
+                        Each card shows the note's colour label, so if you have named your colours in
+                        <strong>Settings → Color labels</strong>, those names appear here too.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="site-vs-page">
+                    <p class="eyebrow">Behaviour</p>
+                    <h2>Whole site or one exact page</h2>
+                    <p>
+                        By default the panel shows notes for the whole site. Site matching treats <code>www</code>,
+                        the main domain, and its subdomains as one place: a note saved on
+                        <code>www.example.com</code> or <code>app.example.com</code> shows when you are on
+                        <code>example.com</code>, and the other way round. Two different subdomains —
+                        <code>a.example.com</code> and <code>b.example.com</code> — stay separate, and a lookalike
+                        domain such as <code>notexample.com</code> never matches.
+                    </p>
+                    <p>
+                        Turn on <strong>Only show on the exact matching URL</strong> in Settings if you would rather
+                        each page show only its own notes. That is the better mode on sites where every page is a
+                        different topic — a documentation site, a wiki, a large storefront — because otherwise every
+                        page inherits every note you have made anywhere on the domain.
+                    </p>
+                    <div class="manual-callout info">
+                        A useful rule: per-site for places you have opinions about as a whole (a supplier, a bank, a
+                        tool you use). Per-page for reference material where each page stands alone.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="printing">
+                    <p class="eyebrow">Behaviour</p>
+                    <h2>Why they never print</h2>
+                    <div class="manual-callout info">
+                        Sticky notes never appear when you print a page or save it as a PDF.
+                    </div>
+                    <p>
+                        This is a deliberate design decision rather than an oversight, and it is worth understanding
+                        because it affects how freely you can use the feature.
+                    </p>
+                    <p>
+                        Annotations are private and often blunt. "Overpriced, check the other quote" is a perfectly
+                        reasonable note to leave on a supplier's page and a catastrophic thing to include in a PDF you
+                        forward to that supplier. Because the panel is excluded from print output, a page you print
+                        looks exactly as it would if the extension were not installed — so you never have to remember
+                        to hide anything first.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="vs-desktop">
+                    <p class="eyebrow">Comparison</p>
+                    <h2>Against desktop sticky notes</h2>
+                    <p class="manual-lede">
+                        Most sticky-note tools put a yellow square on your desktop. That is a different product.
+                    </p>
+                    <p>
+                        Desktop sticky notes — the Windows app, the various virtual sticky note tools — are a
+                        scratchpad that floats over everything you do. They are good at short-lived reminders and bad
+                        at anything you need to find again, because a hundred of them is a hundred squares.
+                    </p>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Desktop sticky notes against in-page sticky notes</caption>
+                            <thead>
+                                <tr><th scope="col">&nbsp;</th><th scope="col">Desktop sticky notes</th><th scope="col">In-page sticky notes</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Where the note lives</td><td>On your screen, always</td><td>On the website it is about</td></tr>
+                                <tr><td>How you find one</td><td>You look through them</td><td>It appears when you arrive</td></tr>
+                                <tr><td>Tied to a source</td><td>No</td><td>Yes — the address is stored</td></tr>
+                                <tr><td>Scales to hundreds</td><td>Poorly</td><td>Yes — only matching ones show</td></tr>
+                                <tr><td>Searchable</td><td>Sometimes</td><td>Yes, including by domain</td></tr>
+                                <tr><td>Visible while you work</td><td>Always</td><td>Only on relevant sites</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        The distinction that matters: a desktop sticky note asks you to remember to look at it. An
+                        in-page one waits at the place where you will need it. If your note is "call the dentist", a
+                        desktop app is right. If it is "their support hours are wrong on this page, the real ones are
+                        in the footer", it belongs on the page.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="permissions">
+                    <p class="eyebrow">Your data</p>
+                    <h2>Permissions and privacy</h2>
+                    <p>
+                        Drawing anything onto a page requires permission to run on that page. There is no way around
+                        that, and any extension claiming otherwise is not doing what it says.
+                    </p>
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Permissions NotePin requests</caption>
+                            <thead><tr><th scope="col">Permission</th><th scope="col">Why</th></tr></thead>
+                            <tbody>
+                                <tr><td><code>storage</code></td><td>To save and sync your notes, and to keep local preferences such as popup size.</td></tr>
+                                <tr><td><code>activeTab</code></td><td>To read the address of the tab you are on, for the badge count and to attach to new notes.</td></tr>
+                                <tr><td><code>contextMenus</code></td><td>To add the right-click entries.</td></tr>
+                                <tr><td><code>scripting</code></td><td>To add or remove the in-page sticky note script when you turn that feature on or off.</td></tr>
+                                <tr><td>Website access <em>(optional)</em></td><td>Requested only if you enable in-page sticky notes. Never at install.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>
+                        What that access is used for is narrow: drawing the panel and reading the current address to
+                        decide which notes match. Your notes stay in your browser. There is no NotePin server, no
+                        account, and no analytics inside the extension. The full policy is on the
+                        <a href="privacy.html">privacy page</a>.
+                    </p>
+                    <div class="manual-callout info">
+                        The panel's position and the list of sites you have hidden it on are stored on the device on
+                        purpose and never sync, so hiding the panel on your work laptop does not hide it at home.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="uses">
+                    <p class="eyebrow">In practice</p>
+                    <h2>What people use them for</h2>
+                    <ul class="manual-check-list">
+                        <li><strong>Shopping.</strong> The price you saw last month, on the product page, so you know whether the "sale" is one.</li>
+                        <li><strong>Suppliers and vendors.</strong> Who you spoke to, what they promised, which quote is current.</li>
+                        <li><strong>Documentation.</strong> The workaround for the bit that is wrong, on the page that is wrong.</li>
+                        <li><strong>Accounts and services.</strong> Which email address you signed up with, and when the renewal falls.</li>
+                        <li><strong>Recurring reading.</strong> Where you stopped, on a long reference page you return to.</li>
+                    </ul>
+                    <p>
+                        The pattern in all of these is the same: information that is worthless in a general notes app
+                        because you would never think to go looking for it, and valuable on the page because it
+                        arrives exactly when it is relevant.
+                    </p>
+
+                    <div class="cta-buttons">
+                        <a href="https://chromewebstore.google.com/detail/notepin-web-page-notes-st/fonaehlalnjinfdkjpicffebenbhhnbj"
+                            class="btn btn-primary" target="_blank" rel="noopener">
+                            <img src="img/chrome.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
+                            Add to Chrome — Free
+                        </a>
+                        <a href="https://microsoftedge.microsoft.com/addons/detail/notepin-web-page-notes-/neeciljnpmmlcfahncjdeffnclconjck"
+                            class="btn btn-secondary" target="_blank" rel="noopener">
+                            <img src="img/edge.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
+                            Add to Edge — Free
+                        </a>
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="faq">
+                    <p class="eyebrow">Answers</p>
+                    <h2>Common questions</h2>
+
+                    <h3>Can you put sticky notes on a website?</h3>
+                    <p>
+                        Yes, with a browser extension. NotePin shows your saved notes for a site in a small floating
+                        panel on that site. The notes are yours and live in your browser — nothing is added to the
+                        website itself, and no other visitor sees them. Turn the feature on in Settings under
+                        <strong>In-page sticky notes</strong>.
+                    </p>
+
+                    <h3>Is there a sticky notes extension for Chrome?</h3>
+                    <p>
+                        Several exist, and they split into two kinds. Some are a scratchpad that floats over every
+                        page regardless of where you are. Others, including NotePin, tie each note to the address it
+                        was written on, so notes about one site only appear on that site. The second kind is more
+                        useful if the note is about the page rather than just written while you happened to be there.
+                    </p>
+
+                    <h3>Do sticky notes show up when I print a page?</h3>
+                    <p>
+                        No. The sticky panel is hidden from print output and from Save as PDF, so a page you print
+                        looks exactly as it would without the extension installed. This is deliberate — private
+                        annotations should not leak into a document you send to someone else.
+                    </p>
+
+                    <h3>Why does a sticky notes extension need access to website content?</h3>
+                    <p>
+                        Drawing a panel onto a page requires permission to run on that page. NotePin does not request
+                        this at install — it asks only if you switch in-page sticky notes on, and turning the feature
+                        off removes the script again. Every other part of NotePin works without it.
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon">💡</span>
+                        <div>
+                            <h4>Where to go next</h4>
+                            <p>
+                                To get text onto a note in the first place, read
+                                <a href="save-selected-text-chrome-extension.html">saving selected text</a>. To manage
+                                a large collection, see
+                                <a href="bookmark-manager-alternative.html">a better bookmark manager</a>. The
+                                <a href="manual.html#stickies">manual's sticky notes section</a> is the full reference.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="manual.html">Manual</a>
+                <a href="guides.html">Guides</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="https://fixquotes.com/docs/contact/?category=notepin">Feedback &amp; Issues</a>
+            </div>
+            <p class="copyright">© 2026 FixQuotes. NotePin is a browser extension by <a href="https://fixquotes.com/docs/about/" target="_blank">FixQuotes</a>.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

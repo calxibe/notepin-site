@@ -16,13 +16,13 @@
     <meta property="og:title" content="Privacy Policy - NotePin">
     <meta property="og:description" content="NotePin privacy policy. Notes stay in your browser and sync profile, no analytics are collected, and URL privacy controls can strip query strings or hash fragments before saving.">
     <meta property="og:url" content="https://notepin.fixquotes.com/privacy.html">
-    <meta property="og:image" content="https://notepin.fixquotes.com/img/popup_light_1280x800.png">
+    <meta property="og:image" content="https://notepin.fixquotes.com/img/screenshots/popup_light_1280x800.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Privacy Policy - NotePin">
     <meta name="twitter:description" content="NotePin privacy policy. Notes stay in your browser and sync profile, no analytics are collected, and URL privacy controls can strip query strings or hash fragments before saving.">
-    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/popup_light_1280x800.png">
+    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/screenshots/popup_light_1280x800.png">
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -32,9 +32,10 @@
     <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260813-1">
     <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
+    <noscript><style>body { opacity: 1 !important; }</style></noscript>
     <script src="index.js" defer></script>
 </head>
 <body>
@@ -51,16 +52,32 @@
         </button>
         <nav id="site-nav">
           <a href="index.html#features">Features</a>
-          <a href="index.html#shortcuts">Shortcuts</a>
+          <a href="manual.html">Manual</a>
+          <a href="guides.html">Guides</a>
           <a href="changelog.html">Changelog</a>
           <a href="privacy.html" class="active">Privacy</a>
         </nav>
       </div>
     </header>
 
-    <main class="content">
-      <h1>Privacy Policy</h1>
-      <p class="last-updated">Last Updated: April 6, 2026</p>
+    <main>
+      <section class="manual-hero">
+        <div class="container">
+          <span class="section-badge">Privacy</span>
+          <h1>Your notes stay in your browser.</h1>
+          <p class="manual-hero-lede">
+            No account, no NotePin server, and no analytics inside the extension. This page is the full
+            policy behind that summary.
+          </p>
+          <ul class="manual-facts">
+            <li>Last updated 13 August 2026</li>
+            <li>No data collection</li>
+            <li><a href="manual.html#privacy">Permissions explained</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="content">
       <p>
         This Privacy Policy describes how NotePin ("we", "us", or "our")
         handles your information when you use our browser extension.
@@ -104,10 +121,18 @@
         NotePin requests the following browser permissions:
       </p>
       <ul>
-        <li><strong>storage</strong> — To save and sync your notes across devices</li>
+        <li><strong>storage</strong> — To save and sync your notes across devices, and to keep device-local preferences such as popup size and the usage counters behind the one-time rating prompt</li>
         <li><strong>activeTab</strong> — To read the current tab's URL for domain-based note filtering and badge counts</li>
         <li><strong>contextMenus</strong> — To provide the right-click "Save to NotePin" menu item</li>
+        <li><strong>scripting</strong> — To register or remove the optional in-page sticky note script when you turn that feature on or off</li>
       </ul>
+      <p>
+        NotePin also declares <strong>optional website access</strong> (<code>http://*/*</code> and
+        <code>https://*/*</code>). This is not requested at install time. Your browser asks for it only
+        if you enable in-page sticky notes, so that matching notes can be drawn on the pages you visit.
+        Turning the feature off removes the script again, and you can revoke the access at any time from
+        your browser's extension settings.
+      </p>
 
       <h2>4. Third-Party Services</h2>
       <p>
@@ -115,6 +140,13 @@
         and Lucide icon files. Shared UI styles and modal behavior are
         implemented locally inside the extension. No external CDNs or
         third-party tracking scripts are loaded.
+      </p>
+      <p>
+        Two optional links do open a third-party page, and only when you choose to follow them.
+        Uninstalling NotePin opens a Google Forms feedback page, and the in-app rating prompt links to
+        the Chrome Web Store or Microsoft Edge Add-ons listing. Your notes are never attached to these
+        pages — nothing is sent unless you type it into the form yourself, and those pages are governed
+        by their own providers' privacy policies.
       </p>
 
       <h2>5. Website</h2>
@@ -145,11 +177,14 @@
       <p>
         <strong>Publisher:</strong> <a href="https://fixquotes.com/">FixQuotes</a>
       </p>
+      </div>
     </main>
 
     <footer>
         <div class="footer-inner">
             <div class="footer-links">
+                <a href="manual.html">Manual</a>
+                <a href="guides.html">Guides</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="changelog.html">Changelog</a>
                 <a href="https://fixquotes.com/docs/contact/?category=notepin">Feedback &amp; Issues</a>

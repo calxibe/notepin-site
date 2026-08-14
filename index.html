@@ -20,14 +20,14 @@
     <meta property="og:description"
         content="Capture selected text, save notes for any web page or URL, show optional in-page sticky notes, and manage everything in popup or fullscreen with search, bulk actions, privacy controls, and sync-safe storage on Chrome and Edge.">
     <meta property="og:url" content="https://notepin.fixquotes.com">
-    <meta property="og:image" content="https://notepin.fixquotes.com/img/popup_light_1280x800.png">
+    <meta property="og:image" content="https://notepin.fixquotes.com/img/screenshots/popup_light_1280x800.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="NotePin - Save Notes for Any Web Page on Chrome and Edge">
     <meta name="twitter:description"
         content="Capture selected text, save notes for any web page or URL, show optional in-page sticky notes, and manage everything in popup or fullscreen with search, bulk actions, privacy controls, and sync-safe storage on Chrome and Edge.">
-    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/popup_light_1280x800.png">
+    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/screenshots/popup_light_1280x800.png">
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -40,7 +40,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260806-1">
+    <link rel="stylesheet" href="style.css?v=20260813-1">
     <style>
         body {
             opacity: 0;
@@ -51,6 +51,13 @@
             opacity: 1;
         }
     </style>
+    <noscript>
+        <style>
+            body {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
     <script src="index.js" defer></script>
 </head>
 
@@ -70,7 +77,8 @@
             </button>
             <nav id="site-nav">
                 <a href="#features">Features</a>
-                <a href="#shortcuts">Shortcuts</a>
+                <a href="manual.html">Manual</a>
+                <a href="guides.html">Guides</a>
                 <a href="changelog.html">Changelog</a>
                 <a href="privacy.html">Privacy</a>
             </nav>
@@ -145,63 +153,55 @@
                 <div class="screenshot-tabs">
                     <button class="screenshot-tab active" data-view="popup">Popup</button>
                     <button class="screenshot-tab" data-view="context-menu">Context Menu</button>
+                    <button class="screenshot-tab" data-view="stickies">Page Stickies</button>
                     <button class="screenshot-tab" data-view="fullscreen">Fullscreen</button>
                 </div>
 
                 <p class="screenshot-note">Each preview uses the full 1280 x 800 capture directly, and you can open the same image in the fullscreen preview.</p>
 
                 <div class="screenshot-showcase" id="screenshotShowcase">
-                    <div class="screenshot-panel active" data-view="popup">
-                        <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/popup_light_1280x800.png"
-                            aria-label="Open full-size NotePin popup screenshot in light mode">
-                            <span class="screenshot-label">Light</span>
-                            <img src="img/popup_light_1280x800.png" alt="NotePin popup in light mode" width="1280"
-                                height="800" loading="lazy" decoding="async">
+                    <div class="screenshot-panel screenshot-panel-single active" data-view="popup">
+                        <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/screenshots/popup_light_1280x800.png"
+                            aria-label="Open full-size NotePin popup screenshot">
+                            <span class="screenshot-label">Quick Capture</span>
+                            <img src="img/screenshots/popup_light_1280x800.png"
+                                alt="NotePin popup open over a web page, showing saved notes with page titles and tags"
+                                width="1280" height="800" loading="lazy" decoding="async">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
-                        <div class="screenshot-variants">
-                            <button class="screenshot-variant active" type="button"
-                                data-previewsrc="img/popup_light_1280x800.png"
-                                data-fullsrc="img/popup_light_1280x800.png"
-                                data-alt="NotePin popup in light mode"
-                                data-label="Light"
-                                data-aria-label="Open full-size NotePin popup screenshot in light mode"
-                                aria-pressed="true">
-                                <span class="screenshot-variant-name">Light</span>
-                            </button>
-                            <button class="screenshot-variant" type="button"
-                                data-previewsrc="img/popup_dark_1280x800.png"
-                                data-fullsrc="img/popup_dark_1280x800.png"
-                                data-alt="NotePin popup in dark mode"
-                                data-label="Dark"
-                                data-aria-label="Open full-size NotePin popup screenshot in dark mode"
-                                aria-pressed="false">
-                                <span class="screenshot-variant-name">Dark</span>
-                            </button>
-                        </div>
                     </div>
                     <div class="screenshot-panel screenshot-panel-single" data-view="context-menu">
-                        <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/context_menu_capture_1280x800.png"
+                        <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/screenshots/context_menu_capture_1280x800.png"
                             aria-label="Open full-size NotePin context menu capture screenshot">
-                            <span class="screenshot-label">Quick Capture</span>
-                            <img src="img/context_menu_capture_1280x800.png"
-                                alt="NotePin context menu capture flow with selected text and prefilled popup"
+                            <span class="screenshot-label">Right-click Capture</span>
+                            <img src="img/screenshots/context_menu_capture_1280x800.png"
+                                alt="Selected text on a web page with the right-click menu open on Save to NotePin, and the quote already staged in the NotePin popup"
+                                width="1280" height="800" loading="lazy" decoding="async">
+                            <span class="screenshot-hint">Open 1280 x 800</span>
+                        </button>
+                    </div>
+                    <div class="screenshot-panel screenshot-panel-single" data-view="stickies">
+                        <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/screenshots/sticky_notes_1280x800.png"
+                            aria-label="Open full-size NotePin in-page sticky notes screenshot">
+                            <span class="screenshot-label">Page Stickies</span>
+                            <img src="img/screenshots/sticky_notes_1280x800.png"
+                                alt="NotePin in-page sticky notes overlay showing three saved notes on a product page"
                                 width="1280" height="800" loading="lazy" decoding="async">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
                     </div>
                     <div class="screenshot-panel" data-view="fullscreen">
-                        <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/fullscreen_light_1280x800.png"
+                        <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/screenshots/fullscreen_light_1280x800.png"
                             aria-label="Open full-size NotePin fullscreen screenshot in light mode">
                             <span class="screenshot-label">Light</span>
-                            <img src="img/fullscreen_light_1280x800.png" alt="NotePin fullscreen in light mode"
+                            <img src="img/screenshots/fullscreen_light_1280x800.png" alt="NotePin fullscreen in light mode"
                                 width="1280" height="800" loading="lazy" decoding="async">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
                         <div class="screenshot-variants">
                             <button class="screenshot-variant active" type="button"
-                                data-previewsrc="img/fullscreen_light_1280x800.png"
-                                data-fullsrc="img/fullscreen_light_1280x800.png"
+                                data-previewsrc="img/screenshots/fullscreen_light_1280x800.png"
+                                data-fullsrc="img/screenshots/fullscreen_light_1280x800.png"
                                 data-alt="NotePin fullscreen in light mode"
                                 data-label="Light"
                                 data-aria-label="Open full-size NotePin fullscreen screenshot in light mode"
@@ -209,8 +209,8 @@
                                 <span class="screenshot-variant-name">Light</span>
                             </button>
                             <button class="screenshot-variant" type="button"
-                                data-previewsrc="img/fullscreen_dark_1280x800.png"
-                                data-fullsrc="img/fullscreen_dark_1280x800.png"
+                                data-previewsrc="img/screenshots/fullscreen_dark_1280x800.png"
+                                data-fullsrc="img/screenshots/fullscreen_dark_1280x800.png"
                                 data-alt="NotePin fullscreen in dark mode"
                                 data-label="Dark"
                                 data-aria-label="Open full-size NotePin fullscreen screenshot in dark mode"
@@ -314,39 +314,8 @@
                             <li>Unsupported URL schemes are ignored instead of being saved</li>
                             <li>No note data is sent to third-party servers</li>
                             <li>Accessible labels, pressed states, and live status announcements throughout</li>
-                            <li>Minimal permissions: storage, activeTab, contextMenus</li>
+                            <li>Minimal permissions: storage, activeTab, contextMenus, scripting — plus website access you grant only if you turn on in-page sticky notes</li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="shortcuts">
-            <div class="container">
-                <div class="shortcuts-section">
-                    <div class="section-header">
-                        <span class="section-badge">Efficiency</span>
-                        <h2>⌨️ Keyboard Shortcuts</h2>
-                        <p class="section-desc">Move faster in the popup, fullscreen view, and selected-text capture flow</p>
-                    </div>
-
-                    <div class="shortcuts-grid">
-                        <div class="shortcut-item">
-                            <span class="kbd">Ctrl + Enter</span>
-                            <span class="shortcut-label">Save Note</span>
-                        </div>
-                        <div class="shortcut-item">
-                            <span class="kbd">Escape</span>
-                            <span class="shortcut-label">Cancel Editing</span>
-                        </div>
-                        <div class="shortcut-item">
-                            <span class="kbd">Right-Click</span>
-                            <span class="shortcut-label">Save Selected Text</span>
-                        </div>
-                        <div class="shortcut-item">
-                            <span class="kbd">Custom</span>
-                            <span class="shortcut-label">Open NotePin (configurable)</span>
-                        </div>
                     </div>
                 </div>
 
@@ -358,6 +327,11 @@
                             hover-friendly timestamps, automatic dark mode, inline copy buttons, browser-language UI
                             support, smarter search empty states, optional site stickies, and fullscreen domain or
                             color filtering that can also group notes without a domain.</p>
+                        <p>Want the detail? The <a href="guides.html">guides</a> go deep on one feature at a time —
+                            <a href="save-selected-text-chrome-extension.html">saving selected text</a>,
+                            <a href="bookmark-manager-alternative.html">replacing bookmark folders</a>,
+                            <a href="sticky-notes-chrome-extension.html">sticky notes on any website</a>, and more.
+                            Every <a href="manual.html#shortcuts">keyboard shortcut</a> is listed in the user manual.</p>
                     </div>
                 </div>
             </div>
@@ -395,15 +369,6 @@
                         <h3>FixGuard</h3>
                         <p>Block ads, hide cookie banners, and browse clean with zero tracking.</p>
                     </a>
-                    <a href="https://fixquotes.com/docs/browser-extension/" class="extension-card" target="_blank"
-                        rel="noopener">
-                        <div class="extension-icon extension-icon--image">
-                            <img src="img/plugins/fixquotes-logo.svg" alt="" class="extension-logo" width="48"
-                                height="48" aria-hidden="true">
-                        </div>
-                        <h3>FixQuotes</h3>
-                        <p>Daily quotes, striking backgrounds, and dark mode on every new tab.</p>
-                    </a>
                     <a href="https://tabconnect.app/" class="extension-card" target="_blank" rel="noopener">
                         <div class="extension-icon extension-icon--image">
                             <img src="img/plugins/tabconnect-logo.svg" alt="" class="extension-logo" width="48"
@@ -426,6 +391,8 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-links">
+                <a href="manual.html">Manual</a>
+                <a href="guides.html">Guides</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="changelog.html">Changelog</a>
                 <a href="https://fixquotes.com/docs/contact/?category=notepin">Feedback &amp; Issues</a>

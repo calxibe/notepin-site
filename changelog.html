@@ -16,13 +16,13 @@
     <meta property="og:title" content="Changelog - NotePin">
     <meta property="og:description" content="All notable changes to the NotePin browser extension. See new features, improvements, and fixes for each release.">
     <meta property="og:url" content="https://notepin.fixquotes.com/changelog.html">
-    <meta property="og:image" content="https://notepin.fixquotes.com/img/popup_light_1280x800.png">
+    <meta property="og:image" content="https://notepin.fixquotes.com/img/screenshots/popup_light_1280x800.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Changelog - NotePin">
     <meta name="twitter:description" content="All notable changes to the NotePin browser extension. See new features, improvements, and fixes for each release.">
-    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/popup_light_1280x800.png">
+    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/screenshots/popup_light_1280x800.png">
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -33,8 +33,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260813-1">
     <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
+    <noscript><style>body { opacity: 1 !important; }</style></noscript>
     <script src="index.js" defer></script>
 </head>
 <body>
@@ -52,16 +53,76 @@
             </button>
             <nav id="site-nav">
                 <a href="index.html#features">Features</a>
-                <a href="index.html#shortcuts">Shortcuts</a>
+                <a href="manual.html">Manual</a>
+                <a href="guides.html">Guides</a>
                 <a href="changelog.html" class="active">Changelog</a>
                 <a href="privacy.html">Privacy</a>
             </nav>
         </div>
     </header>
 
-    <main class="content">
-        <h1>Changelog</h1>
-        <p class="intro">All notable changes to NotePin are documented here.</p>
+    <main>
+        <section class="manual-hero">
+            <div class="container">
+                <span class="section-badge">Changelog</span>
+                <h1>What changed, and when.</h1>
+                <p class="manual-hero-lede">
+                    Every release of NotePin, newest first — what was added, what was fixed, and what was
+                    improved.
+                </p>
+                <ul class="manual-facts">
+                    <li>Chrome and Edge</li>
+                    <li>Free, no account</li>
+                    <li><a href="manual.html">Read the manual</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="content">
+
+        <!-- Version 1.0.18 -->
+        <div class="version-card">
+            <div class="version-header">
+                <span class="version-number">v1.0.18</span>
+                <span class="version-badge badge-initial">Update</span>
+                <span class="version-date">August 2026</span>
+            </div>
+
+            <div class="feature-category">
+                <h4>&#10024; Added</h4>
+                <ul>
+                    <li><strong>Notes Know Which Page They Came From:</strong> Every new note now stores the page title, so cards show a readable page name instead of a raw address &mdash; and you can search for it</li>
+                    <li><strong>Tags:</strong> Add up to five tags to any note, click a tag chip to filter, or search <code>tag:research</code></li>
+                    <li><strong>Name Your Colors:</strong> Give each of the eight colors your own meaning in Settings &mdash; the names show up on swatches, filters, and in-page stickies</li>
+                    <li><strong>Storage Meter:</strong> Settings now show how much of your browser sync budget your notes use, and warn you before you run out instead of failing on save</li>
+                    <li><strong>Light and Dark, Your Choice:</strong> Pick Match system, Light, or Dark instead of always following your operating system</li>
+                    <li><strong>More Ways to Capture:</strong> Right-click any page or any link to save it, not just selected text</li>
+                    <li><strong>Real Keyboard Shortcuts:</strong> Assign shortcuts to open NotePin, open the board, or save the selection &mdash; plus quick keys on the board for search, new note, pin, and moving between notes</li>
+                    <li><strong>Markdown and CSV Export:</strong> Take your notes to Obsidian, Notion, or a spreadsheet, and restore a backup outright with the new replace-on-import mode</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
+                <h4>&#128027; Fixes</h4>
+                <ul>
+                    <li><strong>Your Notes Cannot Vanish From a Sync Hiccup:</strong> A missing internal bookkeeping record could cause NotePin to clear its stored notes and show an empty list. It now rebuilds that record from your notes instead</li>
+                    <li><strong>Privacy Settings No Longer Rewrite Old Notes:</strong> Turning on URL trimming used to strip links from every existing note the next time you touched any note. It now applies only to notes you save or edit, exactly as the setting says</li>
+                    <li><strong>Bulk Actions Tell You What They Will Touch:</strong> A selection can include notes hidden by your filters &mdash; the toolbar and the delete confirmation now say how many, and Escape clears the selection</li>
+                    <li><strong>Nothing You Typed Disappears Silently:</strong> Closing a note dialog or the sticky-note editor with unsaved text now asks first, a right-click capture adds to an unsaved draft instead of replacing it, and an edit in progress survives a note changing on another device</li>
+                    <li><strong>Every Language Is Complete Again:</strong> Bulk selection and duplicate cleanup were showing English text in all six translated languages</li>
+                    <li><strong>Stickies Stay Out of Your Printouts:</strong> In-page sticky notes no longer appear when you print a page or save it as PDF, show translated color names, and can always be dismissed for a site</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
+                <h4>&#9889; Improved</h4>
+                <ul>
+                    <li><strong>Much Faster Saving:</strong> Saving a large note collection went from roughly half a second of lag to a few milliseconds</li>
+                    <li><strong>Clearer to See and Use:</strong> Visible keyboard focus, better light-mode contrast, screen readers can finally read your note text, reduced-motion is respected, pinned notes are obvious again, and the popup fits more notes on screen</li>
+                    <li><strong>Board Fixes:</strong> The filter sidebar collapses on narrow or zoomed windows, the bulk toolbar stays in view while scrolling, and an empty board tells you which filters caused it with one button to clear them</li>
+                </ul>
+            </div>
+        </div>
 
         <!-- Version 1.0.17 -->
         <div class="version-card">
@@ -190,7 +251,7 @@
             </div>
 
             <div class="feature-category">
-                <h4>ðŸ› Fixes</h4>
+                <h4>&#128027; Fixes</h4>
                 <ul>
                     <li><strong>Long Popup Notes:</strong> Viewing a long note in the popup now keeps the note header and top content visible by scrolling the note body instead of letting the whole modal drift out of view</li>
                     <li><strong>No Empty URL Rows:</strong> Popup and fullscreen now hide blank URL rows in note cards and note-view modals when a note has no saved URL, including cases where the stored value is only whitespace</li>
@@ -509,11 +570,14 @@
                 </ul>
             </div>
         </div>
+        </div>
     </main>
 
     <footer>
         <div class="footer-inner">
             <div class="footer-links">
+                <a href="manual.html">Manual</a>
+                <a href="guides.html">Guides</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="changelog.html">Changelog</a>
                 <a href="https://fixquotes.com/docs/contact/?category=notepin">Feedback &amp; Issues</a>

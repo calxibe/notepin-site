@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Selected Text from Any Web Page — Right-Click</title>
+    <meta name="description"
+        content="Select any text, right-click, and save it as a note with the source address already attached. No copy-paste, no switching tabs, no losing where it came from.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="canonical" href="https://notepin.fixquotes.com/save-selected-text-chrome-extension.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotePin">
+    <meta property="og:title" content="Save Selected Text from Any Web Page with a Right-Click">
+    <meta property="og:description"
+        content="Select any text, right-click, and save it as a note with the source address already attached. No copy-paste, no switching tabs.">
+    <meta property="og:url" content="https://notepin.fixquotes.com/save-selected-text-chrome-extension.html">
+    <meta property="og:image" content="https://notepin.fixquotes.com/img/screenshots/context_menu_capture_1280x800.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Save Selected Text from Any Web Page with a Right-Click">
+    <meta name="twitter:description"
+        content="Select any text, right-click, and save it as a note with the source address already attached.">
+    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/screenshots/context_menu_capture_1280x800.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260813-1">
+    <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
+    <noscript><style>body { opacity: 1 !important; }</style></noscript>
+    <script src="index.js" defer></script>
+    <script src="manual.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Save Selected Text from Any Web Page with a Right-Click",
+      "description": "How to select text on any website and save it as a note with the source page address attached automatically.",
+      "inLanguage": "en",
+      "url": "https://notepin.fixquotes.com/save-selected-text-chrome-extension.html",
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "NotePin",
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Chrome, Microsoft Edge"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FixQuotes",
+        "url": "https://fixquotes.com/docs/about/"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I save text from a website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Select the text you want, right-click it, and choose Save to NotePin. The selected text is filled in as the note and the address of the page you are on is attached automatically. Review or trim it, then press Save. Nothing is stored until you do."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I save selected text in Chrome without copy and paste?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Install a context-menu extension such as NotePin, then select text and use the right-click menu. This skips the clipboard entirely, so you never have to open another app, paste, and then go back for the link. You can also assign a keyboard shortcut at chrome://extensions/shortcuts to capture a selection without opening the menu at all."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it save the page address along with the text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The address of the page you captured from is attached to the note automatically, along with the page title, capped at 80 characters. Both are searchable later, so you can find a quote by the site it came from as well as by its wording."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I edit the text before it saves?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A capture always opens the note for review first. You can trim a long quote, add your own comment, pick a colour, or add tags before saving. Notes hold up to 2,000 characters, and a counter appears once you pass 1,000."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="manual-page">
+    <a class="skip-link" href="#guide-content">Skip to the guide</a>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="img/icon48.png" alt="NotePin" class="logo-icon">
+                <span class="logo-text">Note<span>Pin</span></span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav id="site-nav">
+                <a href="index.html#features">Features</a>
+                <a href="manual.html">Manual</a>
+                <a href="guides.html" class="active" aria-current="page">Guides</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="guide-content">
+        <section class="manual-hero">
+            <div class="container">
+                <span class="section-badge"><a href="guides.html">Guides</a></span>
+                <h1>Save Selected Text from Any Web Page with a Right-Click</h1>
+                <p class="manual-hero-lede">
+                    The usual way to keep a paragraph you found is to select it, copy it, open something else,
+                    paste it, then go back for the link — and half the time the link never makes it. This is the
+                    version without those steps: select, right-click, save. The address comes with it.
+                </p>
+                <div class="cta-buttons manual-hero-actions">
+                    <a class="btn btn-primary" href="#three-seconds">See the three-second version</a>
+                    <a class="btn btn-secondary" href="#not-a-highlighter">Is this a highlighter?</a>
+                </div>
+                <ul class="manual-facts">
+                    <li>Works on any website</li>
+                    <li>Source address attached automatically</li>
+                    <li>Chrome and Edge, free</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="container manual-layout">
+            <aside class="manual-sidebar" aria-label="Guide navigation">
+                <button class="manual-toc-toggle" id="manual-toc-toggle" type="button" aria-controls="manual-toc"
+                    aria-expanded="true">
+                    <span>On this page</span>
+                    <span class="manual-toc-toggle-state">Hide sections</span>
+                </button>
+                <nav class="manual-toc" id="manual-toc" aria-label="Guide sections">
+                    <p>On this page</p>
+                    <ol>
+                        <li><a href="#three-seconds">The three-second capture</a></li>
+                        <li><a href="#every-route">Every way to capture</a></li>
+                        <li><a href="#why-source">Why the address matters more</a></li>
+                        <li><a href="#review">Nothing saves until you say so</a></li>
+                        <li><a href="#drafts">Drafts are never overwritten</a></li>
+                        <li><a href="#limits">Pages that cannot carry an address</a></li>
+                        <li><a href="#not-a-highlighter">Saving vs highlighting</a></li>
+                        <li><a href="#triage">Colours and tags for triage</a></li>
+                        <li><a href="#faq">Common questions</a></li>
+                    </ol>
+                </nav>
+            </aside>
+
+            <article class="manual-article">
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="three-seconds">
+                    <p class="eyebrow">The basics</p>
+                    <h2>The three-second capture</h2>
+                    <p class="manual-lede">
+                        Three steps, no clipboard, no second window.
+                    </p>
+
+                    <figure class="manual-screenshot">
+                        <img src="img/screenshots/context_menu_capture_1280x800.png"
+                            alt="Selected text on a web page with the right-click menu open on Save to NotePin, and the quote already staged in the NotePin popup"
+                            width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption>Select, right-click, and the quote is already staged with its source.</figcaption>
+                    </figure>
+
+                    <div class="manual-card-grid">
+                        <div class="manual-mini-card">
+                            <span class="manual-card-mark">1</span>
+                            <h3>Select</h3>
+                            <ol>
+                                <li>Highlight any text on any website.</li>
+                                <li>A sentence, a paragraph, a code block — whatever you want to keep.</li>
+                            </ol>
+                        </div>
+                        <div class="manual-mini-card">
+                            <span class="manual-card-mark">2</span>
+                            <h3>Right-click</h3>
+                            <ol>
+                                <li>Choose <strong>Save to NotePin</strong>.</li>
+                                <li>The note opens with your selection already filled in.</li>
+                            </ol>
+                        </div>
+                        <div class="manual-mini-card">
+                            <span class="manual-card-mark">3</span>
+                            <h3>Save</h3>
+                            <ol>
+                                <li>Trim it, add a thought, pick a colour.</li>
+                                <li>Press <strong>Save</strong> — or <kbd>Ctrl</kbd> + <kbd>Enter</kbd>.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <p>
+                        What you have afterwards is not a loose fragment of text. It is the text, the address of the
+                        page it came from, that page's title, the date, and whatever colour or tags you gave it — all
+                        of which are searchable.
+                    </p>
+
+                    <div class="manual-callout info">
+                        Prefer the keyboard? A command called <strong>Save the selected text to NotePin</strong> can
+                        be given any key combination you like, so you can skip the right-click menu entirely. See
+                        <a href="#every-route">Every way to capture</a>.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="every-route">
+                    <p class="eyebrow">Reference</p>
+                    <h2>Every way to capture</h2>
+                    <p>
+                        Selected text is the most common route, but it is not the only one. Each method differs in
+                        what ends up in the note and which address gets attached.
+                    </p>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Capture methods and what each one attaches</caption>
+                            <thead>
+                                <tr><th scope="col">Method</th><th scope="col">Note text</th><th scope="col">Address attached</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Right-click on selected text</td><td>The selected text</td><td>The page you are on</td></tr>
+                                <tr><td>Right-click on a page</td><td>Empty, you type it</td><td>The page you are on</td></tr>
+                                <tr><td>Right-click on a link</td><td>Empty, you type it</td><td>The link's address</td></tr>
+                                <tr><td>Keyboard command</td><td>The selected text, if any</td><td>The page you are on</td></tr>
+                                <tr><td>Popup → Take a new note…</td><td>Empty, you type it</td><td>The page you are on</td></tr>
+                                <tr><td>Board → New Note</td><td>Empty, you type it</td><td>Whatever you type in the URL field</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        The third row is worth noticing. Right-clicking a <em>link</em> rather than the page saves a
+                        note against the destination, not against where you are standing. That is how you leave
+                        yourself a note about an article you have not read yet.
+                    </p>
+
+                    <h3>Assigning a keyboard shortcut</h3>
+                    <p>
+                        Three commands can be bound to keys of your choice. None are assigned out of the box, so
+                        nothing you already use gets taken over.
+                    </p>
+                    <ol class="manual-steps">
+                        <li>Open <code>chrome://extensions/shortcuts</code> — on Edge, <code>edge://extensions/shortcuts</code>.</li>
+                        <li>Find NotePin in the list.</li>
+                        <li>Click the pencil beside <strong>Save the selected text to NotePin</strong> and press your combination.</li>
+                    </ol>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="why-source">
+                    <p class="eyebrow">The idea</p>
+                    <h2>Why the address matters more than the text</h2>
+                    <p class="manual-lede">
+                        A saved quote with no source is a rumour you told yourself.
+                    </p>
+                    <p>
+                        Anyone who has kept a scratch file of interesting paragraphs knows how it ends. Six months
+                        later there are forty fragments and no way to tell which came from a standards document and
+                        which came from a forum reply by someone guessing. The text survived; the thing that made it
+                        worth trusting did not.
+                    </p>
+                    <p>
+                        Attaching the address at capture time is the whole trick, and it only works if it costs
+                        nothing. If keeping the source means an extra deliberate step, it gets skipped exactly when
+                        you are moving fast — which is exactly when you are collecting the most.
+                    </p>
+
+                    <figure class="manual-figure">
+                        <img src="img/manual/manual-note-card.png"
+                            alt="A NotePin note card showing the page title as a link, the note text, a tag chip, and the action buttons"
+                            width="1280" height="720" loading="lazy" decoding="async">
+                        <figcaption>The card leads with the page title, not the raw address.</figcaption>
+                    </figure>
+
+                    <p>
+                        NotePin also stores the page's title, up to 80 characters, and shows that instead of the raw
+                        URL on the note card. A list of saved quotes then reads like a list of sources rather than a
+                        column of near-identical addresses. Hover the link to see the full address; it is still there,
+                        and it is still searchable.
+                    </p>
+
+                    <div class="manual-callout info">
+                        Search covers the note text, the page title, the full address, the domain, and the note's
+                        tags. So you can find a quote by what it said, by who said it, or by where you were.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="review">
+                    <p class="eyebrow">Behaviour</p>
+                    <h2>Nothing saves until you say so</h2>
+                    <p>
+                        A capture never writes straight to storage. It opens the note with your selection already in
+                        it and waits.
+                    </p>
+                    <div class="manual-callout info">
+                        <strong>Nothing saves until you press Save.</strong> A capture always opens the note for
+                        review first, so you can trim a long quote or change the colour before it is stored.
+                    </div>
+                    <p>
+                        This matters more than it sounds. Web selections are messy — you catch a stray heading, a
+                        "Share this" caption, a footnote marker. Being able to clean that up in the same motion as
+                        saving is the difference between a collection you will reread and one you will not.
+                    </p>
+                    <p>
+                        Notes hold up to 2,000 characters, and a counter appears once you pass 1,000 so you know
+                        you are approaching the ceiling. Line breaks are preserved, so a captured list stays a list.
+                    </p>
+
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-note-form.png"
+                            alt="The NotePin New Note dialog with a URL, note text, a tags field, and the color picker"
+                            width="820" height="900" loading="lazy" decoding="async">
+                        <figcaption>The capture, open for review: text, address, tags, colour.</figcaption>
+                    </figure>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="drafts">
+                    <p class="eyebrow">Behaviour</p>
+                    <h2>Drafts are never overwritten</h2>
+                    <p>
+                        If you start writing in the popup and it closes — you clicked the page, switched tabs, the
+                        browser took the focus away — the text is kept. Open NotePin again and it is still there.
+                    </p>
+                    <p>
+                        The part that is easy to get wrong, and that NotePin gets right: if you then capture
+                        something else with a right-click, the new capture is <strong>added underneath</strong> your
+                        unsaved draft rather than replacing it, and a short message confirms it. You can collect three
+                        quotes in a row into one note without losing the first two.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="limits">
+                    <p class="eyebrow">Limits</p>
+                    <h2>Pages that cannot carry an address</h2>
+                    <p>
+                        Not every page is a web page, and the ones that are not cannot be attached to a note.
+                    </p>
+                    <div class="manual-callout warning">
+                        <strong>Browser and local pages.</strong> Pages such as <code>chrome://</code> and
+                        <code>edge://</code>, extension pages, and local <code>file://</code> pages are not valid web
+                        addresses for a note. You can still write the note; it is saved without an address and appears
+                        under <strong>No Domain</strong> on the board.
+                    </div>
+                    <p>
+                        Only <code>http</code> and <code>https</code> addresses are stored. If you type a bare address
+                        by hand, <code>https://</code> is added for you before it is checked.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="not-a-highlighter">
+                    <p class="eyebrow">Honest scope</p>
+                    <h2>Saving vs highlighting: what this is and is not</h2>
+                    <p class="manual-lede">
+                        If you searched for a web highlighter, read this bit before installing anything.
+                    </p>
+                    <p>
+                        A <strong>highlighter extension</strong> paints colour onto the page itself and tries to
+                        restore that colour the next time you visit, by remembering the position of the text in the
+                        document. A <strong>capture tool</strong> takes a copy of the text out of the page and stores
+                        it somewhere of its own. They look similar in a screenshot and behave very differently in
+                        practice.
+                    </p>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Two different jobs</caption>
+                            <thead>
+                                <tr><th scope="col">Behaviour</th><th scope="col">Highlighter</th><th scope="col">NotePin</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Marks the original page</td><td>Yes</td><td>No</td></tr>
+                                <tr><td>Survives the page being rewritten</td><td>Often not</td><td>Yes — you hold a copy</td></tr>
+                                <tr><td>Works if the page is deleted</td><td>No</td><td>Yes</td></tr>
+                                <tr><td>Your own words alongside the quote</td><td>Sometimes</td><td>Yes, same field</td></tr>
+                                <tr><td>Shows on the page when you return</td><td>Yes</td><td>Optional — see <a href="sticky-notes-chrome-extension.html">sticky notes</a></td></tr>
+                                <tr><td>One searchable list of everything kept</td><td>Varies</td><td>Yes</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="manual-callout info">
+                        <strong>Which do you want?</strong> If your goal is to re-read an article with your marks on
+                        it, you want a highlighter. If your goal is to still have the paragraph in two years, when the
+                        article has been rewritten or taken down, you want a copy — and that is what this does.
+                    </div>
+
+                    <p>
+                        NotePin can do the on-page part too, but as a separate opt-in feature rather than the core
+                        model: <a href="sticky-notes-chrome-extension.html">in-page sticky notes</a> show your saved
+                        notes for a site floating on that site. That feature is off by default and is the only one
+                        that asks for access to website content.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="triage">
+                    <p class="eyebrow">Organising</p>
+                    <h2>Colours and tags for triage</h2>
+                    <p>
+                        Capture is fast, so you will capture a lot. The sorting problem arrives next. Two cheap tools
+                        handle most of it.
+                    </p>
+                    <p>
+                        <strong>Eight colours</strong> — red, yellow, blue, green, purple, orange, pink, and teal —
+                        appear as a stripe down the edge of each card and as a filter on the board. Colours cost
+                        nothing to store. Because "purple means read later" is impossible to remember six weeks on,
+                        you can name each colour in <strong>Settings → Color labels</strong>; those names then appear
+                        on the swatches, in the board's filters, and in the bulk colour picker.
+                    </p>
+                    <p>
+                        <strong>Tags</strong> — up to five per note, 24 characters each — are the better choice when
+                        the thing you are grouping spans many different sites. Type them comma-separated in the note
+                        form. Clicking a tag chip later fills the search box with <code>tag:name</code>, which you can
+                        also just type.
+                    </p>
+                    <div class="manual-callout warning">
+                        Tags use a share of your sync storage, roughly 16 bytes each. On a large collection that adds
+                        up against the budget described in the <a href="manual.html#storage">manual's storage
+                        section</a>. If eight named colours cover you, you do not need tags.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="faq">
+                    <p class="eyebrow">Answers</p>
+                    <h2>Common questions</h2>
+
+                    <h3>How do I save text from a website?</h3>
+                    <p>
+                        Select the text you want, right-click it, and choose <strong>Save to NotePin</strong>. The
+                        selected text is filled in as the note and the address of the page you are on is attached
+                        automatically. Review or trim it, then press Save. Nothing is stored until you do.
+                    </p>
+
+                    <h3>How do I save selected text in Chrome without copy and paste?</h3>
+                    <p>
+                        Install a context-menu extension such as NotePin, then select text and use the right-click
+                        menu. This skips the clipboard entirely, so you never have to open another app, paste, and
+                        then go back for the link. You can also assign a keyboard shortcut at
+                        <code>chrome://extensions/shortcuts</code> to capture a selection without opening the menu at
+                        all.
+                    </p>
+
+                    <h3>Does it save the page address along with the text?</h3>
+                    <p>
+                        Yes. The address of the page you captured from is attached to the note automatically, along
+                        with the page title, capped at 80 characters. Both are searchable later, so you can find a
+                        quote by the site it came from as well as by its wording.
+                    </p>
+
+                    <h3>Can I edit the text before it saves?</h3>
+                    <p>
+                        Yes. A capture always opens the note for review first. You can trim a long quote, add your own
+                        comment, pick a colour, or add tags before saving. Notes hold up to 2,000 characters, and a
+                        counter appears once you pass 1,000.
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon">💡</span>
+                        <div>
+                            <h4>Where to go next</h4>
+                            <p>
+                                Collecting quotes with their sources is the raw material for a
+                                <a href="digital-commonplace-book.html">digital commonplace book</a>. If you would
+                                rather see your notes on the pages they belong to, read about
+                                <a href="sticky-notes-chrome-extension.html">sticky notes on any website</a>. The
+                                <a href="manual.html#capture">manual's capture section</a> is the full reference.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="manual.html">Manual</a>
+                <a href="guides.html">Guides</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="https://fixquotes.com/docs/contact/?category=notepin">Feedback &amp; Issues</a>
+            </div>
+            <p class="copyright">© 2026 FixQuotes. NotePin is a browser extension by <a href="https://fixquotes.com/docs/about/" target="_blank">FixQuotes</a>.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
