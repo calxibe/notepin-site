@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://notepin.fixquotes.com/sitemap.xml
+Sitemap: https://notepin.cloud/sitemap.xml
