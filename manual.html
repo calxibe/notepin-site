@@ -35,7 +35,7 @@
     <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
     <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=20260814-1">
+    <link rel="stylesheet" href="style.css?v=20260814-2">
     <script src="index.js" defer></script>
     <script src="manual.js" defer></script>
 
@@ -289,12 +289,12 @@
                                 <tr><th scope="col">Method</th><th scope="col">Note text</th><th scope="col">Address attached</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Popup → Take a new note…</td><td>Empty, you type it</td><td>The page you are on</td></tr>
-                                <tr><td>Right-click on selected text</td><td>The selected text</td><td>The page you are on</td></tr>
-                                <tr><td>Right-click on a page</td><td>Empty, you type it</td><td>The page you are on</td></tr>
-                                <tr><td>Right-click on a link</td><td>Empty, you type it</td><td>The link's address</td></tr>
-                                <tr><td>Keyboard command</td><td>The selected text, if any</td><td>The page you are on</td></tr>
-                                <tr><td>Board → New Note</td><td>Empty, you type it</td><td>Whatever you type in the URL field</td></tr>
+                                <tr><th scope="row">Popup → Take a new note…</th><td>Empty, you type it</td><td>The page you are on</td></tr>
+                                <tr><th scope="row">Right-click on selected text</th><td>The selected text</td><td>The page you are on</td></tr>
+                                <tr><th scope="row">Right-click on a page</th><td>Empty, you type it</td><td>The page you are on</td></tr>
+                                <tr><th scope="row">Right-click on a link</th><td>Empty, you type it</td><td>The link's address</td></tr>
+                                <tr><th scope="row">Keyboard command</th><td>The selected text, if any</td><td>The page you are on</td></tr>
+                                <tr><th scope="row">Board → New Note</th><td>Empty, you type it</td><td>Whatever you type in the URL field</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -344,12 +344,12 @@
                                 <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Take a new note…</td><td>Opens the note form. The current page is attached when you save.</td></tr>
-                                <tr><td>Search box</td><td>Filters your notes as you type. See <a href="#search">Search and filters</a>.</td></tr>
-                                <tr><td>Current Site</td><td>Limits the list to notes for the site you are on. Your choice is remembered.</td></tr>
-                                <tr><td>Settings (gear)</td><td>Opens the shared settings panel. See <a href="#settings">Settings reference</a>.</td></tr>
-                                <tr><td>Expand (arrows)</td><td>Opens the fullscreen board in a tab. An in-progress note comes with you.</td></tr>
-                                <tr><td>Toolbar badge</td><td>The number of notes you have for the site you are on.</td></tr>
+                                <tr><th scope="row">Take a new note…</th><td>Opens the note form. The current page is attached when you save.</td></tr>
+                                <tr><th scope="row">Search box</th><td>Filters your notes as you type. See <a href="#search">Search and filters</a>.</td></tr>
+                                <tr><th scope="row">Current Site</th><td>Limits the list to notes for the site you are on. Your choice is remembered.</td></tr>
+                                <tr><th scope="row">Settings (gear)</th><td>Opens the shared settings panel. See <a href="#settings">Settings reference</a>.</td></tr>
+                                <tr><th scope="row">Expand (arrows)</th><td>Opens the fullscreen board in a tab. An in-progress note comes with you.</td></tr>
+                                <tr><th scope="row">Toolbar badge</th><td>The number of notes you have for the site you are on.</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -383,13 +383,13 @@
                                 <tr><th scope="col">Field</th><th scope="col">Limit</th><th scope="col">Notes</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Text</td><td>2,000 characters</td><td>A counter appears once you pass 1,000. Line breaks are kept.</td></tr>
-                                <tr><td>Web address</td><td>—</td><td>Only <code>http</code> and <code>https</code> addresses are stored.</td></tr>
-                                <tr><td>Page title</td><td>80 characters</td><td>Captured automatically. Shown as the card's link label.</td></tr>
-                                <tr><td>Tags</td><td>5 tags, 24 characters each</td><td>Optional. See <a href="#tags">Tags</a>.</td></tr>
-                                <tr><td>Color</td><td>One of 8</td><td>See <a href="#colors">Colors</a>.</td></tr>
-                                <tr><td>Pinned</td><td>Yes or no</td><td>Pinned notes sort above everything else.</td></tr>
-                                <tr><td>Created / last edited</td><td>—</td><td>Hover a timestamp to see the full date and time.</td></tr>
+                                <tr><th scope="row">Text</th><td>2,000 characters</td><td>A counter appears once you pass 1,000. Line breaks are kept.</td></tr>
+                                <tr><th scope="row">Web address</th><td>—</td><td>Only <code>http</code> and <code>https</code> addresses are stored.</td></tr>
+                                <tr><th scope="row">Page title</th><td>80 characters</td><td>Captured automatically. Shown as the card's link label.</td></tr>
+                                <tr><th scope="row">Tags</th><td>5 tags, 24 characters each</td><td>Optional. See <a href="#tags">Tags</a>.</td></tr>
+                                <tr><th scope="row">Color</th><td>One of 8</td><td>See <a href="#colors">Colors</a>.</td></tr>
+                                <tr><th scope="row">Pinned</th><td>Yes or no</td><td>Pinned notes sort above everything else.</td></tr>
+                                <tr><th scope="row">Created / last edited</th><td>—</td><td>Hover a timestamp to see the full date and time.</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -537,11 +537,11 @@
                                 <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Drag the header</td><td>Snaps the panel to any of the four screen corners. Your choice is remembered per browser.</td></tr>
-                                <tr><td>− / +</td><td>Collapses the panel to its header, or expands it again. Remembered per site.</td></tr>
-                                <tr><td>Hide site</td><td>Hides the panel on this site for 24 hours.</td></tr>
-                                <tr><td>Filter box</td><td>Appears once a site has five or more notes. Narrows the panel's list.</td></tr>
-                                <tr><td>Pencil on a card</td><td>Opens a dedicated editor window for that note.</td></tr>
+                                <tr><th scope="row">Drag the header</th><td>Snaps the panel to any of the four screen corners. Your choice is remembered per browser.</td></tr>
+                                <tr><th scope="row">− / +</th><td>Collapses the panel to its header, or expands it again. Remembered per site.</td></tr>
+                                <tr><th scope="row">Hide site</th><td>Hides the panel on this site for 24 hours.</td></tr>
+                                <tr><th scope="row">Filter box</th><td>Appears once a site has five or more notes. Narrows the panel's list.</td></tr>
+                                <tr><th scope="row">Pencil on a card</th><td>Opens a dedicated editor window for that note.</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -588,11 +588,11 @@
                                 <tr><th scope="col">Area</th><th scope="col">Contents</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Sidebar, top</td><td>Every domain you have notes on, with counts. A filter box narrows a long list.</td></tr>
-                                <tr><td>Sidebar, bottom</td><td>Color filters. Pick several at once to combine them.</td></tr>
-                                <tr><td>Toolbar</td><td>Search box and the sort selector.</td></tr>
-                                <tr><td>Header</td><td>New Note, expand/collapse all, help and FAQ, settings.</td></tr>
-                                <tr><td>List</td><td>Your notes, filtered and sorted by everything above.</td></tr>
+                                <tr><th scope="row">Sidebar, top</th><td>Every domain you have notes on, with counts. A filter box narrows a long list.</td></tr>
+                                <tr><th scope="row">Sidebar, bottom</th><td>Color filters. Pick several at once to combine them.</td></tr>
+                                <tr><th scope="row">Toolbar</th><td>Search box and the sort selector.</td></tr>
+                                <tr><th scope="row">Header</th><td>New Note, expand/collapse all, help and FAQ, settings.</td></tr>
+                                <tr><th scope="row">List</th><td>Your notes, filtered and sorted by everything above.</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -724,11 +724,11 @@
                                 <tr><th scope="col">Action</th><th scope="col">Confirms first</th><th scope="col">Undo</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Delete one note</td><td>No</td><td>Yes, 5 seconds</td></tr>
-                                <tr><td>Bulk delete</td><td>Yes</td><td>Yes, 5 seconds</td></tr>
-                                <tr><td>Clear visible notes</td><td>Yes</td><td>Yes, 5 seconds</td></tr>
-                                <tr><td>Clean duplicates</td><td>Yes</td><td>Yes, 5 seconds</td></tr>
-                                <tr><td>Bulk color, pin, unpin</td><td>No</td><td>No — reapply manually</td></tr>
+                                <tr><th scope="row">Delete one note</th><td>No</td><td>Yes, 5 seconds</td></tr>
+                                <tr><th scope="row">Bulk delete</th><td>Yes</td><td>Yes, 5 seconds</td></tr>
+                                <tr><th scope="row">Clear visible notes</th><td>Yes</td><td>Yes, 5 seconds</td></tr>
+                                <tr><th scope="row">Clean duplicates</th><td>Yes</td><td>Yes, 5 seconds</td></tr>
+                                <tr><th scope="row">Bulk color, pin, unpin</th><td>No</td><td>No — reapply manually</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -796,17 +796,17 @@
                                 <tr><th scope="col">Setting</th><th scope="col">Options</th><th scope="col">What it affects</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Appearance</td><td>Match system, Light, Dark</td><td>All NotePin screens. Applies at once and on next open.</td></tr>
-                                <tr><td>Popup size</td><td>Small, Medium, Large</td><td>Popup width only (360, 420, or 480 pixels). Popup only.</td></tr>
-                                <tr><td>Sort notes</td><td>Six orders</td><td>The board's list. The popup stays newest-first.</td></tr>
-                                <tr><td>Show sticky notes on matching sites</td><td>On / off</td><td>Turns <a href="#stickies">in-page stickies</a> on. Asks for website access.</td></tr>
-                                <tr><td>Only show on the exact matching URL</td><td>On / off</td><td>Stickies show per page instead of per site.</td></tr>
-                                <tr><td>Remove query strings from saved URLs</td><td>On / off</td><td>Strips <code>?tracking=…</code> from addresses you save from now on.</td></tr>
-                                <tr><td>Remove hash fragments from saved URLs</td><td>On / off</td><td>Strips <code>#section</code> from addresses you save from now on.</td></tr>
-                                <tr><td>Color labels</td><td>Eight text fields</td><td>Your own name for each color. Blank restores the default.</td></tr>
-                                <tr><td>Storage</td><td>Read-only meter</td><td>How much of your sync space the notes use. See <a href="#storage">Storage limits</a>.</td></tr>
-                                <tr><td>Export format</td><td>JSON, Markdown, CSV</td><td>The format the Export button produces. Board only.</td></tr>
-                                <tr><td>Replace all notes when importing</td><td>On / off</td><td>Import replaces instead of merging. Board only.</td></tr>
+                                <tr><th scope="row">Appearance</th><td>Match system, Light, Dark</td><td>All NotePin screens. Applies at once and on next open.</td></tr>
+                                <tr><th scope="row">Popup size</th><td>Small, Medium, Large</td><td>Popup width only (360, 420, or 480 pixels). Popup only.</td></tr>
+                                <tr><th scope="row">Sort notes</th><td>Six orders</td><td>The board's list. The popup stays newest-first.</td></tr>
+                                <tr><th scope="row">Show sticky notes on matching sites</th><td>On / off</td><td>Turns <a href="#stickies">in-page stickies</a> on. Asks for website access.</td></tr>
+                                <tr><th scope="row">Only show on the exact matching URL</th><td>On / off</td><td>Stickies show per page instead of per site.</td></tr>
+                                <tr><th scope="row">Remove query strings from saved URLs</th><td>On / off</td><td>Strips <code>?tracking=…</code> from addresses you save from now on.</td></tr>
+                                <tr><th scope="row">Remove hash fragments from saved URLs</th><td>On / off</td><td>Strips <code>#section</code> from addresses you save from now on.</td></tr>
+                                <tr><th scope="row">Color labels</th><td>Eight text fields</td><td>Your own name for each color. Blank restores the default.</td></tr>
+                                <tr><th scope="row">Storage</th><td>Read-only meter</td><td>How much of your sync space the notes use. See <a href="#storage">Storage limits</a>.</td></tr>
+                                <tr><th scope="row">Export format</th><td>JSON, Markdown, CSV</td><td>The format the Export button produces. Board only.</td></tr>
+                                <tr><th scope="row">Replace all notes when importing</th><td>On / off</td><td>Import replaces instead of merging. Board only.</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -834,8 +834,8 @@
                             <caption>Note form shortcuts</caption>
                             <thead><tr><th scope="col">Keys</th><th scope="col">Action</th></tr></thead>
                             <tbody>
-                                <tr><td><kbd>Ctrl</kbd> + <kbd>Enter</kbd></td><td>Save the note</td></tr>
-                                <tr><td><kbd>Esc</kbd></td><td>Cancel an inline edit, or close a dialog</td></tr>
+                                <tr><th scope="row"><kbd>Ctrl</kbd> + <kbd>Enter</kbd></th><td>Save the note</td></tr>
+                                <tr><th scope="row"><kbd>Esc</kbd></th><td>Cancel an inline edit, or close a dialog</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -847,14 +847,14 @@
                             <caption>Board shortcuts</caption>
                             <thead><tr><th scope="col">Key</th><th scope="col">Action</th></tr></thead>
                             <tbody>
-                                <tr><td><kbd>/</kbd></td><td>Jump to the search box</td></tr>
-                                <tr><td><kbd>n</kbd></td><td>New note</td></tr>
-                                <tr><td><kbd>j</kbd> / <kbd>k</kbd></td><td>Move down / up through the notes</td></tr>
-                                <tr><td><kbd>Enter</kbd></td><td>Open the marked note</td></tr>
-                                <tr><td><kbd>x</kbd></td><td>Select or deselect the marked note</td></tr>
-                                <tr><td><kbd>p</kbd></td><td>Pin or unpin the marked note</td></tr>
-                                <tr><td><kbd>e</kbd></td><td>Expand or collapse all note text</td></tr>
-                                <tr><td><kbd>Esc</kbd></td><td>Clear the current selection</td></tr>
+                                <tr><th scope="row"><kbd>/</kbd></th><td>Jump to the search box</td></tr>
+                                <tr><th scope="row"><kbd>n</kbd></th><td>New note</td></tr>
+                                <tr><th scope="row"><kbd>j</kbd> / <kbd>k</kbd></th><td>Move down / up through the notes</td></tr>
+                                <tr><th scope="row"><kbd>Enter</kbd></th><td>Open the marked note</td></tr>
+                                <tr><th scope="row"><kbd>x</kbd></th><td>Select or deselect the marked note</td></tr>
+                                <tr><th scope="row"><kbd>p</kbd></th><td>Pin or unpin the marked note</td></tr>
+                                <tr><th scope="row"><kbd>e</kbd></th><td>Expand or collapse all note text</td></tr>
+                                <tr><th scope="row"><kbd>Esc</kbd></th><td>Clear the current selection</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -874,9 +874,9 @@
                             <caption>Assignable commands</caption>
                             <thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead>
                             <tbody>
-                                <tr><td>Open the NotePin popup</td><td>Same as clicking the toolbar icon</td></tr>
-                                <tr><td>Open the NotePin board</td><td>Opens the board, reusing the tab if one is open</td></tr>
-                                <tr><td>Save the selected text to NotePin</td><td>Captures the current selection without the right-click menu</td></tr>
+                                <tr><th scope="row">Open the NotePin popup</th><td>Same as clicking the toolbar icon</td></tr>
+                                <tr><th scope="row">Open the NotePin board</th><td>Opens the board, reusing the tab if one is open</td></tr>
+                                <tr><th scope="row">Save the selected text to NotePin</th><td>Captures the current selection without the right-click menu</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -959,11 +959,11 @@
                             <caption>Approximate cost of each part of a note</caption>
                             <thead><tr><th scope="col">Part</th><th scope="col">Rough cost</th></tr></thead>
                             <tbody>
-                                <tr><td>The note text</td><td>1 byte per character, more for emoji and accents</td></tr>
-                                <tr><td>The web address</td><td>1 byte per character</td></tr>
-                                <tr><td>The page title</td><td>Up to about 80 bytes</td></tr>
-                                <tr><td>Each tag</td><td>About 16 bytes</td></tr>
-                                <tr><td>Color, pinned, dates</td><td>Around 90 bytes together</td></tr>
+                                <tr><th scope="row">The note text</th><td>1 byte per character, more for emoji and accents</td></tr>
+                                <tr><th scope="row">The web address</th><td>1 byte per character</td></tr>
+                                <tr><th scope="row">The page title</th><td>Up to about 80 bytes</td></tr>
+                                <tr><th scope="row">Each tag</th><td>About 16 bytes</td></tr>
+                                <tr><th scope="row">Color, pinned, dates</th><td>Around 90 bytes together</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -986,9 +986,9 @@
                             <caption>Export formats</caption>
                             <thead><tr><th scope="col">Format</th><th scope="col">Best for</th><th scope="col">Can be imported back</th></tr></thead>
                             <tbody>
-                                <tr><td>JSON</td><td>Backups and moving between browsers</td><td>Yes</td></tr>
-                                <tr><td>Markdown</td><td>Obsidian, Notion, any notes app</td><td>No</td></tr>
-                                <tr><td>CSV</td><td>Excel, Google Sheets</td><td>No</td></tr>
+                                <tr><th scope="row">JSON</th><td>Backups and moving between browsers</td><td>Yes</td></tr>
+                                <tr><th scope="row">Markdown</th><td>Obsidian, Notion, any notes app</td><td>No</td></tr>
+                                <tr><th scope="row">CSV</th><td>Excel, Google Sheets</td><td>No</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -1010,8 +1010,8 @@
                             <caption>Import modes</caption>
                             <thead><tr><th scope="col">Mode</th><th scope="col">Behaviour</th></tr></thead>
                             <tbody>
-                                <tr><td>Merge (default)</td><td>Adds notes from the file. Any note already present is skipped, so importing twice is safe.</td></tr>
-                                <tr><td>Replace all notes when importing</td><td>Your current notes are replaced by the file's. Offers undo afterwards.</td></tr>
+                                <tr><th scope="row">Merge (default)</th><td>Adds notes from the file. Any note already present is skipped, so importing twice is safe.</td></tr>
+                                <tr><th scope="row">Replace all notes when importing</th><td>Your current notes are replaced by the file's. Offers undo afterwards.</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -1048,11 +1048,11 @@
                             <caption>Permissions NotePin requests</caption>
                             <thead><tr><th scope="col">Permission</th><th scope="col">Why</th></tr></thead>
                             <tbody>
-                                <tr><td><code>storage</code></td><td>To save and sync your notes, and to keep local preferences such as popup size.</td></tr>
-                                <tr><td><code>activeTab</code></td><td>To read the address of the tab you are on, for the badge count and to attach to new notes.</td></tr>
-                                <tr><td><code>contextMenus</code></td><td>To add the right-click entries.</td></tr>
-                                <tr><td><code>scripting</code></td><td>To add or remove the in-page sticky note script when you turn that feature on or off.</td></tr>
-                                <tr><td>Website access <em>(optional)</em></td><td>Requested only if you enable in-page sticky notes. Never at install.</td></tr>
+                                <tr><th scope="row"><code>storage</code></th><td>To save and sync your notes, and to keep local preferences such as popup size.</td></tr>
+                                <tr><th scope="row"><code>activeTab</code></th><td>To read the address of the tab you are on, for the badge count and to attach to new notes.</td></tr>
+                                <tr><th scope="row"><code>contextMenus</code></th><td>To add the right-click entries.</td></tr>
+                                <tr><th scope="row"><code>scripting</code></th><td>To add or remove the in-page sticky note script when you turn that feature on or off.</td></tr>
+                                <tr><th scope="row">Website access <em>(optional)</em></th><td>Requested only if you enable in-page sticky notes. Never at install.</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -1207,20 +1207,20 @@
                             <caption>Limits and defaults at a glance</caption>
                             <thead><tr><th scope="col">Item</th><th scope="col">Value</th></tr></thead>
                             <tbody>
-                                <tr><td>Note text</td><td>2,000 characters</td></tr>
-                                <tr><td>Character counter appears</td><td>Past 1,000 characters</td></tr>
-                                <tr><td>Page title stored</td><td>Up to 80 characters</td></tr>
-                                <tr><td>Tags per note</td><td>5, up to 24 characters each</td></tr>
-                                <tr><td>Colors</td><td>8</td></tr>
-                                <tr><td>Sort orders</td><td>6</td></tr>
-                                <tr><td>Total sync storage</td><td>About 95 kB for all notes</td></tr>
-                                <tr><td>Storage warning</td><td>At 80% used</td></tr>
-                                <tr><td>Undo window</td><td>5 seconds</td></tr>
-                                <tr><td>Hide site duration</td><td>24 hours</td></tr>
-                                <tr><td>Sticky filter box appears</td><td>At 5 or more notes on the site</td></tr>
-                                <tr><td>Popup widths</td><td>360 / 420 / 480 pixels</td></tr>
-                                <tr><td>Board drawer breakpoint</td><td>Below about 992 pixels</td></tr>
-                                <tr><td>Languages</td><td>7</td></tr>
+                                <tr><th scope="row">Note text</th><td>2,000 characters</td></tr>
+                                <tr><th scope="row">Character counter appears</th><td>Past 1,000 characters</td></tr>
+                                <tr><th scope="row">Page title stored</th><td>Up to 80 characters</td></tr>
+                                <tr><th scope="row">Tags per note</th><td>5, up to 24 characters each</td></tr>
+                                <tr><th scope="row">Colors</th><td>8</td></tr>
+                                <tr><th scope="row">Sort orders</th><td>6</td></tr>
+                                <tr><th scope="row">Total sync storage</th><td>About 95 kB for all notes</td></tr>
+                                <tr><th scope="row">Storage warning</th><td>At 80% used</td></tr>
+                                <tr><th scope="row">Undo window</th><td>5 seconds</td></tr>
+                                <tr><th scope="row">Hide site duration</th><td>24 hours</td></tr>
+                                <tr><th scope="row">Sticky filter box appears</th><td>At 5 or more notes on the site</td></tr>
+                                <tr><th scope="row">Popup widths</th><td>360 / 420 / 480 pixels</td></tr>
+                                <tr><th scope="row">Board drawer breakpoint</th><td>Below about 992 pixels</td></tr>
+                                <tr><th scope="row">Languages</th><td>7</td></tr>
                             </tbody>
                         </table>
                     </div>

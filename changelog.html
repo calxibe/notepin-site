@@ -31,7 +31,7 @@
     <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
     <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=20260814-1">
+    <link rel="stylesheet" href="style.css?v=20260814-2">
     <script src="index.js" defer></script>
 </head>
 <body>
@@ -79,13 +79,13 @@
         <!-- Version 1.0.18 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.18</span>
+                <h2 class="version-number">v1.0.18</h2>
                 <span class="version-badge badge-initial">Update</span>
                 <span class="version-date">August 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>&#10024; Added</h4>
+                <h3>&#10024; Added</h3>
                 <ul>
                     <li><strong>Notes Know Which Page They Came From:</strong> Every new note now stores the page title, so cards show a readable page name instead of a raw address &mdash; and you can search for it</li>
                     <li><strong>Tags:</strong> Add up to five tags to any note, click a tag chip to filter, or search <code>tag:research</code></li>
@@ -99,7 +99,7 @@
             </div>
 
             <div class="feature-category">
-                <h4>&#128027; Fixes</h4>
+                <h3>&#128027; Fixes</h3>
                 <ul>
                     <li><strong>Your Notes Cannot Vanish From a Sync Hiccup:</strong> A missing internal bookkeeping record could cause NotePin to clear its stored notes and show an empty list. It now rebuilds that record from your notes instead</li>
                     <li><strong>Privacy Settings No Longer Rewrite Old Notes:</strong> Turning on URL trimming used to strip links from every existing note the next time you touched any note. It now applies only to notes you save or edit, exactly as the setting says</li>
@@ -111,7 +111,7 @@
             </div>
 
             <div class="feature-category">
-                <h4>&#9889; Improved</h4>
+                <h3>&#9889; Improved</h3>
                 <ul>
                     <li><strong>Much Faster Saving:</strong> Saving a large note collection went from roughly half a second of lag to a few milliseconds</li>
                     <li><strong>Clearer to See and Use:</strong> Visible keyboard focus, better light-mode contrast, screen readers can finally read your note text, reduced-motion is respected, pinned notes are obvious again, and the popup fits more notes on screen</li>
@@ -123,20 +123,20 @@
         <!-- Version 1.0.17 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.17</span>
+                <h2 class="version-number">v1.0.17</h2>
                 <span class="version-badge badge-initial">Update</span>
                 <span class="version-date">June 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>&#10024; Added</h4>
+                <h3>&#10024; Added</h3>
                 <ul>
                     <li><strong>A Friendly Nudge for Reviews:</strong> Long-time users who actively take notes now see a one-time, dismissible prompt to rate NotePin or share feedback &mdash; it only appears after you have used NotePin for a while and never nags again once answered</li>
                 </ul>
             </div>
 
             <div class="feature-category">
-                <h4>&#128027; Fixes</h4>
+                <h3>&#128027; Fixes</h3>
                 <ul>
                     <li><strong>Notes Stop Disappearing Across www and Subdomains:</strong> The current-site filter, toolbar badge, and in-page sticky notes now treat <code>www</code>, the main domain, and its subdomains as the same site, so a note saved on <code>www.example.com</code> still shows up on <code>example.com</code></li>
                     <li><strong>Tidier Note Timestamps:</strong> Notes without a saved link now show their time on a clean row instead of an overlay that could overlap long timestamps</li>
@@ -144,7 +144,7 @@
             </div>
 
             <div class="feature-category">
-                <h4>&#128260; Changed</h4>
+                <h3>&#128260; Changed</h3>
                 <ul>
                     <li><strong>Easier-to-Tap Controls:</strong> Larger header buttons, color swatches, and note actions, with clearer keyboard focus highlights throughout</li>
                     <li><strong>Cleaner Popup &amp; Wider Layout Support:</strong> Flatter, calmer popup panels and a fullscreen sidebar that adapts better to mid-size and tablet screens</li>
@@ -155,13 +155,13 @@
         <!-- Version 1.0.16 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.16</span>
+                <h2 class="version-number">v1.0.16</h2>
                 <span class="version-badge badge-initial">Bug Fix</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>&#128027; Fixes</h4>
+                <h3>&#128027; Fixes</h3>
                 <ul>
                     <li><strong>Quieter Badge Updates:</strong> NotePin now handles tabs that close during background badge refreshes, avoiding repeated service worker errors</li>
                 </ul>
@@ -171,13 +171,13 @@
         <!-- Version 1.0.15 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.15</span>
+                <h2 class="version-number">v1.0.15</h2>
                 <span class="version-badge badge-initial">Update</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>&#10024; Added</h4>
+                <h3>&#10024; Added</h3>
                 <ul>
                     <li><strong>Fullscreen Bulk Workflows:</strong> The fullscreen board now supports selecting visible notes, applying colors, pinning or unpinning, exporting selected notes, deleting selected notes with undo, and cleaning duplicate notes</li>
                     <li><strong>Smarter Page Stickies:</strong> In-page sticky notes now remember position and collapsed state per site, include a compact note filter, and let you hide the overlay for the current site temporarily</li>
@@ -186,7 +186,7 @@
             </div>
 
             <div class="feature-category">
-                <h4>&#128260; Changed</h4>
+                <h3>&#128260; Changed</h3>
                 <ul>
                     <li><strong>More Resilient Settings:</strong> Settings now open immediately with cached values when the background runtime is unavailable, then show a warning instead of blocking the modal</li>
                     <li><strong>Cleaner Fullscreen Onboarding:</strong> The first-run empty state now points to the fullscreen <strong>New Note</strong> button</li>
@@ -196,7 +196,7 @@
             </div>
 
             <div class="feature-category">
-                <h4>&#128027; Fixes</h4>
+                <h3>&#128027; Fixes</h3>
                 <ul>
                     <li><strong>Safer Undo Restore:</strong> Restoring deleted notes now skips IDs that already exist, avoiding duplicate notes after sync or race-condition restores</li>
                     <li><strong>Documentation Sync:</strong> Popup documentation now matches the current search-first filter layout with the <strong>Current Site</strong> checkbox</li>
@@ -207,13 +207,13 @@
         <!-- Version 1.0.14 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.14</span>
+                <h2 class="version-number">v1.0.14</h2>
                 <span class="version-badge badge-initial">Update</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>&#128260; Changed</h4>
+                <h3>&#128260; Changed</h3>
                 <ul>
                     <li><strong>Minor Interface Improvements:</strong> Popup and fullscreen received small polish updates across note cards, note dialogs, and mobile layout behavior</li>
                     <li><strong>Better Consistency:</strong> Note actions and metadata placement were refined so the experience feels more uniform across surfaces</li>
@@ -224,13 +224,13 @@
         <!-- Version 1.0.13 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.13</span>
+                <h2 class="version-number">v1.0.13</h2>
                 <span class="version-badge badge-initial">Bug Fix</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>&#128027; Fixes</h4>
+                <h3>&#128027; Fixes</h3>
                 <ul>
                     <li><strong>Consistent Note Metadata:</strong> Popup and fullscreen note cards now handle saved metadata the same way, so notes without a URL no longer leave an empty row above the text and notes with a URL keep the URL and date on the same line</li>
                     <li><strong>Fullscreen Layout Polish:</strong> The fullscreen top bar and filter sidebar header are aligned to the same height again, and fullscreen mobile modals now open near the top with fixed spacing instead of sitting vertically centered</li>
@@ -241,13 +241,13 @@
         <!-- Version 1.0.12 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.12</span>
+                <h2 class="version-number">v1.0.12</h2>
                 <span class="version-badge badge-initial">Bug Fix</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>&#128027; Fixes</h4>
+                <h3>&#128027; Fixes</h3>
                 <ul>
                     <li><strong>Long Popup Notes:</strong> Viewing a long note in the popup now keeps the note header and top content visible by scrolling the note body instead of letting the whole modal drift out of view</li>
                     <li><strong>No Empty URL Rows:</strong> Popup and fullscreen now hide blank URL rows in note cards and note-view modals when a note has no saved URL, including cases where the stored value is only whitespace</li>
@@ -259,13 +259,13 @@
         <!-- Version 1.0.11 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.11</span>
+                <h2 class="version-number">v1.0.11</h2>
                 <span class="version-badge badge-initial">Update</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>✨ Added</h4>
+                <h3>✨ Added</h3>
                 <ul>
                     <li><strong>Optional Page Stickies:</strong> You can now turn on in-page sticky notes in Settings to show matching NotePin notes directly on supported websites</li>
                     <li><strong>Dedicated Sticky Editor:</strong> Each page sticky now includes a quick edit button that opens its own focused editor window, so you can update a note without hunting for it in the popup</li>
@@ -274,7 +274,7 @@
             </div>
 
             <div class="feature-category">
-                <h4>🔄 Changed</h4>
+                <h3>🔄 Changed</h3>
                 <ul>
                     <li><strong>Permission On Demand:</strong> NotePin now asks for website access only when you enable the new in-page sticky notes feature, and the toggle now stays enabled after you allow access</li>
                     <li><strong>Page-Specific Stickies:</strong> You can now keep a sticky note tied to one exact page instead of every page on the same site</li>
@@ -284,7 +284,7 @@
             </div>
 
             <div class="feature-category">
-                <h4>🐛 Fixes</h4>
+                <h3>🐛 Fixes</h3>
                 <ul>
                     <li><strong>No Reload Needed:</strong> Page stickies now appear on tabs that were already open when you enable the feature, and they disappear right away when you turn the feature off</li>
                     <li><strong>Better Sticky Reliability:</strong> Sticky notes now do a better job remembering their expanded state, updating on SPA-style navigation, and recovering cleanly after reloads or interrupted drags</li>
@@ -297,13 +297,13 @@
         <!-- Version 1.0.10 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.10</span>
+                <h2 class="version-number">v1.0.10</h2>
                 <span class="version-badge badge-initial">Bug Fix</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>🐛 Fixes</h4>
+                <h3>🐛 Fixes</h3>
                 <ul>
                     <li><strong>Sharper Button Labels:</strong> Popup, fullscreen, and welcome-page buttons now render text more crisply on Windows by using the bundled bold face and avoiding the soft hover shift that could blur labels</li>
                 </ul>
@@ -313,13 +313,13 @@
         <!-- Version 1.0.9 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.9</span>
+                <h2 class="version-number">v1.0.9</h2>
                 <span class="version-badge badge-initial">Bug Fix</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>🐛 Fixes</h4>
+                <h3>🐛 Fixes</h3>
                 <ul>
                     <li><strong>Long Note Editors:</strong> Popup keeps long drafts under control inside the popup, fullscreen textareas auto-grow, inline editing temporarily removes the note card height cap, and textareas now shrink back down correctly after you shorten a note</li>
                 </ul>
@@ -329,20 +329,20 @@
         <!-- Version 1.0.8 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.8</span>
+                <h2 class="version-number">v1.0.8</h2>
                 <span class="version-badge badge-initial">Update</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>✨ Added</h4>
+                <h3>✨ Added</h3>
                 <ul>
                     <li><strong>Color Filters:</strong> Fullscreen now lets you filter notes by one or more colors and combine them with domain filters for tighter review passes</li>
                 </ul>
             </div>
 
             <div class="feature-category">
-                <h4>🔄 Changed</h4>
+                <h3>🔄 Changed</h3>
                 <ul>
                     <li><strong>Smarter Filter Sidebar:</strong> The No Domain filter now sits directly under All Notes with a clearer icon, and selected colors stand out more clearly</li>
                     <li><strong>Dark Mode Contrast:</strong> Active filters and the fullscreen New Note button are easier to read in dark mode</li>
@@ -350,7 +350,7 @@
             </div>
 
             <div class="feature-category">
-                <h4>🐛 Fixes</h4>
+                <h3>🐛 Fixes</h3>
                 <ul>
                     <li><strong>Filter Reliability:</strong> Used note colors stay visible in the filter list, and imported notes now reopen the full board view so they are easier to review right away</li>
                     <li><strong>Sidebar Layout:</strong> The domain list now scrolls on its own while the color tray stays pinned at the bottom of the fullscreen sidebar</li>
@@ -363,13 +363,13 @@
         <!-- Version 1.0.7 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.7</span>
+                <h2 class="version-number">v1.0.7</h2>
                 <span class="version-badge badge-initial">Update</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>🔄 Changed</h4>
+                <h3>🔄 Changed</h3>
                 <ul>
                     <li><strong>Copy Feedback:</strong> Inline copy buttons now turn green with a checkmark for 3 seconds after a successful copy</li>
                     <li><strong>Website Navigation:</strong> The site header now collapses into a burger menu on mobile so the main pages stay easy to navigate on smaller screens</li>
@@ -378,7 +378,7 @@
             </div>
 
             <div class="feature-category">
-                <h4>🐛 Fixes</h4>
+                <h3>🐛 Fixes</h3>
                 <ul>
                     <li><strong>Filter Header Spacing:</strong> Fullscreen filter section headings now keep the intended spacing above the color and domain lists</li>
                     <li><strong>New Note Cancel:</strong> Canceling a fullscreen draft now clears it immediately so it does not reopen unexpectedly or keep the refresh warning around</li>
@@ -394,13 +394,13 @@
         <!-- Version 1.0.6 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.6</span>
+                <h2 class="version-number">v1.0.6</h2>
                 <span class="version-badge badge-initial">Update</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>✨ Added</h4>
+                <h3>✨ Added</h3>
                 <ul>
                     <li><strong>Quick Copy:</strong> Every note card now includes a copy-to-clipboard button with success and error notifications when NotePin writes to the clipboard</li>
                     <li><strong>Fullscreen Help:</strong> Fullscreen now includes an in-app Help &amp; FAQ modal with quick answers and a large Feedback &amp; Issues button</li>
@@ -408,7 +408,7 @@
             </div>
 
             <div class="feature-category">
-                <h4>🔄 Changed</h4>
+                <h3>🔄 Changed</h3>
                 <ul>
                     <li><strong>Browser Language:</strong> NotePin now follows Chrome's UI language for English, Spanish, Brazilian Portuguese, French, German, Japanese, and Norwegian Bokmål, with English as the fallback when your browser language is not supported</li>
                     <li><strong>Uninstall Feedback:</strong> Removing NotePin now opens a short feedback form so you can share why the extension did not fit your workflow</li>
@@ -421,7 +421,7 @@
             </div>
 
             <div class="feature-category">
-                <h4>🐛 Fixes</h4>
+                <h3>🐛 Fixes</h3>
                 <ul>
                     <li><strong>Norwegian Chrome:</strong> Chrome profiles using Norwegian locale variants now pick up the localized Bokmål NotePin interface instead of falling back to English</li>
                     <li><strong>Popup Draft Restore:</strong> Draft text now comes back the next time you open the popup if you closed it by mistake</li>
@@ -437,13 +437,13 @@
         <!-- Version 1.0.5 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.5</span>
+                <h2 class="version-number">v1.0.5</h2>
                 <span class="version-badge badge-initial">Bug Fix</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>🐛 Fixes</h4>
+                <h3>🐛 Fixes</h3>
                 <ul>
                     <li><strong>Draft Handoff:</strong> Opening fullscreen while you are still writing in the popup now carries that in-progress note across instead of starting blank</li>
                     <li><strong>Draft Context:</strong> The transferred draft now keeps its selected color and pre-fills the page URL when NotePin can read the current site</li>
@@ -454,20 +454,20 @@
         <!-- Version 1.0.4 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.4</span>
+                <h2 class="version-number">v1.0.4</h2>
                 <span class="version-badge badge-initial">Update</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>✨ Added</h4>
+                <h3>✨ Added</h3>
                 <ul>
                     <li><strong>Privacy Settings:</strong> You can now strip query strings and hash fragments from newly saved note URLs</li>
                 </ul>
             </div>
 
             <div class="feature-category">
-                <h4>🔄 Changed</h4>
+                <h3>🔄 Changed</h3>
                 <ul>
                     <li><strong>Context Menu Flow:</strong> Saving selected text from the page context menu now opens NotePin with the text prefilled so you can review it before saving</li>
                     <li><strong>Shared UI Refresh:</strong> Popup and fullscreen now share a more polished UI layer, and fullscreen works better on narrower screens</li>
@@ -476,7 +476,7 @@
             </div>
 
             <div class="feature-category">
-                <h4>🐛 Fixes</h4>
+                <h3>🐛 Fixes</h3>
                 <ul>
                     <li><strong>Bare URL Entry:</strong> Note URL fields now add https:// automatically for bare web addresses while still rejecting incomplete URLs</li>
                     <li><strong>Missing Domain Filter:</strong> Fullscreen domain filters now include a No Domain option when saved notes do not have a domain</li>
@@ -493,20 +493,20 @@
         <!-- Version 1.0.3 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.3</span>
+                <h2 class="version-number">v1.0.3</h2>
                 <span class="version-badge badge-initial">Update</span>
                 <span class="version-date">April 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>✨ Added</h4>
+                <h3>✨ Added</h3>
                 <ul>
                     <li><strong>Microsoft Edge Release:</strong> NotePin is now available on Microsoft Edge Add-ons</li>
                 </ul>
             </div>
 
             <div class="feature-category">
-                <h4>🐛 Fixes</h4>
+                <h3>🐛 Fixes</h3>
                 <ul>
                     <li><strong>Sync Reliability:</strong> Improved sync recovery helps preserve existing notes and prevents accidental overwrites when browser sync data is temporarily incomplete</li>
                 </ul>
@@ -516,13 +516,13 @@
         <!-- Version 1.0.2 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.2</span>
+                <h2 class="version-number">v1.0.2</h2>
                 <span class="version-badge badge-initial">Bug Fix</span>
                 <span class="version-date">March 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>🐛 Fixes</h4>
+                <h3>🐛 Fixes</h3>
                 <ul>
                     <li><strong>Sync Storage:</strong> Fixed chrome.storage.sync chunking for emoji and other non-ASCII text</li>
                     <li><strong>Search and Note Actions:</strong> Search, filtering, note actions, and import/export flows are more reliable in popup and fullscreen</li>
@@ -534,13 +534,13 @@
         <!-- Version 1.0.1 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.1</span>
+                <h2 class="version-number">v1.0.1</h2>
                 <span class="version-badge badge-initial">Bug Fix</span>
                 <span class="version-date">March 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>🐛 Fixes</h4>
+                <h3>🐛 Fixes</h3>
                 <ul>
                     <li><strong>Popup Note Form:</strong> Note form no longer closes on filter tab clicks when it contains unsaved text</li>
                 </ul>
@@ -550,13 +550,13 @@
         <!-- Version 1.0.0 -->
         <div class="version-card">
             <div class="version-header">
-                <span class="version-number">v1.0.0</span>
+                <h2 class="version-number">v1.0.0</h2>
                 <span class="version-badge badge-initial">Initial Release</span>
                 <span class="version-date">March 2026</span>
             </div>
 
             <div class="feature-category">
-                <h4>✨ Added</h4>
+                <h3>✨ Added</h3>
                 <ul>
                     <li><strong>Initial Release:</strong> NotePin launched with page-based notes you can create, edit, delete, pin, color, and expand inline</li>
                     <li><strong>Popup and Fullscreen Views:</strong> Search, domain filtering, sorting, and note previews are available in both compact and full-page layouts</li>
