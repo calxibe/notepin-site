@@ -1,11 +1,3 @@
-if (document.fonts?.ready) {
-    document.fonts.ready.then(() => {
-        document.body.classList.add('fonts-loaded');
-    });
-} else {
-    document.body.classList.add('fonts-loaded');
-}
-
 const headerInner = document.querySelector('.header-inner');
 const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.getElementById('site-nav');
