@@ -2,6 +2,53 @@
    NotePin - Main Stylesheet
    =================================== */
 
+/* ===================================
+   Self-hosted fonts
+
+   Previously served from fonts.googleapis.com, which put two extra origins on
+   the critical path: a stylesheet request to googleapis, then woff2 files from
+   gstatic, each needing its own DNS + TLS before a glyph arrived. Same-origin
+   here and declared in the stylesheet the page already blocks on, so there is
+   no extra round trip.
+
+   Both families are variable, so one file covers every weight the site uses.
+   The unicode-range split is Google's own, keeping accented glyphs off the
+   common path. See MAINTENANCE.md to refresh them.
+   =================================== */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url('fonts/inter-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url('fonts/inter-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400 500;
+    font-display: swap;
+    src: url('fonts/jetbrains-mono-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400 500;
+    font-display: swap;
+    src: url('fonts/jetbrains-mono-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+
 /* CSS Variables — Dark (default) */
 :root {
     --primary: #f59e0b;
@@ -28,6 +75,14 @@
     --btn-primary-to: var(--primary-dark);
     --btn-primary-ink: #1a1205;
     --btn-primary-glow: rgba(245, 158, 11, 0.35);
+    /* Amber as *text* needs 4.5:1, which the fill colours do not reach in the light
+       theme. These two are the text-safe versions; --primary and --accent stay as they
+       are for fills, borders and gradients. Dark theme already clears it, so these
+       match there. */
+    --primary-text: #f59e0b;
+    /* 9.2:1 on --bg, 8.3:1 on --surface */
+    --accent-text: #fb923c;
+    /* 6.6:1 on --surface-light */
 }
 
 /* CSS Variables — Light */
@@ -40,7 +95,8 @@
         --bg: #f8f9fa;
         --bg-gradient: linear-gradient(135deg, #f8f9fa 0%, #e5e7eb 50%, #f8f9fa 100%);
         --text: #1f2937;
-        --text-muted: #6b7280;
+        /* was #6b7280, which came to 4.39:1 on --surface-light and failed AA */
+        --text-muted: #5f6673;
         --surface: #ffffff;
         --surface-light: #f3f4f6;
         --border: #d1d5db;
@@ -56,6 +112,12 @@
         --btn-primary-to: #92400e;
         --btn-primary-ink: #ffffff;
         --btn-primary-glow: rgba(180, 83, 9, 0.3);
+        /* --primary (#d97706) is only 3.0:1 on the page and 3.2:1 on a card, so it
+           cannot carry text here. These are the darkened equivalents. */
+        --primary-text: #a3480a;
+        /* 5.7:1 on --bg, 6.0:1 on --surface */
+        --accent-text: #c2410c;
+        /* 4.7:1 on --surface-light */
     }
 }
 
@@ -304,7 +366,7 @@ code {
     border-radius: 4px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.85rem;
-    color: var(--accent);
+    color: var(--accent-text);
 }
 
 .intro {
@@ -836,7 +898,7 @@ section {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--primary-light);
+    color: var(--primary-text);
     margin-bottom: 16px;
 }
 
@@ -950,7 +1012,7 @@ section {
 .validation-item h4 {
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.1rem;
-    color: var(--accent);
+    color: var(--accent-text);
     margin-bottom: 12px;
 }
 
@@ -1071,7 +1133,7 @@ section {
 .version-section h3 {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--accent-text);
     margin-bottom: 12px;
     display: flex;
     align-items: center;
@@ -1568,12 +1630,15 @@ body.lightbox-open {
     left: 0;
 }
 
-.eyebrow {
+/* `.manual-topic p` is (0,1,1) and would otherwise win over a bare `.eyebrow`,
+   which quietly turned every kicker inside a topic muted grey instead of amber. */
+.eyebrow,
+.manual-topic .eyebrow {
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--primary);
+    color: var(--primary-text);
     margin-bottom: 6px;
 }
 
@@ -1745,7 +1810,7 @@ body.lightbox-open {
     min-width: 15px;
     font-size: 0.72rem;
     font-variant-numeric: tabular-nums;
-    color: var(--border);
+    color: var(--text-muted);
     font-weight: 700;
 }
 
@@ -1810,14 +1875,26 @@ body.lightbox-open {
 /* Inline links only. Without :not(.btn) this beats .btn-primary on specificity, which
    painted the button label amber on an amber gradient and replaced the secondary
    button's bottom border with a transparent one. */
-.manual-topic a:not(.btn) {
-    color: var(--primary);
+/* A link has to be identifiable without relying on colour, so prose links carry a
+   permanent underline rather than revealing one on hover. Nav items, buttons, cards
+   and the contents list are deliberately excluded — they read as controls, not as
+   links in a sentence. */
+.manual-topic a:not(.btn),
+.manual-hero-lede a,
+.note-box a,
+.content p a,
+.content li a {
+    color: var(--primary-text);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid currentColor;
 }
 
-.manual-topic a:not(.btn):hover {
-    border-bottom-color: currentColor;
+.manual-topic a:not(.btn):hover,
+.manual-hero-lede a:hover,
+.note-box a:hover,
+.content p a:hover,
+.content li a:hover {
+    color: var(--heading);
 }
 
 .manual-topic code {
