@@ -36,9 +36,9 @@
     <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        media="print" onload="this.media='all';this.onload=null">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
     <link rel="stylesheet" href="style.css?v=20260813-1">
     <script src="index.js" defer></script>
     <script src="manual.js" defer></script>
@@ -71,7 +71,7 @@
     <header>
         <div class="header-inner">
             <a href="index.html" class="logo">
-                <img src="img/icon48.png" alt="NotePin" class="logo-icon">
+                <img src="img/icon48.png" alt="NotePin" class="logo-icon" width="48" height="48">
                 <span class="logo-text">Note<span>Pin</span></span>
             </a>
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
@@ -337,7 +337,7 @@
 
                     <figure class="manual-screenshot">
                         <img src="img/manual/manual-popup.png"
-                            alt="The NotePin popup open beside a web page, with a note being written and saved notes listed below" loading="lazy" decoding="async">
+                            alt="The NotePin popup open beside a web page, with a note being written and saved notes listed below" loading="lazy" decoding="async" width="1280" height="704">
                         <figcaption>The popup mid-note. The page you are on is attached automatically.</figcaption>
                     </figure>
 
@@ -399,7 +399,7 @@
                     </div>
 
                     <figure class="manual-figure">
-                        <img src="img/manual/manual-note-card.png" alt="A NotePin note card showing the page title as a link, the note text, a tag chip, and the action buttons" loading="lazy" decoding="async">
+                        <img src="img/manual/manual-note-card.png" alt="A NotePin note card showing the page title as a link, the note text, a tag chip, and the action buttons" loading="lazy" decoding="async" width="992" height="174">
                         <figcaption>One note card: page title as the link, note text, a tag, and the actions.</figcaption>
                     </figure>
                     <h3>Why the page title matters</h3>
@@ -441,7 +441,7 @@
 
                     <h3>Name what a color means</h3>
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-settings-colors.png" alt="The Color labels section of NotePin settings with four of the eight colors named" loading="lazy" decoding="async">
+                        <img src="img/manual/manual-settings-colors.png" alt="The Color labels section of NotePin settings with four of the eight colors named" loading="lazy" decoding="async" width="510" height="223">
                         <figcaption>Settings → Color labels. Blank fields keep the default names.</figcaption>
                     </figure>
                     <p>
@@ -471,7 +471,7 @@
                     <figure class="manual-figure manual-figure-narrow">
                         <img src="img/manual/manual-note-form.png"
                             alt="The NotePin New Note dialog with a URL, note text, a tags field, and the color picker"
-                            loading="lazy" decoding="async">
+                            loading="lazy" decoding="async" width="544" height="606">
                         <figcaption>The note form. Tags go in comma separated.</figcaption>
                     </figure>
                     <p>
@@ -505,13 +505,13 @@
 
                     <figure class="manual-screenshot">
                         <img src="img/manual/manual-stickies-page.png"
-                            alt="Three NotePin sticky notes floating on a product page, showing price, screen, and return window notes" loading="lazy" decoding="async">
+                            alt="Three NotePin sticky notes floating on a product page, showing price, screen, and return window notes" loading="lazy" decoding="async" width="1280" height="704">
                         <figcaption>Sticky notes on the page they were written about.</figcaption>
                     </figure>
 
                     <h3>Turning them on</h3>
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-settings-stickies.png" alt="The in-page sticky notes section of NotePin settings with both checkboxes" loading="lazy" decoding="async">
+                        <img src="img/manual/manual-settings-stickies.png" alt="The in-page sticky notes section of NotePin settings with both checkboxes" loading="lazy" decoding="async" width="510" height="201">
                         <figcaption>Settings → In-page sticky notes. Both options live here.</figcaption>
                     </figure>
                     <ol class="manual-steps">
@@ -531,7 +531,7 @@
 
                     <h3>Using the panel</h3>
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-sticky-panel.png" alt="The NotePin sticky note panel showing three notes with color labels, dates, and edit buttons" loading="lazy" decoding="async">
+                        <img src="img/manual/manual-sticky-panel.png" alt="The NotePin sticky note panel showing three notes with color labels, dates, and edit buttons" loading="lazy" decoding="async" width="352" height="446">
                         <figcaption>The panel itself: a header with Hide site and collapse, then one card per note.</figcaption>
                     </figure>
                     <div class="manual-table-wrap">
@@ -581,7 +581,7 @@
 
                     <figure class="manual-screenshot">
                         <img src="img/manual/manual-board.png"
-                            alt="The NotePin board showing the domain and color sidebar beside a list of notes" loading="lazy" decoding="async">
+                            alt="The NotePin board showing the domain and color sidebar beside a list of notes" loading="lazy" decoding="async" width="1280" height="704">
                         <figcaption>The board, with the domain list and color filters in the sidebar.</figcaption>
                     </figure>
 
@@ -602,7 +602,7 @@
                     </div>
 
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-sidebar-filters.png" alt="The NotePin board sidebar showing the domain list with counts and the color filter grid" loading="lazy" decoding="async">
+                        <img src="img/manual/manual-sidebar-filters.png" alt="The NotePin board sidebar showing the domain list with counts and the color filter grid" loading="lazy" decoding="async" width="280" height="800">
                         <figcaption>The sidebar: domains with counts on top, color filters underneath.</figcaption>
                     </figure>
                     <h3>No Domain</h3>
@@ -650,7 +650,7 @@
 
                     <h3>Searching by tag</h3>
                     <figure class="manual-figure">
-                        <img src="img/manual/manual-search-tag.png" alt="The NotePin board search box containing tag:work with a single matching note below it" loading="lazy" decoding="async">
+                        <img src="img/manual/manual-search-tag.png" alt="The NotePin board search box containing tag:work with a single matching note below it" loading="lazy" decoding="async" width="996" height="300">
                         <figcaption>A tag: query narrows the board to one tag.</figcaption>
                     </figure>
                     <p>
@@ -691,7 +691,7 @@
 
                     <figure class="manual-screenshot">
                         <img src="img/manual/manual-board-dark.png"
-                            alt="The NotePin board in dark mode with several notes selected and the bulk action toolbar visible" loading="lazy" decoding="async">
+                            alt="The NotePin board in dark mode with several notes selected and the bulk action toolbar visible" loading="lazy" decoding="async" width="1280" height="704">
                         <figcaption>The bulk toolbar, shown here in dark mode.</figcaption>
                     </figure>
 
@@ -703,7 +703,7 @@
                     <figure class="manual-figure">
                         <img src="img/manual/manual-bulk-toolbar.png"
                             alt="The NotePin bulk action toolbar showing 9 selected with 8 hidden by filters, and the color, pin, unpin, export, delete and duplicates buttons"
-                            loading="lazy" decoding="async">
+                            loading="lazy" decoding="async" width="996" height="87">
                         <figcaption>The bulk toolbar. The amber pill appears when the selection includes notes you cannot see.</figcaption>
                     </figure>
 
@@ -745,7 +745,7 @@
 
                     <h3>Editing in place</h3>
                     <figure class="manual-figure">
-                        <img src="img/manual/manual-inline-edit.png" alt="A NotePin note card in inline edit mode with an editable URL, a text area, a color picker and Cancel and Save buttons" loading="lazy" decoding="async">
+                        <img src="img/manual/manual-inline-edit.png" alt="A NotePin note card in inline edit mode with an editable URL, a text area, a color picker and Cancel and Save buttons" loading="lazy" decoding="async" width="992" height="292">
                         <figcaption>Inline editing: the card becomes the editor, in place.</figcaption>
                     </figure>
                     <p>
@@ -789,7 +789,7 @@
                     <figure class="manual-figure manual-figure-narrow">
                         <img src="img/manual/manual-settings-appearance.png"
                             alt="The Appearance setting in NotePin settings, a dropdown set to Match system"
-                            loading="lazy" decoding="async">
+                            loading="lazy" decoding="async" width="510" height="97">
                         <figcaption>Every setting looks like this: a label, a control, and it saves as you change it.</figcaption>
                     </figure>
 
@@ -943,7 +943,7 @@
 
                     <h3>The storage meter</h3>
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-settings-storage.png" alt="The NotePin storage meter showing a usage bar with kilobytes used out of the total" loading="lazy" decoding="async">
+                        <img src="img/manual/manual-settings-storage.png" alt="The NotePin storage meter showing a usage bar with kilobytes used out of the total" loading="lazy" decoding="async" width="510" height="135">
                         <figcaption>Settings → Storage. The bar turns amber at 80%.</figcaption>
                     </figure>
                     <p>
@@ -981,7 +981,7 @@
 
                     <h3>Export</h3>
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-settings-export.png" alt="The Notes section of NotePin settings showing the export format selector, Export and Import buttons, and the replace-all checkbox" loading="lazy" decoding="async">
+                        <img src="img/manual/manual-settings-export.png" alt="The Notes section of NotePin settings showing the export format selector, Export and Import buttons, and the replace-all checkbox" loading="lazy" decoding="async" width="510" height="310">
                         <figcaption>Settings → Notes, on the board. Export format and the replace-on-import switch.</figcaption>
                     </figure>
                     <p>Choose a format, then click <strong>Export Notes</strong>.</p>
