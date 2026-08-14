@@ -83,6 +83,8 @@
     /* 9.2:1 on --bg, 8.3:1 on --surface */
     --accent-text: #fb923c;
     /* 6.6:1 on --surface-light */
+    --success-text: #22c55e;
+    /* 6.0:1 on the tinted badge background */
 }
 
 /* CSS Variables — Light */
@@ -118,6 +120,8 @@
         /* 5.7:1 on --bg, 6.0:1 on --surface */
         --accent-text: #c2410c;
         /* 4.7:1 on --surface-light */
+        --success-text: #166534;
+        /* 6.3:1 on the tinted badge background; #16a34a was 2.9:1 */
     }
 }
 
@@ -529,7 +533,7 @@ code {
     box-shadow: 0 18px 40px rgba(0, 0, 0, calc(var(--shadow-strength) * 0.45));
 }
 
-.supported-box h4 {
+.supported-box h2 {
     font-size: 1.08rem;
     font-weight: 700;
     color: var(--text);
@@ -556,7 +560,7 @@ code {
     gap: 6px;
     background: rgba(217, 119, 6, 0.12);
     border: 1px solid rgba(217, 119, 6, 0.3);
-    color: var(--primary-light);
+    color: var(--primary-text);
     font-size: 0.95rem;
     font-weight: 600;
     padding: 9px 14px;
@@ -731,7 +735,7 @@ code {
 .screenshot-tab.active {
     background: rgba(245, 158, 11, 0.12);
     border-color: var(--primary);
-    color: var(--primary-light);
+    color: var(--primary-text);
 }
 
 .screenshot-note {
@@ -1040,7 +1044,7 @@ section {
 
 .note-box h4 {
     font-size: 1rem;
-    color: var(--warning);
+    color: var(--primary-text);
     margin-bottom: 8px;
 }
 
@@ -1084,6 +1088,8 @@ section {
 }
 
 .version-number {
+    font-size: 1.35rem;
+    margin: 0;
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.5rem;
     font-weight: 700;
@@ -1107,13 +1113,13 @@ section {
 
 .badge-dev {
     background: rgba(245, 158, 11, 0.15);
-    color: var(--warning);
+    color: var(--primary-text);
     border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .badge-initial {
     background: rgba(34, 197, 94, 0.15);
-    color: var(--success);
+    color: var(--success-text);
     border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
@@ -1164,7 +1170,7 @@ section {
     margin-bottom: 16px;
 }
 
-.feature-category h4 {
+.feature-category h3 {
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--heading);
@@ -1881,6 +1887,7 @@ body.lightbox-open {
    links in a sentence. */
 .manual-topic a:not(.btn),
 .manual-hero-lede a,
+.copyright a,
 .note-box a,
 .content p a,
 .content li a {
@@ -1891,6 +1898,7 @@ body.lightbox-open {
 
 .manual-topic a:not(.btn):hover,
 .manual-hero-lede a:hover,
+.copyright a:hover,
 .note-box a:hover,
 .content p a:hover,
 .content li a:hover {
@@ -2058,9 +2066,21 @@ body.lightbox-open {
     border-bottom: 0;
 }
 
-.manual-table-wrap td:first-child {
+.manual-table-wrap th[scope="row"] {
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    text-align: left;
+    background: none;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: inherit;
     color: var(--text);
     font-weight: 600;
+}
+
+.manual-table-wrap tbody tr:last-child th[scope="row"] {
+    border-bottom: 0;
 }
 
 /* ---- Card grid ---- */
@@ -2292,7 +2312,7 @@ body.lightbox-open {
     margin-bottom: 18px;
 }
 
-.guide-card h3 {
+.guide-card h2 {
     font-size: 1.12rem;
     font-weight: 700;
     line-height: 1.35;

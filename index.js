@@ -93,7 +93,9 @@ document.querySelectorAll('.screenshot-panel').forEach((panel) => {
             });
 
             featureCard.dataset.fullsrc = variant.dataset.fullsrc || featureCard.dataset.fullsrc;
-            featureCard.setAttribute('aria-label', variant.dataset.ariaLabel || featureCard.getAttribute('aria-label') || '');
+            // No aria-label here on purpose. The button's accessible name comes from its
+            // own visible text plus the image alt; an aria-label that did not repeat that
+            // visible text failed Lighthouse's label-content-name-mismatch check.
             featureImage.src = variant.dataset.previewsrc || featureImage.src;
             featureImage.alt = variant.dataset.alt || featureImage.alt;
 
