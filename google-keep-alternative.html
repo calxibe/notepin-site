@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Keep, OneNote &amp; Evernote Alternative for Web</title>
+    <meta name="description"
+        content="No account, no server, no subscription. A browser-only notes extension for people who only ever wanted notes attached to the web pages they were reading.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="canonical" href="https://notepin.fixquotes.com/google-keep-alternative.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotePin">
+    <meta property="og:title" content="A Lightweight Alternative to Google Keep, OneNote, and Evernote">
+    <meta property="og:description"
+        content="No account, no server, no subscription — and an honest account of what it does not do. A browser-only notes extension for web page notes.">
+    <meta property="og:url" content="https://notepin.fixquotes.com/google-keep-alternative.html">
+    <meta property="og:image" content="https://notepin.fixquotes.com/img/screenshots/popup_light_1280x800.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A Lightweight Alternative to Google Keep, OneNote, and Evernote">
+    <meta name="twitter:description"
+        content="No account, no server, no subscription — plus an honest account of what it does not do.">
+    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/screenshots/popup_light_1280x800.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260813-1">
+    <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
+    <noscript><style>body { opacity: 1 !important; }</style></noscript>
+    <script src="index.js" defer></script>
+    <script src="manual.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "A Lightweight Alternative to Google Keep, OneNote, and Evernote",
+      "description": "An honest comparison between full note-taking suites and a browser-only extension for notes attached to web pages, including what it deliberately does not do.",
+      "inLanguage": "en",
+      "url": "https://notepin.fixquotes.com/google-keep-alternative.html",
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "NotePin",
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Chrome, Microsoft Edge"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FixQuotes",
+        "url": "https://fixquotes.com/docs/about/"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a good free alternative to Google Keep?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on which part of Keep you use. If you use it for lists, reminders, images and voice notes across phone and desktop, you want a full notes app and NotePin is not it. If you mostly use it to jot something about a web page you are looking at, NotePin is lighter and better suited: it attaches the page address automatically, needs no account, and keeps everything inside your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a lightweight alternative to OneNote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OneNote is built around notebooks, sections and pages, which is a lot of structure if your notes are short and tied to websites. NotePin has no hierarchy at all — notes group themselves by the domain they were saved from, and colours and tags cut across that. It handles plain text only, up to 2,000 characters per note, so it suits short notes rather than long documents."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does NotePin need an account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. There is no account, no sign-up, and no NotePin server. Notes are stored in your browser profile. Syncing between your own devices uses your browser's own sync — the same mechanism that syncs your bookmarks — so nothing passes through a server belonging to us."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I import my notes from another app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only from a NotePin JSON export. There is no importer for Keep, OneNote, or Evernote archives, so an existing collection does not transfer. Export in the other direction works to JSON, Markdown, or CSV, which means you can leave at any time even though you cannot arrive in bulk."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="manual-page">
+    <a class="skip-link" href="#guide-content">Skip to the guide</a>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="img/icon48.png" alt="NotePin" class="logo-icon">
+                <span class="logo-text">Note<span>Pin</span></span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav id="site-nav">
+                <a href="index.html#features">Features</a>
+                <a href="manual.html">Manual</a>
+                <a href="guides.html" class="active" aria-current="page">Guides</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="guide-content">
+        <section class="manual-hero">
+            <div class="container">
+                <span class="section-badge"><a href="guides.html">Guides</a></span>
+                <h1>A Lightweight Alternative to Google Keep, OneNote, and Evernote</h1>
+                <p class="manual-hero-lede">
+                    Straight away, so nobody wastes their time: NotePin is <strong>not</strong> a replacement for
+                    these products. It has no rich text, no images, no attachments, no sharing, and no mobile app.
+                    It does one thing — short notes attached to web pages — and if that is genuinely what you use
+                    Keep for, it is lighter and faster. If it is not, close this tab and keep what you have.
+                </p>
+                <div class="cta-buttons manual-hero-actions">
+                    <a class="btn btn-primary" href="#comparison">See the comparison</a>
+                    <a class="btn btn-secondary" href="#who-should-not">Who should not switch</a>
+                </div>
+                <ul class="manual-facts">
+                    <li>No account, ever</li>
+                    <li>No server behind it</li>
+                    <li>Free, with nothing above it</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="container manual-layout">
+            <aside class="manual-sidebar" aria-label="Guide navigation">
+                <button class="manual-toc-toggle" id="manual-toc-toggle" type="button" aria-controls="manual-toc"
+                    aria-expanded="true">
+                    <span>On this page</span>
+                    <span class="manual-toc-toggle-state">Hide sections</span>
+                </button>
+                <nav class="manual-toc" id="manual-toc" aria-label="Guide sections">
+                    <p>On this page</p>
+                    <ol>
+                        <li><a href="#what-it-doesnt">What it does not do</a></li>
+                        <li><a href="#what-people-use">What people actually use Keep for</a></li>
+                        <li><a href="#comparison">The comparison</a></li>
+                        <li><a href="#no-account">No account, no server</a></li>
+                        <li><a href="#free">Free, with nothing above it</a></li>
+                        <li><a href="#moving">Moving in and out</a></li>
+                        <li><a href="#who-should-not">Who should not switch</a></li>
+                        <li><a href="#faq">Common questions</a></li>
+                    </ol>
+                </nav>
+            </aside>
+
+            <article class="manual-article">
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="what-it-doesnt">
+                    <p class="eyebrow">First</p>
+                    <h2>What it does not do</h2>
+                    <p class="manual-lede">
+                        The limitations, before the pitch. Most of these are deliberate; all of them are real.
+                    </p>
+
+                    <div class="manual-callout warning">
+                        <strong>NotePin has none of the following.</strong> No rich text or formatting. No images,
+                        drawings, audio, or file attachments. No sharing or collaboration. No reminders or
+                        notifications. No mobile app — it is a browser extension for Chrome and Edge on the desktop.
+                        No folders or notebooks. Notes are capped at 2,000 characters, and total storage at roughly
+                        250 to 300 notes.
+                    </div>
+
+                    <p>
+                        Those are not a roadmap. A tool that stays inside your browser's sync storage cannot hold
+                        images, and one with no server cannot offer sharing. The constraints come from the
+                        architecture, and the architecture is the point — it is what removes the account, the server,
+                        and the subscription.
+                    </p>
+                    <p>
+                        If any single item in that list is something you rely on, the honest recommendation is to stay
+                        where you are. Keep and OneNote are good products, and both have free tiers.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="what-people-use">
+                    <p class="eyebrow">The case</p>
+                    <h2>What people actually use Keep for</h2>
+                    <p>
+                        Full notes suites are built for the union of everything anyone might want. Most individuals
+                        use a narrow slice of that, and for a large number of people the slice looks like this:
+                    </p>
+                    <ul class="manual-check-list">
+                        <li>A few lines about a page they are looking at.</li>
+                        <li>A quote from an article, pasted in so it is not lost.</li>
+                        <li>A link plus a sentence explaining why it was worth keeping.</li>
+                        <li>A reminder about a specific site — which account, which price, which contact.</li>
+                    </ul>
+                    <p>
+                        Every one of those is a note <em>about a web page</em>. And in a general notes app, every one
+                        of them requires the same manual ritual: copy the text, switch app, paste, switch back, copy
+                        the URL, switch app again, paste. The address is the part that gets dropped, because it is the
+                        third trip.
+                    </p>
+                    <p>
+                        That is the whole gap. Not that Keep is bad at notes — it is that a general notes app has no
+                        concept of the page you were on, so the connection has to be rebuilt by hand every time.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="comparison">
+                    <p class="eyebrow">Side by side</p>
+                    <h2>The comparison</h2>
+                    <p>
+                        Structural differences only. Feature tiers and pricing at the three suites change regularly,
+                        so this compares how the tools are built rather than what any current plan includes.
+                    </p>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>How the tools are built</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">&nbsp;</th>
+                                    <th scope="col">Keep / OneNote / Evernote</th>
+                                    <th scope="col">NotePin</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Account required</td><td>Yes</td><td>No</td></tr>
+                                <tr><td>Where notes are stored</td><td>The vendor's servers</td><td>Your browser profile</td></tr>
+                                <tr><td>Sync mechanism</td><td>The vendor's sync</td><td>Your browser's own sync</td></tr>
+                                <tr><td>Rich text, images, attachments</td><td>Yes</td><td>No — plain text only</td></tr>
+                                <tr><td>Mobile apps</td><td>Yes</td><td>No — desktop browser only</td></tr>
+                                <tr><td>Sharing and collaboration</td><td>Yes</td><td>No</td></tr>
+                                <tr><td>Page address attached automatically</td><td>No — paste it yourself</td><td>Yes</td></tr>
+                                <tr><td>Notes grouped by website</td><td>No</td><td>Yes, automatically</td></tr>
+                                <tr><td>Count of notes for the current site</td><td>No</td><td>Yes, on the toolbar icon</td></tr>
+                                <tr><td>Notes shown on the site itself</td><td>No</td><td>Optional — <a href="sticky-notes-chrome-extension.html">sticky notes</a></td></tr>
+                                <tr><td>Practical size</td><td>Very large</td><td>About 250–300 notes</td></tr>
+                                <tr><td>Export</td><td>Varies by product</td><td>JSON, Markdown, CSV</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        Rows one to six favour the suites. Rows seven to ten are things they structurally cannot do,
+                        because a general notes app does not know what page your browser is on. That is the trade, and
+                        which side wins depends entirely on which rows describe your actual use.
+                    </p>
+
+                    <figure class="manual-screenshot">
+                        <img src="img/screenshots/popup_light_1280x800.png"
+                            alt="The NotePin popup open over a web page, showing saved notes with page titles and tags"
+                            width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption>Notes for the site you are on, without leaving it.</figcaption>
+                    </figure>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="no-account">
+                    <p class="eyebrow">Architecture</p>
+                    <h2>No account, no server</h2>
+                    <p class="manual-lede">
+                        There is no NotePin server. This is a factual statement about the architecture, not a
+                        privacy promise.
+                    </p>
+                    <p>
+                        Notes live in your browser profile. Syncing between your own machines uses your browser's own
+                        sync — the same mechanism that already carries your bookmarks — so a note travels from your
+                        desktop to your laptop the way a bookmark does, without passing through anything of ours.
+                    </p>
+                    <ul class="manual-check-list">
+                        <li>No sign-up, no email address, no password.</li>
+                        <li>No analytics inside the extension.</li>
+                        <li>No note data is sent to third parties.</li>
+                        <li>Nothing to delete from a server if you uninstall, because nothing was on one.</li>
+                    </ul>
+                    <p>
+                        The permissions are correspondingly small: <code>storage</code>, <code>activeTab</code>,
+                        <code>contextMenus</code>, and <code>scripting</code>. Website access is requested only if you
+                        switch on in-page sticky notes, never at install. Full detail is on the
+                        <a href="privacy.html">privacy page</a>.
+                    </p>
+                    <div class="manual-callout info">
+                        The flip side of no server: if you lose your browser profile and had no backup and no sync,
+                        the notes are gone. Export a JSON file occasionally. This is the genuine cost of the
+                        no-account model, and it is worth being clear about.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="free">
+                    <p class="eyebrow">Cost</p>
+                    <h2>Free, with nothing above it</h2>
+                    <p>
+                        NotePin is free, and there is no paid tier — no pro version, no device limit, no note cap
+                        beyond the storage ceiling described above, and no feature held back.
+                    </p>
+                    <p>
+                        This is worth stating plainly because "free note taking app" usually means a free tier
+                        underneath a paid one, where the free tier's limits are set by what makes upgrading feel
+                        necessary. There is no upgrade here, so the limits on this page are the real ones — set by
+                        browser sync storage, not by pricing strategy.
+                    </p>
+                    <p>
+                        What that also means: there is no revenue funding a large roadmap. NotePin is a small tool by
+                        <a href="https://fixquotes.com/docs/about/" target="_blank" rel="noopener">FixQuotes</a> and
+                        is likely to stay one.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="moving">
+                    <p class="eyebrow">Practicalities</p>
+                    <h2>Moving in and out</h2>
+
+                    <h3>Coming from Keep, OneNote, or Evernote</h3>
+                    <div class="manual-callout warning">
+                        <strong>There is no importer.</strong> NotePin can only import its own JSON export. An
+                        existing collection in another app does not transfer, and there is no conversion tool.
+                    </div>
+                    <p>
+                        In practice this matters less than it sounds, because the two tools do different jobs. The
+                        realistic pattern is not migration but division: leave the existing archive where it is, and
+                        start using NotePin for new notes that are about specific web pages. If after a month you have
+                        not opened the old app for that kind of note, you have your answer.
+                    </p>
+
+                    <h3>Leaving</h3>
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-settings-export.png"
+                            alt="The Notes section of NotePin settings showing the export format selector, Export and Import buttons, and the replace-all checkbox"
+                            width="820" height="480" loading="lazy" decoding="async">
+                        <figcaption>Settings → Notes, on the board.</figcaption>
+                    </figure>
+                    <p>
+                        Export offers three formats. <strong>Markdown</strong> is the exit route into Obsidian,
+                        Notion, or any plain-text system. <strong>CSV</strong> goes into a spreadsheet.
+                        <strong>JSON</strong> is the only one that can be imported back, so it is the one to keep as a
+                        backup. Files are named with the date and time, and you can export just the notes you have
+                        selected using the bulk toolbar.
+                    </p>
+                    <p>
+                        The asymmetry is deliberate and worth naming: you cannot bring a collection in, but you can
+                        always take one out.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="who-should-not">
+                    <p class="eyebrow">Honest scope</p>
+                    <h2>Who should not switch</h2>
+                    <p class="manual-lede">
+                        The clearest signal a comparison is fair is that it tells some readers to stay put.
+                    </p>
+                    <ul class="manual-check-list">
+                        <li><strong>You take notes on your phone.</strong> There is no mobile app and no plan for one. This alone rules out a large share of Keep users.</li>
+                        <li><strong>You need images, scans, or handwriting.</strong> OneNote is very good at this; NotePin cannot do it at all.</li>
+                        <li><strong>You write long documents.</strong> 2,000 characters is a few paragraphs, not a chapter.</li>
+                        <li><strong>You share notes with other people.</strong> No sharing, no collaboration, no export-to-a-colleague beyond sending them a file.</li>
+                        <li><strong>You use reminders.</strong> Nothing here notifies you of anything.</li>
+                        <li><strong>You have thousands of notes.</strong> The ceiling is a few hundred.</li>
+                        <li><strong>Most of your notes are not about web pages.</strong> Then the one advantage on offer does not apply to you.</li>
+                    </ul>
+                    <p>
+                        What is left, once those are excluded, is a fairly specific person: someone at a desktop
+                        browser, taking short notes about specific websites, who is tired of the copy-switch-paste
+                        ritual and does not want another account. For that person this is a better tool. For everyone
+                        else it is a worse one, and pretending otherwise would just waste an install.
+                    </p>
+
+                    <div class="cta-buttons">
+                        <a href="https://chromewebstore.google.com/detail/notepin-web-page-notes-st/fonaehlalnjinfdkjpicffebenbhhnbj"
+                            class="btn btn-primary" target="_blank" rel="noopener">
+                            <img src="img/chrome.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
+                            Add to Chrome — Free
+                        </a>
+                        <a href="https://microsoftedge.microsoft.com/addons/detail/notepin-web-page-notes-/neeciljnpmmlcfahncjdeffnclconjck"
+                            class="btn btn-secondary" target="_blank" rel="noopener">
+                            <img src="img/edge.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
+                            Add to Edge — Free
+                        </a>
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="faq">
+                    <p class="eyebrow">Answers</p>
+                    <h2>Common questions</h2>
+
+                    <h3>What is a good free alternative to Google Keep?</h3>
+                    <p>
+                        It depends on which part of Keep you use. If you use it for lists, reminders, images and voice
+                        notes across phone and desktop, you want a full notes app and NotePin is not it. If you mostly
+                        use it to jot something about a web page you are looking at, NotePin is lighter and better
+                        suited: it attaches the page address automatically, needs no account, and keeps everything
+                        inside your browser.
+                    </p>
+
+                    <h3>Is there a lightweight alternative to OneNote?</h3>
+                    <p>
+                        OneNote is built around notebooks, sections and pages, which is a lot of structure if your
+                        notes are short and tied to websites. NotePin has no hierarchy at all — notes group themselves
+                        by the domain they were saved from, and colours and tags cut across that. It handles plain
+                        text only, up to 2,000 characters per note, so it suits short notes rather than long documents.
+                    </p>
+
+                    <h3>Does NotePin need an account?</h3>
+                    <p>
+                        No. There is no account, no sign-up, and no NotePin server. Notes are stored in your browser
+                        profile. Syncing between your own devices uses your browser's own sync — the same mechanism
+                        that syncs your bookmarks — so nothing passes through a server belonging to us.
+                    </p>
+
+                    <h3>Can I import my notes from another app?</h3>
+                    <p>
+                        Only from a NotePin JSON export. There is no importer for Keep, OneNote, or Evernote archives,
+                        so an existing collection does not transfer. Export in the other direction works to JSON,
+                        Markdown, or CSV, which means you can leave at any time even though you cannot arrive in bulk.
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon">💡</span>
+                        <div>
+                            <h4>Where to go next</h4>
+                            <p>
+                                The capture flow that makes this worthwhile is covered in
+                                <a href="save-selected-text-chrome-extension.html">saving selected text</a>. For
+                                organising a growing collection, see
+                                <a href="bookmark-manager-alternative.html">a better bookmark manager</a>, and for a
+                                specific long-term use, <a href="digital-commonplace-book.html">the commonplace book
+                                guide</a>.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="manual.html">Manual</a>
+                <a href="guides.html">Guides</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="https://fixquotes.com/docs/contact/?category=notepin">Feedback &amp; Issues</a>
+            </div>
+            <p class="copyright">© 2026 FixQuotes. NotePin is a browser extension by <a href="https://fixquotes.com/docs/about/" target="_blank">FixQuotes</a>.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

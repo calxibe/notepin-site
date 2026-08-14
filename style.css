@@ -21,6 +21,13 @@
     --heading: #fff;
     --overlay: rgba(0, 0, 0, 0.85);
     --shadow-strength: 0.4;
+    /* Primary button. White on bright amber is only ~2.2:1, so the dark theme puts dark
+       ink on the amber instead. Kept as tokens so each theme can pick what actually
+       reads on its own gradient. */
+    --btn-primary-from: var(--primary);
+    --btn-primary-to: var(--primary-dark);
+    --btn-primary-ink: #1a1205;
+    --btn-primary-glow: rgba(245, 158, 11, 0.35);
 }
 
 /* CSS Variables — Light */
@@ -43,6 +50,12 @@
         --heading: #111827;
         --overlay: rgba(0, 0, 0, 0.6);
         --shadow-strength: 0.12;
+        /* The light theme's amber is already dark, so white ink wins here. Starting the
+           gradient at the deeper amber takes white from 3.2:1 to 5.0:1. */
+        --btn-primary-from: #b45309;
+        --btn-primary-to: #92400e;
+        --btn-primary-ink: #ffffff;
+        --btn-primary-glow: rgba(180, 83, 9, 0.3);
     }
 }
 
@@ -368,13 +381,6 @@ code {
     50% { opacity: 0.5; }
 }
 
-.cta-buttons {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
 
 .btn {
     display: inline-flex;
@@ -391,15 +397,17 @@ code {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+    background: linear-gradient(135deg, var(--btn-primary-from) 0%, var(--btn-primary-to) 100%);
+    color: var(--btn-primary-ink);
+    /* The glow was indigo, left over from another palette; it never matched the button. */
+    box-shadow: 0 4px 20px var(--btn-primary-glow);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
+    box-shadow: 0 8px 30px var(--btn-primary-glow);
     text-decoration: none;
+    color: var(--btn-primary-ink);
 }
 
 .btn-secondary {
@@ -915,47 +923,9 @@ section {
     color: var(--primary-light);
 }
 
-/* ===================================
-   Keyboard Shortcuts Section
-   =================================== */
-.shortcuts-section {
-    background: var(--surface);
-    border-radius: 20px;
-    padding: 60px;
-    border: 1px solid var(--border);
-}
-
-.shortcuts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.shortcut-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.kbd {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    padding: 8px 12px;
-    border-radius: 8px;
-    color: var(--text);
-    white-space: nowrap;
-}
-
-.shortcut-label {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
+/* The keyboard shortcuts section moved to manual.html#shortcuts, which styles its own
+   <kbd> elements under .manual-topic kbd. The .shortcuts-* and .kbd rules that served the
+   landing page went with it. */
 
 /* Validation Section */
 .validation-section {
@@ -1178,7 +1148,9 @@ section {
 
 .extensions-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    /* One column per card, so the row always fills. Was hard-coded to 5 and
+       left an empty column when a product card was removed. */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;
     margin-top: 40px;
 }
@@ -1507,7 +1479,6 @@ body.lightbox-open {
         grid-template-columns: 1fr;
     }
 
-    .shortcuts-section,
     .validation-section {
         padding: 32px 24px;
     }
@@ -1559,5 +1530,824 @@ body.lightbox-open {
     nav {
         background: rgba(255, 255, 255, 0.98);
         border-color: rgba(209, 213, 219, 0.92);
+    }
+}
+
+/* ===================================
+   User Manual (manual.html)
+   Built on the tokens above, so it
+   follows the site's dark/light modes.
+   =================================== */
+
+/* The site header is sticky, so an anchored heading would otherwise land underneath it.
+   scroll-margin-top sits on the jump target, so it works whichever element scrolls —
+   unlike scroll-padding-top, which only applies to the scroll container itself. */
+.manual-page .manual-topic {
+    scroll-margin-top: 88px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .manual-page {
+        scroll-behavior: smooth;
+    }
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 200;
+    background: var(--primary);
+    color: #1a1205;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 0 0 10px 0;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+.eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+/* ---- Hero ----
+   One centred hero shared by the manual, the guides hub, every guide, the
+   changelog and the privacy page, closed by a thin rule. Everything inside it
+   centres, so a left-aligned headline can never end up beside centred buttons. */
+.manual-hero {
+    padding: 64px 0 36px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.manual-hero-lede,
+.manual-hero .section-desc {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.manual-hero .manual-facts {
+    /* the shared ul rule carries margin-left: 24px, which throws a centred
+       flex row off-axis */
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.manual-hero h1 {
+    font-size: clamp(2.1rem, 4.5vw, 3.1rem);
+    /* 1.1 clipped the descenders on y and g */
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: var(--heading);
+    margin: 14px 0 16px;
+    padding-bottom: 0.06em;
+}
+
+.manual-hero-lede {
+    font-size: 1.08rem;
+    color: var(--text-muted);
+    max-width: 60ch;
+}
+
+.manual-hero-actions {
+    margin-top: 26px;
+}
+
+.manual-facts {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 26px;
+}
+
+.manual-facts li {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---- Layout ---- */
+.manual-layout {
+    display: grid;
+    grid-template-columns: 268px minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
+    padding-bottom: 96px;
+}
+
+.manual-sidebar {
+    position: sticky;
+    top: 92px;
+}
+
+.manual-toc-toggle {
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--heading);
+    font: inherit;
+    font-weight: 700;
+    padding: 13px 16px;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.manual-toc-toggle-state {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* This is a <nav>, and the site stylesheet gives bare nav elements a horizontal flex
+   row. Reset that here or the heading and the list sit side by side and the list
+   overflows its own scroll box. */
+.manual-toc {
+    display: block;
+    align-items: initial;
+    gap: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    max-height: calc(100vh - 132px);
+    overflow-y: auto;
+}
+
+.manual-toc > p {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.manual-toc ol {
+    list-style: none;
+    counter-reset: toc;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.manual-toc li {
+    counter-increment: toc;
+}
+
+/* The number is a flex item rather than an absolutely positioned ::before: absolute
+   positioning aligned the two boxes by their top edges, and because the counter is set
+   smaller than the label its baseline landed ~3px high. Baseline alignment is what the
+   eye reads as "on the same line". */
+.manual-toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 8px;
+}
+
+.manual-toc a::before {
+    content: counter(toc);
+    flex: none;
+    min-width: 15px;
+    font-size: 0.72rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--border);
+    font-weight: 700;
+}
+
+.manual-toc a:hover {
+    background: var(--surface-light);
+    color: var(--text);
+}
+
+.manual-toc a.is-current {
+    background: var(--surface-light);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.manual-toc a.is-current::before {
+    color: var(--primary);
+}
+
+/* ---- Article ---- */
+.manual-article {
+    min-width: 0;
+}
+
+.manual-topic {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.manual-topic:first-of-type {
+    padding-top: 8px;
+}
+
+.manual-topic:last-of-type {
+    border-bottom: 0;
+}
+
+.manual-topic h2 {
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--heading);
+    margin-bottom: 16px;
+}
+
+.manual-topic h3 {
+    font-size: 1.08rem;
+    color: var(--heading);
+    margin: 30px 0 10px;
+}
+
+.manual-topic p {
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    max-width: 72ch;
+}
+
+.manual-lede {
+    font-size: 1.06rem;
+    color: var(--text) !important;
+}
+
+/* Inline links only. Without :not(.btn) this beats .btn-primary on specificity, which
+   painted the button label amber on an amber gradient and replaced the secondary
+   button's bottom border with a transparent one. */
+.manual-topic a:not(.btn) {
+    color: var(--primary);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.manual-topic a:not(.btn):hover {
+    border-bottom-color: currentColor;
+}
+
+.manual-topic code {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.85em;
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 1px 6px;
+    color: var(--text);
+    word-break: break-word;
+}
+
+.manual-topic kbd {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.8em;
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    border-bottom-width: 2px;
+    border-radius: 6px;
+    padding: 2px 7px;
+    color: var(--text);
+    white-space: nowrap;
+}
+
+/* ---- Lists ---- */
+.manual-steps {
+    counter-reset: step;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 0 18px;
+    max-width: 72ch;
+}
+
+.manual-steps > li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 42px;
+    color: var(--text-muted);
+}
+
+.manual-steps > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #1a1205;
+    font-size: 0.8rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.manual-check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin: 0 0 18px;
+    max-width: 72ch;
+}
+
+.manual-check-list li {
+    position: relative;
+    padding-left: 28px;
+    color: var(--text-muted);
+}
+
+.manual-check-list li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 0.62em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+/* ---- Callouts ---- */
+.manual-callout {
+    border: 1px solid var(--border);
+    border-left-width: 4px;
+    border-radius: 0 12px 12px 0;
+    background: var(--surface);
+    padding: 16px 20px;
+    margin: 20px 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 76ch;
+}
+
+.manual-callout strong {
+    color: var(--heading);
+}
+
+.manual-callout.info {
+    border-left-color: var(--primary);
+}
+
+.manual-callout.warning {
+    border-left-color: var(--warning);
+}
+
+.manual-callout.danger {
+    border-left-color: var(--error);
+}
+
+/* ---- Tables ---- */
+.manual-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin: 20px 0 24px;
+    background: var(--surface);
+}
+
+.manual-table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    min-width: 480px;
+}
+
+.manual-table-wrap caption {
+    text-align: left;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 14px 18px 0;
+}
+
+.manual-table-wrap th {
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+.manual-table-wrap td {
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    vertical-align: top;
+}
+
+.manual-table-wrap tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.manual-table-wrap td:first-child {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* ---- Card grid ---- */
+.manual-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+    margin: 22px 0;
+}
+
+.manual-mini-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.manual-card-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #1a1205;
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.manual-mini-card h3 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    color: var(--heading);
+}
+
+.manual-mini-card ol {
+    padding-left: 18px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.manual-mini-card li {
+    margin-bottom: 5px;
+}
+
+/* ---- Disclosure ---- */
+.manual-disclosure {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.manual-disclosure > summary {
+    cursor: pointer;
+    padding: 15px 20px;
+    font-weight: 600;
+    color: var(--heading);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.manual-disclosure > summary::-webkit-details-marker {
+    display: none;
+}
+
+.manual-disclosure > summary::before {
+    content: "+";
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    color: var(--primary);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.manual-disclosure[open] > summary::before {
+    content: "\2212";
+}
+
+.manual-disclosure > summary:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: -2px;
+}
+
+.manual-disclosure > *:not(summary) {
+    padding: 0 20px;
+    color: var(--text-muted);
+    font-size: 0.94rem;
+}
+
+.manual-disclosure > ol,
+.manual-disclosure > ul {
+    padding-left: 42px;
+    padding-bottom: 16px;
+}
+
+.manual-disclosure > p {
+    padding-bottom: 16px;
+    max-width: none;
+}
+
+/* ---- Inline detail figures ----
+   Tight crops of one control, shown at their captured size so the UI stays crisp
+   rather than being upscaled. They only shrink when the column is narrower. */
+.manual-figure {
+    margin: 20px 0 24px;
+    max-width: 100%;
+}
+
+.manual-figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+}
+
+.manual-figure-narrow img {
+    max-width: min(100%, 520px);
+}
+
+.manual-figure figcaption {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 9px;
+}
+
+/* ---- Screenshot ---- */
+.manual-screenshot {
+    margin: 22px 0 26px;
+}
+
+.manual-screenshot img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.manual-screenshot figcaption {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+}
+
+
+
+
+.manual-footnote {
+    font-size: 0.86rem;
+    margin-top: 18px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1000px) {
+
+    .manual-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .manual-sidebar {
+        position: static;
+    }
+
+    .manual-toc-toggle {
+        display: flex;
+    }
+
+    .manual-toc {
+        max-height: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .manual-hero {
+        padding: 48px 0 32px;
+    }
+
+    .manual-topic {
+        padding: 30px 0;
+    }
+
+}
+
+
+
+
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 8px 0 56px;
+}
+
+.guide-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 26px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.guide-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+}
+
+.guide-icon {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 18px;
+}
+
+.guide-card h3 {
+    font-size: 1.12rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--heading);
+    margin-bottom: 10px;
+}
+
+.guide-card p {
+    font-size: 0.94rem;
+    line-height: 1.62;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+@media (max-width: 1100px) {
+    .guides-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .guides-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+}
+
+/* ============================================================
+   "Deep dive" pointers from the manual to the guides.
+   Prefixed with .manual-topic so it outranks `.manual-topic p`
+   on specificity; a bare .manual-related would lose.
+   ============================================================ */
+.manual-topic .manual-related {
+    margin: 26px 0 0;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.manual-topic .manual-related strong {
+    color: var(--heading);
+    font-weight: 700;
+    margin-right: 2px;
+}
+
+/* The changelog and privacy body sits directly under the shared hero, which
+   already supplies the gap; .content's own 60px top would double it. */
+.manual-hero + .content {
+    padding-top: 0;
+}
+
+/* ============================================================
+   Manual search bar — a horizontal strip between the hero and
+   the article, not a boxed card. The input carries no border of
+   its own so the strip itself reads as the line.
+   ============================================================ */
+.manual-hero:has(+ .manual-searchbar) {
+    margin-bottom: 0;
+}
+
+.manual-searchbar {
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+}
+
+.manual-searchbar-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 56px;
+}
+
+.manual-searchbar-inner > svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+    color: var(--text-muted);
+}
+
+.manual-searchbar input {
+    flex: 1 1 auto;
+    min-width: 0;
+    border: 0;
+    background: none;
+    padding: 8px 0;
+    font: inherit;
+    font-size: 0.98rem;
+    color: var(--text);
+}
+
+.manual-searchbar input::placeholder {
+    color: var(--text-muted);
+}
+
+.manual-searchbar input:focus {
+    outline: none;
+}
+
+.manual-searchbar:focus-within {
+    border-bottom-color: var(--primary);
+}
+
+.manual-searchbar .manual-search-status {
+    flex: none;
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.manual-searchbar button {
+    flex: none;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: none;
+    padding: 5px 14px;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.manual-searchbar button:hover {
+    border-color: var(--primary);
+    color: var(--heading);
+}
+
+@media (max-width: 620px) {
+    .manual-searchbar .manual-search-status {
+        display: none;
     }
 }

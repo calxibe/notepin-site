@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Better Bookmark Manager for Chrome and Edge</title>
+    <meta name="description"
+        content="Folders stop scaling at a few hundred bookmarks. Organise saved pages by domain, colour, and searchable notes in a fullscreen board instead of a folder tree.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="canonical" href="https://notepin.fixquotes.com/bookmark-manager-alternative.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotePin">
+    <meta property="og:title" content="A Better Bookmark Manager for Chrome and Edge">
+    <meta property="og:description"
+        content="Folders stop scaling at a few hundred bookmarks. Organise saved pages by domain, colour, and searchable notes instead.">
+    <meta property="og:url" content="https://notepin.fixquotes.com/bookmark-manager-alternative.html">
+    <meta property="og:image" content="https://notepin.fixquotes.com/img/screenshots/fullscreen_light_1280x800.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A Better Bookmark Manager for Chrome and Edge">
+    <meta name="twitter:description"
+        content="Folders stop scaling at a few hundred bookmarks. Organise saved pages by domain, colour, and searchable notes instead.">
+    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/screenshots/fullscreen_light_1280x800.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260813-1">
+    <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
+    <noscript><style>body { opacity: 1 !important; }</style></noscript>
+    <script src="index.js" defer></script>
+    <script src="manual.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "A Better Bookmark Manager for Chrome and Edge",
+      "description": "Why folder-based bookmarking stops scaling, and how a board organised by domain, colour, and searchable notes works instead.",
+      "inLanguage": "en",
+      "url": "https://notepin.fixquotes.com/bookmark-manager-alternative.html",
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "NotePin",
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Chrome, Microsoft Edge"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FixQuotes",
+        "url": "https://fixquotes.com/docs/about/"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I organise bookmarks in Chrome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open the bookmark manager with Ctrl + Shift + O. From there you can create folders, drag bookmarks between them, and right-click a folder to sort its contents by name. Keep the folder tree shallow — two levels at most — because anything deeper takes longer to file into than it saves you in finding. Export an HTML backup from the same screen before any large reorganisation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best bookmark manager extension for Chrome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on what is actually failing. If you cannot find things, you want better search. If you cannot remember why you saved something, no amount of folder structure helps — you need somewhere to write the reason down. NotePin takes the second approach: every saved address carries up to 2,000 characters of your own text, and search covers that text as well as the title, address, domain, and tags."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I search my bookmarks by content?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chrome's bookmark manager searches only the title and the address, not the content of the page or any note about it. That is why a bookmark called Home | Acme is effectively unfindable. A note attached to an address is searchable by whatever you wrote, which is usually what you actually remember months later."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this replace Chrome bookmarks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, and it is not meant to. Keep bookmarking the handful of sites you open every day — the bookmarks bar is the right tool for that and nothing beats a one-click tab. Notes are for the much smaller set of pages you had a thought about and will want to find again by that thought."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="manual-page">
+    <a class="skip-link" href="#guide-content">Skip to the guide</a>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="img/icon48.png" alt="NotePin" class="logo-icon">
+                <span class="logo-text">Note<span>Pin</span></span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav id="site-nav">
+                <a href="index.html#features">Features</a>
+                <a href="manual.html">Manual</a>
+                <a href="guides.html" class="active" aria-current="page">Guides</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="guide-content">
+        <section class="manual-hero">
+            <div class="container">
+                <span class="section-badge"><a href="guides.html">Guides</a></span>
+                <h1>A Better Bookmark Manager: Links That Remember Why You Saved Them</h1>
+                <p class="manual-hero-lede">
+                    Everyone's bookmarks end the same way — a folder called <em>Read later</em> with four hundred
+                    entries nobody has read. The problem is not that you filed them badly. It is that a bookmark has
+                    nowhere to put the reason, and a folder tree is a poor substitute for one.
+                </p>
+                <div class="cta-buttons manual-hero-actions">
+                    <a class="btn btn-primary" href="#the-board">See the board</a>
+                    <a class="btn btn-secondary" href="#organize-natively">Fix Chrome's folders first</a>
+                </div>
+                <ul class="manual-facts">
+                    <li>Grouped by site automatically</li>
+                    <li>Search covers your own words</li>
+                    <li>Bulk actions across hundreds</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="container manual-layout">
+            <aside class="manual-sidebar" aria-label="Guide navigation">
+                <button class="manual-toc-toggle" id="manual-toc-toggle" type="button" aria-controls="manual-toc"
+                    aria-expanded="true">
+                    <span>On this page</span>
+                    <span class="manual-toc-toggle-state">Hide sections</span>
+                </button>
+                <nav class="manual-toc" id="manual-toc" aria-label="Guide sections">
+                    <p>On this page</p>
+                    <ol>
+                        <li><a href="#why-folders-fail">Why folders stop scaling</a></li>
+                        <li><a href="#organize-natively">Organising Chrome's bookmarks today</a></li>
+                        <li><a href="#different-model">A different model</a></li>
+                        <li><a href="#the-board">The fullscreen board</a></li>
+                        <li><a href="#filters">Filtering by domain and colour</a></li>
+                        <li><a href="#search">Search that covers your words</a></li>
+                        <li><a href="#bulk">Bulk actions at scale</a></li>
+                        <li><a href="#not-replace">What this does not replace</a></li>
+                        <li><a href="#faq">Common questions</a></li>
+                    </ol>
+                </nav>
+            </aside>
+
+            <article class="manual-article">
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="why-folders-fail">
+                    <p class="eyebrow">The problem</p>
+                    <h2>Why bookmark folders stop scaling</h2>
+                    <p class="manual-lede">
+                        Filing costs effort now and pays off later. Past a certain size, the trade stops being worth it.
+                    </p>
+                    <p>
+                        A folder tree assumes you know, at the moment of saving, which single category a page belongs
+                        to. That assumption holds for about fifty bookmarks. After that:
+                    </p>
+                    <ul class="manual-check-list">
+                        <li><strong>Things belong in two places.</strong> A pricing page for a tool you might buy for a project is filed under the tool, the project, or purchasing — and whichever you pick is where you will not look.</li>
+                        <li><strong>Filing is a decision, so it gets deferred.</strong> Everything lands in the root or in <em>Read later</em>, which is the same as not filing.</li>
+                        <li><strong>Nesting hides things.</strong> Three levels down is functionally deleted.</li>
+                        <li><strong>Duplicates accumulate silently.</strong> Nothing tells you that you already saved this page from a different search two months ago.</li>
+                        <li><strong>Search only sees titles.</strong> Chrome's bookmark manager matches the title and address. "Home | Acme" matches nothing you would ever type.</li>
+                    </ul>
+                    <p>
+                        The usual advice — be more disciplined about folders — treats the symptom. The structural
+                        issue is that the one piece of information that would make a saved page findable, namely why
+                        you saved it, has nowhere to live.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="organize-natively">
+                    <p class="eyebrow">First, the basics</p>
+                    <h2>Organising Chrome's bookmarks today</h2>
+                    <p>
+                        Before adding anything, it is worth getting the built-in manager into decent shape. This is
+                        genuinely useful and costs nothing.
+                    </p>
+                    <ol class="manual-steps">
+                        <li>Open the bookmark manager with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd> — on a
+                            Mac, <kbd>⌘</kbd> + <kbd>Option</kbd> + <kbd>B</kbd>.</li>
+                        <li>Export an HTML backup first, from the three-dot menu inside the manager.</li>
+                        <li>Right-click a folder and choose <strong>Sort by name</strong> to make its contents scannable.</li>
+                        <li>Drag the five or six sites you actually open daily onto the bookmarks bar, and delete their names so only icons remain.</li>
+                        <li>Keep the tree to two levels. Anything deeper costs more to file into than it returns.</li>
+                    </ol>
+                    <div class="manual-callout info">
+                        A useful test: if you have not opened a folder in a year, you will not open it next year
+                        either. Export the backup, then delete the folder. The backup means this is reversible, which
+                        is what makes it easy to do.
+                    </div>
+                    <p>
+                        If that fixes your problem, stop here — you did not need an extension. The rest of this page
+                        is for the case where it does not, which is usually when the collection is large and the
+                        reasons behind it have been lost.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="different-model">
+                    <p class="eyebrow">The alternative</p>
+                    <h2>A different model: address, note, colour</h2>
+                    <p class="manual-lede">
+                        Stop filing. Write down why, and let the site do the grouping.
+                    </p>
+                    <p>
+                        <a href="index.html">NotePin</a> inverts the bookmark. Instead of an address filed into a
+                        category, it stores a piece of text with an address attached. Three consequences follow, and
+                        they are the whole argument:
+                    </p>
+                    <ul class="manual-check-list">
+                        <li><strong>No filing decision.</strong> Notes group themselves by the domain they came from. There is no folder to choose at save time, so saving never stalls.</li>
+                        <li><strong>The reason is searchable.</strong> Up to 2,000 characters of your own words, indexed alongside the page title, address, domain, and tags.</li>
+                        <li><strong>Colour is a second axis.</strong> Eight colours cut across domains, so "decide by Friday" and "reference" can be visible at a glance without a folder each.</li>
+                    </ul>
+                    <p>
+                        The categories that folders force you to invent up front emerge instead from where things
+                        came from and what you said about them.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="the-board">
+                    <p class="eyebrow">The interface</p>
+                    <h2>The fullscreen board</h2>
+                    <p class="manual-lede">
+                        The full-window view: every note, with filters down the side.
+                    </p>
+                    <p>
+                        The popup is for capture. The board is where a large collection becomes manageable. Open it
+                        with the expand button in the popup header, or with a keyboard shortcut you assign yourself.
+                    </p>
+
+                    <figure class="manual-screenshot">
+                        <img src="img/manual/manual-board.png"
+                            alt="The NotePin board showing the domain and color sidebar beside a list of notes"
+                            width="1280" height="800" loading="lazy" decoding="async">
+                        <figcaption>The board: domains and colour filters in the sidebar, notes in the list.</figcaption>
+                    </figure>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Board layout</caption>
+                            <thead>
+                                <tr><th scope="col">Area</th><th scope="col">Contents</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Sidebar, top</td><td>Every domain you have notes on, with counts. A filter box narrows a long list.</td></tr>
+                                <tr><td>Sidebar, bottom</td><td>Colour filters. Pick several at once to combine them.</td></tr>
+                                <tr><td>Toolbar</td><td>Search box and the sort selector.</td></tr>
+                                <tr><td>Header</td><td>New Note, expand/collapse all, help and FAQ, settings.</td></tr>
+                                <tr><td>List</td><td>Your notes, filtered and sorted by everything above.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Sorting</h3>
+                    <p>Six orders, remembered between sessions:</p>
+                    <ul class="manual-check-list">
+                        <li>Created, newest and oldest first</li>
+                        <li>Updated, newest and oldest first</li>
+                        <li>A–Z and Z–A</li>
+                    </ul>
+                    <p>Pinned notes always sort above everything else, whichever order you pick.</p>
+
+                    <h3>Keyboard navigation</h3>
+                    <p>
+                        The board is fully keyboard-driven, which matters when you are working through hundreds of
+                        entries. <kbd>/</kbd> jumps to search, <kbd>j</kbd> and <kbd>k</kbd> move down and up,
+                        <kbd>Enter</kbd> opens, <kbd>x</kbd> selects, <kbd>p</kbd> pins, <kbd>e</kbd> expands every
+                        note's text, and <kbd>Esc</kbd> clears the selection.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="filters">
+                    <p class="eyebrow">Finding things</p>
+                    <h2>Filtering by domain and colour</h2>
+
+                    <figure class="manual-figure">
+                        <img src="img/manual/manual-sidebar-filters.png"
+                            alt="The NotePin board sidebar showing the domain list with counts and the color filter grid"
+                            width="900" height="1000" loading="lazy" decoding="async">
+                        <figcaption>Domains with counts on top, colour filters underneath.</figcaption>
+                    </figure>
+
+                    <p>
+                        The domain list is built for you — every site you have saved from, with a count beside it.
+                        This is the bit that replaces folders, and it needs no maintenance because it is derived
+                        rather than declared.
+                    </p>
+                    <p>
+                        Colours cut across it. Because "purple means read later" is impossible to remember six weeks
+                        on, name each colour in <strong>Settings → Color labels</strong>. Your names then appear on
+                        the swatches, in these filters, and in the bulk colour picker. Colour labels are stored once
+                        in settings rather than on each note, so naming them uses none of your note storage.
+                    </p>
+                    <p>
+                        Domain, colour, the sidebar's own filter box, and search all apply at once — a note has to
+                        satisfy every active filter to show.
+                    </p>
+                    <div class="manual-callout info">
+                        If a combination leaves the board empty, the empty state lists which filters are active and
+                        offers one <strong>Clear all filters</strong> button. The board also clears a filter by itself
+                        when the last note matching it disappears, so you are never stranded looking at nothing.
+                    </div>
+                    <p>
+                        Notes saved without an address — a thought that belongs to no particular page — are grouped
+                        under <strong>No Domain</strong>, directly beneath <strong>All Notes</strong>.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="search">
+                    <p class="eyebrow">Finding things</p>
+                    <h2>Search that covers your words</h2>
+                    <p>
+                        This is the practical difference from a bookmark manager. Typing in the search box matches
+                        against all of:
+                    </p>
+                    <ul class="manual-check-list">
+                        <li>The note text — your own words</li>
+                        <li>The page title</li>
+                        <li>The full web address</li>
+                        <li>The domain</li>
+                        <li>The note's tags</li>
+                    </ul>
+                    <p>
+                        Chrome's bookmark manager offers the middle three. The first one is the one you will actually
+                        remember, because you wrote it. "The vendor with the weird refund policy" finds nothing in a
+                        bookmark manager and finds exactly one note here.
+                    </p>
+                    <p>
+                        Tags add a cross-domain axis: up to five per note, 24 characters each. Typing
+                        <code>tag:name</code> filters to one, and clicking a tag chip on a card does it for you.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="bulk">
+                    <p class="eyebrow">Working at scale</p>
+                    <h2>Bulk actions at scale</h2>
+                    <p>
+                        Cleaning up an inherited mess is the job a bookmark manager is worst at. Tick any note and the
+                        bulk toolbar appears.
+                    </p>
+
+                    <figure class="manual-figure">
+                        <img src="img/manual/manual-bulk-toolbar.png"
+                            alt="The NotePin bulk action toolbar showing 9 selected with 8 hidden by filters, and the color, pin, unpin, export, delete and duplicates buttons"
+                            width="1100" height="220" loading="lazy" decoding="async">
+                        <figcaption>The bulk toolbar. The amber pill warns when the selection includes hidden notes.</figcaption>
+                    </figure>
+
+                    <ol class="manual-steps">
+                        <li>Tick the checkbox on any note. The toolbar appears.</li>
+                        <li>Use <strong>Select visible</strong> to tick everything currently on screen.</li>
+                        <li>Apply a colour, pin, unpin, export, delete, or clean duplicates.</li>
+                    </ol>
+
+                    <p>
+                        <strong>Duplicates</strong> finds notes with the same text and the same address, keeps one of
+                        each, and removes the rest. It asks first and gives you an undo afterwards — the exact
+                        operation no browser bookmark manager offers.
+                    </p>
+
+                    <div class="manual-callout warning">
+                        <strong>A selection survives filter changes.</strong> Select notes, then change the domain or
+                        colour filter, and those notes are still selected even though you cannot see them. The counter
+                        says so — "12 selected (9 hidden by filters)" — and the delete confirmation repeats the hidden
+                        count. Press <kbd>Esc</kbd> to clear a selection.
+                    </div>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Undo support by action</caption>
+                            <thead>
+                                <tr><th scope="col">Action</th><th scope="col">Confirms first</th><th scope="col">Undo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Delete one note</td><td>No</td><td>Yes, 5 seconds</td></tr>
+                                <tr><td>Bulk delete</td><td>Yes</td><td>Yes, 5 seconds</td></tr>
+                                <tr><td>Clear visible notes</td><td>Yes</td><td>Yes, 5 seconds</td></tr>
+                                <tr><td>Clean duplicates</td><td>Yes</td><td>Yes, 5 seconds</td></tr>
+                                <tr><td>Bulk colour, pin, unpin</td><td>No</td><td>No — reapply manually</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        Export a JSON backup before any large clean-up. Export also offers Markdown and CSV, though
+                        only JSON can be imported back — the other two are one-way exits into other tools.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="not-replace">
+                    <p class="eyebrow">Honest scope</p>
+                    <h2>What this does not replace</h2>
+                    <div class="manual-callout info">
+                        <strong>Keep your bookmarks bar.</strong> For the handful of sites you open every single day,
+                        a one-click tab on the bar is unbeatable and nothing here improves on it. This is not an
+                        argument for deleting your bookmarks.
+                    </div>
+                    <p>
+                        Some other limits worth knowing before you switch anything:
+                    </p>
+                    <ul class="manual-check-list">
+                        <li><strong>It does not import your bookmarks.</strong> There is no converter from a Chrome HTML export into notes. Notes accumulate from the point you start.</li>
+                        <li><strong>Storage is finite.</strong> Browser sync gives an extension about 100 kB; NotePin stops at 95 kB, which is roughly 250 to 300 notes at typical lengths. A meter in settings turns amber at 80%. This is a tool for the pages you thought about, not for ten thousand links.</li>
+                        <li><strong>No page archiving.</strong> Your note survives the page being rewritten. The page itself is not saved — for that you want an archiving service.</li>
+                        <li><strong>No folders.</strong> If you genuinely like your folder tree, this model will annoy you. Domains and colours are the only grouping.</li>
+                    </ul>
+                    <p>
+                        The honest summary: bookmarks are for returning to sites. Notes are for remembering thinking.
+                        Most people need both, and they are cheap to run side by side.
+                    </p>
+
+                    <div class="cta-buttons">
+                        <a href="https://chromewebstore.google.com/detail/notepin-web-page-notes-st/fonaehlalnjinfdkjpicffebenbhhnbj"
+                            class="btn btn-primary" target="_blank" rel="noopener">
+                            <img src="img/chrome.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
+                            Add to Chrome — Free
+                        </a>
+                        <a href="https://microsoftedge.microsoft.com/addons/detail/notepin-web-page-notes-/neeciljnpmmlcfahncjdeffnclconjck"
+                            class="btn btn-secondary" target="_blank" rel="noopener">
+                            <img src="img/edge.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
+                            Add to Edge — Free
+                        </a>
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="faq">
+                    <p class="eyebrow">Answers</p>
+                    <h2>Common questions</h2>
+
+                    <h3>How do I organise bookmarks in Chrome?</h3>
+                    <p>
+                        Open the bookmark manager with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>. From there
+                        you can create folders, drag bookmarks between them, and right-click a folder to sort its
+                        contents by name. Keep the folder tree shallow — two levels at most — because anything deeper
+                        takes longer to file into than it saves you in finding. Export an HTML backup from the same
+                        screen before any large reorganisation.
+                    </p>
+
+                    <h3>What is the best bookmark manager extension for Chrome?</h3>
+                    <p>
+                        It depends on what is actually failing. If you cannot find things, you want better search. If
+                        you cannot remember why you saved something, no amount of folder structure helps — you need
+                        somewhere to write the reason down. NotePin takes the second approach: every saved address
+                        carries up to 2,000 characters of your own text, and search covers that text as well as the
+                        title, address, domain, and tags.
+                    </p>
+
+                    <h3>Can I search my bookmarks by content?</h3>
+                    <p>
+                        Chrome's bookmark manager searches only the title and the address, not the content of the page
+                        or any note about it. That is why a bookmark called "Home | Acme" is effectively unfindable. A
+                        note attached to an address is searchable by whatever you wrote, which is usually what you
+                        actually remember months later.
+                    </p>
+
+                    <h3>Does this replace Chrome bookmarks?</h3>
+                    <p>
+                        No, and it is not meant to. Keep bookmarking the handful of sites you open every day — the
+                        bookmarks bar is the right tool for that and nothing beats a one-click tab. Notes are for the
+                        much smaller set of pages you had a thought about and will want to find again by that thought.
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon">💡</span>
+                        <div>
+                            <h4>Where to go next</h4>
+                            <p>
+                                New to bookmarking generally? Start with
+                                <a href="how-to-bookmark-a-website.html">how to bookmark a website</a>. If you want
+                                the page's actual text and not just the link, read
+                                <a href="save-selected-text-chrome-extension.html">saving selected text</a>. The
+                                <a href="manual.html#board">manual's board section</a> is the full reference.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="manual.html">Manual</a>
+                <a href="guides.html">Guides</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="https://fixquotes.com/docs/contact/?category=notepin">Feedback &amp; Issues</a>
+            </div>
+            <p class="copyright">© 2026 FixQuotes. NotePin is a browser extension by <a href="https://fixquotes.com/docs/about/" target="_blank">FixQuotes</a>.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotePin User Manual — Complete guide</title>
+    <meta name="description"
+        content="The complete NotePin user manual: capture notes with a right-click, use in-page sticky notes, search and tag, run bulk actions, manage sync storage, export backups, and troubleshoot.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="canonical" href="https://notepin.fixquotes.com/manual.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotePin">
+    <meta property="og:title" content="NotePin User Manual">
+    <meta property="og:description"
+        content="Step-by-step instructions and a complete reference for NotePin: capture, in-page stickies, the board, search, tags, sync limits, backups, and troubleshooting.">
+    <meta property="og:url" content="https://notepin.fixquotes.com/manual.html">
+    <meta property="og:image" content="https://notepin.fixquotes.com/img/screenshots/popup_light_1280x800.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NotePin User Manual">
+    <meta name="twitter:description"
+        content="The complete guide to capturing, finding, and syncing notes with NotePin.">
+    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/screenshots/popup_light_1280x800.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260813-1">
+    <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
+    <noscript><style>body { opacity: 1 !important; }</style></noscript>
+    <script src="index.js" defer></script>
+    <script src="manual.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "NotePin User Manual",
+      "description": "Complete instructions and reference information for the NotePin browser extension.",
+      "inLanguage": "en",
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "NotePin",
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Chrome, Microsoft Edge"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FixQuotes",
+        "url": "https://fixquotes.com/docs/about/"
+      }
+    }
+    </script>
+</head>
+
+<body class="manual-page">
+    <a class="skip-link" href="#manual-content">Skip to the manual</a>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="img/icon48.png" alt="NotePin" class="logo-icon">
+                <span class="logo-text">Note<span>Pin</span></span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav id="site-nav">
+                <a href="index.html#features">Features</a>
+                <a href="manual.html" class="active" aria-current="page">Manual</a>
+                <a href="guides.html">Guides</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="manual-content">
+        <section class="manual-hero">
+            <div class="container">
+                <span class="section-badge">User Manual</span>
+                <h1>Everything NotePin can do.</h1>
+                <p class="manual-hero-lede">
+                    From saving your first note to running bulk clean-ups across hundreds of them, this
+                    guide covers every screen, setting, limit, and recovery step — in the order you are
+                    likely to meet them.
+                </p>
+                <div class="cta-buttons manual-hero-actions">
+                    <a class="btn btn-primary" href="#first-note">Save your first note</a>
+                    <a class="btn btn-secondary" href="#troubleshooting">Solve a problem</a>
+                </div>
+                <ul class="manual-facts">
+                    <li>Notes stay in your browser</li>
+                    <li>No account, no ads</li>
+                    <li>Free on Chrome and Edge</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="manual-searchbar">
+            <div class="container manual-searchbar-inner">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7" />
+                    <path d="m20 20-3.5-3.5" />
+                </svg>
+                <input id="manual-search" type="search"
+                    aria-label="Search the manual"
+                    placeholder="Search the manual — try “sticky”, “tags”, or “storage full”"
+                    autocomplete="off" spellcheck="false">
+                <p class="manual-search-status" id="manual-search-status" aria-live="polite"></p>
+                <button id="manual-clear-search" type="button" hidden>Clear</button>
+            </div>
+        </div>
+
+        <div class="container manual-layout">
+            <aside class="manual-sidebar" aria-label="Manual navigation">
+                <button class="manual-toc-toggle" id="manual-toc-toggle" type="button" aria-controls="manual-toc"
+                    aria-expanded="true">
+                    <span>On this page</span>
+                    <span class="manual-toc-toggle-state">Hide sections</span>
+                </button>
+                <nav class="manual-toc" id="manual-toc" aria-label="Manual sections">
+                    <p>On this page</p>
+                    <ol>
+                        <li><a href="#what-it-does">What NotePin does</a></li>
+                        <li><a href="#install">Install and first run</a></li>
+                        <li><a href="#first-note">Save your first note</a></li>
+                        <li><a href="#capture">Every way to capture</a></li>
+                        <li><a href="#popup">The popup, screen by screen</a></li>
+                        <li><a href="#note-anatomy">What a note holds</a></li>
+                        <li><a href="#colors">Colors and color labels</a></li>
+                        <li><a href="#tags">Tags</a></li>
+                        <li><a href="#stickies">In-page sticky notes</a></li>
+                        <li><a href="#board">The fullscreen board</a></li>
+                        <li><a href="#search">Search and filters</a></li>
+                        <li><a href="#bulk">Bulk actions</a></li>
+                        <li><a href="#editing">Editing and deleting</a></li>
+                        <li><a href="#settings">Settings reference</a></li>
+                        <li><a href="#shortcuts">Keyboard shortcuts</a></li>
+                        <li><a href="#sync">Sync across devices</a></li>
+                        <li><a href="#storage">Storage limits</a></li>
+                        <li><a href="#backup">Export, import, and backup</a></li>
+                        <li><a href="#privacy">Privacy and permissions</a></li>
+                        <li><a href="#languages">Languages</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="#reference">Quick reference</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ol>
+                </nav>
+            </aside>
+
+            <article class="manual-article">
+                <div class="manual-no-results" id="manual-no-results" hidden>
+                    <h2>No matching section</h2>
+                    <p>Try a shorter term, a feature name such as “sticky”, or clear the search.</p>
+                    <button class="btn btn-secondary" type="button" data-manual-clear>Clear search</button>
+                </div>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="what-it-does">
+                    <p class="eyebrow">Start here</p>
+                    <h2>What NotePin does</h2>
+                    <p class="manual-lede">
+                        NotePin saves a note against the web page you found something on, and brings it back
+                        when you return to that page.
+                    </p>
+                    <p>
+                        A note is a piece of text with a web address attached. That address is what makes NotePin
+                        different from a plain notepad: notes group by site, the toolbar icon shows a count for the
+                        page you are on, and if you choose to, your notes for a site can appear directly on that
+                        site as floating sticky notes.
+                    </p>
+                    <p>Typical uses:</p>
+                    <ul class="manual-check-list">
+                        <li>A workaround you found in a long GitHub issue, saved on that issue.</li>
+                        <li>A price and a return window on a product page, so next week you still have the numbers.</li>
+                        <li>A change you want to make to a recipe, waiting on the recipe.</li>
+                        <li>A quoted paragraph from an article, with the source link kept automatically.</li>
+                    </ul>
+                    <div class="manual-callout info">
+                        <strong>NotePin is not a general note app.</strong> Every note wants an address. You can save
+                        a note without one, but most of what makes NotePin useful — site grouping, the badge count,
+                        page stickies — depends on the note being tied to a page.
+                    </div>
+                    <p>
+                        This page is the reference. For longer walkthroughs of one feature at a time — capturing
+                        selected text, replacing bookmark folders, in-page stickies, keeping a commonplace book —
+                        see the <a href="guides.html">guides</a>.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="install">
+                    <p class="eyebrow">Setup</p>
+                    <h2>Install and first run</h2>
+                    <ol class="manual-steps">
+                        <li>
+                            Install from the
+                            <a href="https://chromewebstore.google.com/detail/notepin-web-page-notes-st/fonaehlalnjinfdkjpicffebenbhhnbj"
+                                target="_blank" rel="noopener">Chrome Web Store</a> or
+                            <a href="https://microsoftedge.microsoft.com/addons/detail/notepin-web-page-notes-/neeciljnpmmlcfahncjdeffnclconjck"
+                                target="_blank" rel="noopener">Microsoft Edge Add-ons</a>.
+                        </li>
+                        <li>
+                            A welcome page opens once, explaining the basics. You can close it and reopen it any
+                            time from the extension's details page.
+                        </li>
+                        <li>
+                            <strong>Pin the toolbar icon.</strong> Click the puzzle-piece icon in the browser toolbar,
+                            then the pin beside NotePin. Without this the icon hides in the overflow menu and the
+                            badge count is invisible.
+                        </li>
+                        <li>
+                            Open any web page and click the NotePin icon. The popup opens with an empty list and a
+                            <strong>Take a new note…</strong> button.
+                        </li>
+                    </ol>
+                    <div class="manual-callout info">
+                        NotePin asks for no permissions beyond the four it needs to work, and it never asks for
+                        website access at install. See <a href="#privacy">Privacy and permissions</a>.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="first-note">
+                    <p class="eyebrow">Quick start</p>
+                    <h2>Save your first note</h2>
+                    <p class="manual-lede">Three ways, in order of how often you will use them.</p>
+
+                    <div class="manual-card-grid">
+                        <div class="manual-mini-card">
+                            <span class="manual-card-mark">1</span>
+                            <h3>From the popup</h3>
+                            <ol>
+                                <li>Click the NotePin icon.</li>
+                                <li>Click <strong>Take a new note…</strong>.</li>
+                                <li>Type. The page you are on is attached automatically.</li>
+                                <li>Pick a color, add tags if you want, then <strong>Save</strong>.</li>
+                            </ol>
+                        </div>
+                        <div class="manual-mini-card">
+                            <span class="manual-card-mark">2</span>
+                            <h3>From selected text</h3>
+                            <ol>
+                                <li>Select any text on a page.</li>
+                                <li>Right-click and choose <strong>Save to NotePin</strong>.</li>
+                                <li>NotePin opens with the quote already filled in.</li>
+                                <li>Edit if you like, then <strong>Save</strong>.</li>
+                            </ol>
+                        </div>
+                        <div class="manual-mini-card">
+                            <span class="manual-card-mark">3</span>
+                            <h3>From a page or link</h3>
+                            <ol>
+                                <li>Right-click anywhere with nothing selected.</li>
+                                <li>Choose <strong>Save this page to NotePin</strong>.</li>
+                                <li>On a link, choose <strong>Save this link to NotePin</strong> instead.</li>
+                                <li>Write the note and <strong>Save</strong>.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="manual-callout info">
+                        <strong>Nothing saves until you press Save.</strong> A capture always opens the note for
+                        review first, so you can trim a long quote or change the color before it is stored.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="capture">
+                    <p class="eyebrow">Capture</p>
+                    <h2>Every way to capture</h2>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Capture methods and what each one attaches</caption>
+                            <thead>
+                                <tr><th scope="col">Method</th><th scope="col">Note text</th><th scope="col">Address attached</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Popup → Take a new note…</td><td>Empty, you type it</td><td>The page you are on</td></tr>
+                                <tr><td>Right-click on selected text</td><td>The selected text</td><td>The page you are on</td></tr>
+                                <tr><td>Right-click on a page</td><td>Empty, you type it</td><td>The page you are on</td></tr>
+                                <tr><td>Right-click on a link</td><td>Empty, you type it</td><td>The link's address</td></tr>
+                                <tr><td>Keyboard command</td><td>The selected text, if any</td><td>The page you are on</td></tr>
+                                <tr><td>Board → New Note</td><td>Empty, you type it</td><td>Whatever you type in the URL field</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Drafts are kept for you</h3>
+                    <p>
+                        If you start writing in the popup and the popup closes — you clicked the page, switched tabs,
+                        or the browser closed it — the text is kept. Open NotePin again and it is still there.
+                    </p>
+                    <p>
+                        If you then capture something else with a right-click, the new capture is
+                        <strong>added underneath</strong> your unsaved draft rather than replacing it, and a short
+                        message confirms it. Nothing you typed is thrown away.
+                    </p>
+
+                    <div class="manual-callout warning">
+                        <strong>Pages NotePin cannot attach.</strong> Browser pages such as <code>chrome://</code>
+                        and <code>edge://</code>, extension pages, and local <code>file://</code> pages are not valid
+                        web addresses for a note. You can still write the note; it is saved without an address and
+                        appears under <strong>No Domain</strong> on the board.
+                    </div>
+
+                    <p class="manual-related">
+                        <strong>Deep dive:</strong>
+                        <a href="save-selected-text-chrome-extension.html">Save selected text from any web page</a>
+                        — every capture route, why the source address matters more than the text, and how this differs
+                        from a highlighter extension.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="popup">
+                    <p class="eyebrow">The interface</p>
+                    <h2>The popup, screen by screen</h2>
+                    <p class="manual-lede">The popup is the quick surface. It opens on the toolbar icon.</p>
+
+                    <figure class="manual-screenshot">
+                        <img src="img/manual/manual-popup.png"
+                            alt="The NotePin popup open beside a web page, with a note being written and saved notes listed below" loading="lazy" decoding="async">
+                        <figcaption>The popup mid-note. The page you are on is attached automatically.</figcaption>
+                    </figure>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Popup controls</caption>
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Take a new note…</td><td>Opens the note form. The current page is attached when you save.</td></tr>
+                                <tr><td>Search box</td><td>Filters your notes as you type. See <a href="#search">Search and filters</a>.</td></tr>
+                                <tr><td>Current Site</td><td>Limits the list to notes for the site you are on. Your choice is remembered.</td></tr>
+                                <tr><td>Settings (gear)</td><td>Opens the shared settings panel. See <a href="#settings">Settings reference</a>.</td></tr>
+                                <tr><td>Expand (arrows)</td><td>Opens the fullscreen board in a tab. An in-progress note comes with you.</td></tr>
+                                <tr><td>Toolbar badge</td><td>The number of notes you have for the site you are on.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Current Site matching</h3>
+                    <p>
+                        <strong>Current Site</strong> treats <code>www</code>, the main domain, and its subdomains as
+                        one site. A note saved on <code>www.example.com</code> or <code>app.example.com</code> shows
+                        when you are on <code>example.com</code>, and the other way round. Two different subdomains —
+                        <code>a.example.com</code> and <code>b.example.com</code> — stay separate, and a lookalike
+                        domain such as <code>notexample.com</code> never matches. The toolbar badge counts the same way.
+                    </p>
+
+                    <h3>Popup notes are always newest first</h3>
+                    <p>
+                        The popup list ignores the board's sort setting and always shows the most recent notes at the
+                        top, with pinned notes above everything. Change the sort on the board and the popup is
+                        unaffected.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="note-anatomy">
+                    <p class="eyebrow">Reference</p>
+                    <h2>What a note holds</h2>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Fields stored on every note</caption>
+                            <thead>
+                                <tr><th scope="col">Field</th><th scope="col">Limit</th><th scope="col">Notes</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Text</td><td>2,000 characters</td><td>A counter appears once you pass 1,000. Line breaks are kept.</td></tr>
+                                <tr><td>Web address</td><td>—</td><td>Only <code>http</code> and <code>https</code> addresses are stored.</td></tr>
+                                <tr><td>Page title</td><td>80 characters</td><td>Captured automatically. Shown as the card's link label.</td></tr>
+                                <tr><td>Tags</td><td>5 tags, 24 characters each</td><td>Optional. See <a href="#tags">Tags</a>.</td></tr>
+                                <tr><td>Color</td><td>One of 8</td><td>See <a href="#colors">Colors</a>.</td></tr>
+                                <tr><td>Pinned</td><td>Yes or no</td><td>Pinned notes sort above everything else.</td></tr>
+                                <tr><td>Created / last edited</td><td>—</td><td>Hover a timestamp to see the full date and time.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <figure class="manual-figure">
+                        <img src="img/manual/manual-note-card.png" alt="A NotePin note card showing the page title as a link, the note text, a tag chip, and the action buttons" loading="lazy" decoding="async">
+                        <figcaption>One note card: page title as the link, note text, a tag, and the actions.</figcaption>
+                    </figure>
+                    <h3>Why the page title matters</h3>
+                    <p>
+                        NotePin stores the title of the page you were on. On a note card the title is shown instead
+                        of the raw address, so a list of notes reads like a list of pages rather than a column of
+                        near-identical URLs. The full address is still there — hover the link to see it. Titles are
+                        also searchable.
+                    </p>
+                    <p>
+                        A note whose address you typed by hand on the board has no page to take a title from, so it
+                        shows the address instead.
+                    </p>
+
+                    <h3>Dates</h3>
+                    <p>
+                        Notes from today show the time only. Older notes show the date only. Hovering either shows
+                        the complete date and time in your local format.
+                    </p>
+
+                    <p class="manual-related">
+                        <strong>Deep dive:</strong>
+                        <a href="how-to-bookmark-a-website.html">How to bookmark a website in Chrome and Edge</a>
+                        — what a browser bookmark stores, what it cannot, and where a note with an address fits.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="colors">
+                    <p class="eyebrow">Organising</p>
+                    <h2>Colors and color labels</h2>
+                    <p class="manual-lede">
+                        Eight colors: red, yellow, blue, green, purple, orange, pink, and teal.
+                    </p>
+                    <p>
+                        A color is a stripe down the left edge of the note card, and it is a filter on the board.
+                        Colors cost nothing to use and nothing to store.
+                    </p>
+
+                    <h3>Name what a color means</h3>
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-settings-colors.png" alt="The Color labels section of NotePin settings with four of the eight colors named" loading="lazy" decoding="async">
+                        <figcaption>Settings → Color labels. Blank fields keep the default names.</figcaption>
+                    </figure>
+                    <p>
+                        Six weeks after you decide purple means "read later", you will not remember. Open
+                        <strong>Settings → Color labels</strong> and give each color your own name — "Blocker",
+                        "Buy", "Follow up". Those names then appear on the color swatches, in the board's color
+                        filters, in the bulk color picker, and on in-page sticky notes.
+                    </p>
+                    <div class="manual-callout info">
+                        Color labels are stored once in your settings, not on each note, so naming your colors
+                        uses none of your note storage. Leave a name blank to go back to the default.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="tags">
+                    <p class="eyebrow">Organising</p>
+                    <h2>Tags</h2>
+                    <p class="manual-lede">
+                        Up to five tags per note, 24 characters each. Use them when a project spans several sites.
+                    </p>
+                    <ol class="manual-steps">
+                        <li>Open the note form in the popup or on the board.</li>
+                        <li>Type into the <strong>Tags</strong> field, separating tags with commas.</li>
+                        <li>Save. The tags appear as small chips on the note card.</li>
+                    </ol>
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-note-form.png"
+                            alt="The NotePin New Note dialog with a URL, note text, a tags field, and the color picker"
+                            loading="lazy" decoding="async">
+                        <figcaption>The note form. Tags go in comma separated.</figcaption>
+                    </figure>
+                    <p>
+                        Click any tag chip to filter down to that tag. That fills the search box with
+                        <code>tag:name</code>, which you can also type yourself.
+                    </p>
+                    <div class="manual-callout info">
+                        <strong>Colors or tags?</strong> Colors are faster and free. Tags are better when the thing
+                        you are grouping crosses many domains — a trip, a purchase decision, a piece of research. If
+                        eight named colors cover you, you do not need tags.
+                    </div>
+                    <div class="manual-callout warning">
+                        Tags use part of your sync storage — roughly 16 bytes per tag. On a large collection that adds
+                        up. See <a href="#storage">Storage limits</a>.
+                    </div>
+
+                    <p class="manual-related">
+                        <strong>Deep dive:</strong>
+                        <a href="digital-commonplace-book.html">Build a digital commonplace book</a>
+                        — tagging by theme rather than by site, and a colour template worth stealing.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="stickies">
+                    <p class="eyebrow">On the page</p>
+                    <h2>In-page sticky notes</h2>
+                    <p class="manual-lede">
+                        Your notes for a site, shown on that site, in a small floating panel.
+                    </p>
+
+                    <figure class="manual-screenshot">
+                        <img src="img/manual/manual-stickies-page.png"
+                            alt="Three NotePin sticky notes floating on a product page, showing price, screen, and return window notes" loading="lazy" decoding="async">
+                        <figcaption>Sticky notes on the page they were written about.</figcaption>
+                    </figure>
+
+                    <h3>Turning them on</h3>
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-settings-stickies.png" alt="The in-page sticky notes section of NotePin settings with both checkboxes" loading="lazy" decoding="async">
+                        <figcaption>Settings → In-page sticky notes. Both options live here.</figcaption>
+                    </figure>
+                    <ol class="manual-steps">
+                        <li>Open <strong>Settings</strong> from the popup or the board.</li>
+                        <li>Tick <strong>Show sticky notes on matching sites</strong>.</li>
+                        <li>
+                            Your browser asks for permission to read and change data on websites. This is what lets
+                            NotePin draw the panel on a page. Accept it to continue.
+                        </li>
+                        <li>The panel appears on any site where you already have notes, including tabs already open.</li>
+                    </ol>
+
+                    <div class="manual-callout info">
+                        This is the only feature that needs website access, and it is off by default. NotePin never
+                        asks for it at install. Turning the feature off removes the script again.
+                    </div>
+
+                    <h3>Using the panel</h3>
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-sticky-panel.png" alt="The NotePin sticky note panel showing three notes with color labels, dates, and edit buttons" loading="lazy" decoding="async">
+                        <figcaption>The panel itself: a header with Hide site and collapse, then one card per note.</figcaption>
+                    </figure>
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Sticky panel controls</caption>
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Drag the header</td><td>Snaps the panel to any of the four screen corners. Your choice is remembered per browser.</td></tr>
+                                <tr><td>− / +</td><td>Collapses the panel to its header, or expands it again. Remembered per site.</td></tr>
+                                <tr><td>Hide site</td><td>Hides the panel on this site for 24 hours.</td></tr>
+                                <tr><td>Filter box</td><td>Appears once a site has five or more notes. Narrows the panel's list.</td></tr>
+                                <tr><td>Pencil on a card</td><td>Opens a dedicated editor window for that note.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Whole site or one exact page</h3>
+                    <p>
+                        By default the panel shows notes for the whole site, matched the same way as
+                        <a href="#popup">Current Site</a>. Turn on
+                        <strong>Only show on the exact matching URL</strong> in Settings if you would rather each page
+                        show only its own notes — useful on sites where every page is a different topic.
+                    </p>
+
+                    <div class="manual-callout info">
+                        Sticky notes never appear when you print a page or save it as a PDF.
+                    </div>
+
+                    <p class="manual-related">
+                        <strong>Deep dive:</strong>
+                        <a href="sticky-notes-chrome-extension.html">Sticky notes on any website</a>
+                        — every panel control, per-site against per-page matching, and how these differ from desktop
+                        sticky notes.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="board">
+                    <p class="eyebrow">The interface</p>
+                    <h2>The fullscreen board</h2>
+                    <p class="manual-lede">
+                        The board is the full-window view: every note, with filters down the side.
+                    </p>
+                    <p>Open it with the expand button in the popup header, or with a keyboard shortcut you assign.</p>
+
+                    <figure class="manual-screenshot">
+                        <img src="img/manual/manual-board.png"
+                            alt="The NotePin board showing the domain and color sidebar beside a list of notes" loading="lazy" decoding="async">
+                        <figcaption>The board, with the domain list and color filters in the sidebar.</figcaption>
+                    </figure>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Board layout</caption>
+                            <thead>
+                                <tr><th scope="col">Area</th><th scope="col">Contents</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Sidebar, top</td><td>Every domain you have notes on, with counts. A filter box narrows a long list.</td></tr>
+                                <tr><td>Sidebar, bottom</td><td>Color filters. Pick several at once to combine them.</td></tr>
+                                <tr><td>Toolbar</td><td>Search box and the sort selector.</td></tr>
+                                <tr><td>Header</td><td>New Note, expand/collapse all, help and FAQ, settings.</td></tr>
+                                <tr><td>List</td><td>Your notes, filtered and sorted by everything above.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-sidebar-filters.png" alt="The NotePin board sidebar showing the domain list with counts and the color filter grid" loading="lazy" decoding="async">
+                        <figcaption>The sidebar: domains with counts on top, color filters underneath.</figcaption>
+                    </figure>
+                    <h3>No Domain</h3>
+                    <p>
+                        Notes saved without a web address are grouped under <strong>No Domain</strong>, which appears
+                        directly under <strong>All Notes</strong> whenever such notes exist.
+                    </p>
+
+                    <h3>Sorting</h3>
+                    <p>Six orders, remembered between sessions:</p>
+                    <ul class="manual-check-list">
+                        <li>Created (newest) and Created (oldest)</li>
+                        <li>Updated (newest) and Updated (oldest)</li>
+                        <li>A–Z and Z–A</li>
+                    </ul>
+                    <p>Pinned notes always sort above everything, whichever order you choose.</p>
+
+                    <h3>Narrow windows</h3>
+                    <p>
+                        Below about 992 pixels wide — including a normal window at high browser zoom — the sidebar
+                        becomes a drawer you open from the header, so the note list keeps the full width.
+                    </p>
+
+                    <p class="manual-related">
+                        <strong>Deep dive:</strong>
+                        <a href="bookmark-manager-alternative.html">A better bookmark manager</a>
+                        — why folder trees stop scaling, and how the board replaces them with domains and colours.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="search">
+                    <p class="eyebrow">Finding things</p>
+                    <h2>Search and filters</h2>
+
+                    <h3>What search looks at</h3>
+                    <p>Typing in the search box matches against all of:</p>
+                    <ul class="manual-check-list">
+                        <li>The note text</li>
+                        <li>The page title</li>
+                        <li>The full web address</li>
+                        <li>The domain</li>
+                        <li>The note's tags</li>
+                    </ul>
+
+                    <h3>Searching by tag</h3>
+                    <figure class="manual-figure">
+                        <img src="img/manual/manual-search-tag.png" alt="The NotePin board search box containing tag:work with a single matching note below it" loading="lazy" decoding="async">
+                        <figcaption>A tag: query narrows the board to one tag.</figcaption>
+                    </figure>
+                    <p>
+                        Type <code>tag:work</code> to show only notes carrying that exact tag. Clicking a tag chip on
+                        a note does this for you.
+                    </p>
+
+                    <h3>Combining filters on the board</h3>
+                    <p>
+                        Domain, colors, the sidebar's domain filter box, and search all apply at once. A note has to
+                        satisfy every active filter to appear.
+                    </p>
+                    <div class="manual-callout info">
+                        If a combination leaves the board empty, the empty state lists which filters are active and
+                        offers a single <strong>Clear all filters</strong> button.
+                    </div>
+                    <p>
+                        Your domain, color, and search choices are remembered for the tab while it stays open. The
+                        board also clears a filter by itself if the last note matching it disappears, so you are never
+                        stuck looking at an empty board with no way back.
+                    </p>
+
+                    <p class="manual-related">
+                        <strong>Deep dive:</strong>
+                        <a href="bookmark-manager-alternative.html">Search that covers your own words</a>
+                        — the one thing a browser bookmark manager cannot do, since it only ever matches titles and
+                        addresses.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="bulk">
+                    <p class="eyebrow">Working at scale</p>
+                    <h2>Bulk actions</h2>
+                    <p class="manual-lede">
+                        Available on the board once you tick at least one note.
+                    </p>
+
+                    <figure class="manual-screenshot">
+                        <img src="img/manual/manual-board-dark.png"
+                            alt="The NotePin board in dark mode with several notes selected and the bulk action toolbar visible" loading="lazy" decoding="async">
+                        <figcaption>The bulk toolbar, shown here in dark mode.</figcaption>
+                    </figure>
+
+                    <ol class="manual-steps">
+                        <li>Tick the checkbox on any note. The bulk toolbar appears.</li>
+                        <li>Use <strong>Select visible</strong> to tick everything currently on screen.</li>
+                        <li>Choose an action: apply a color, pin, unpin, export, delete, or clean duplicates.</li>
+                    </ol>
+                    <figure class="manual-figure">
+                        <img src="img/manual/manual-bulk-toolbar.png"
+                            alt="The NotePin bulk action toolbar showing 9 selected with 8 hidden by filters, and the color, pin, unpin, export, delete and duplicates buttons"
+                            loading="lazy" decoding="async">
+                        <figcaption>The bulk toolbar. The amber pill appears when the selection includes notes you cannot see.</figcaption>
+                    </figure>
+
+                    <div class="manual-callout warning">
+                        <strong>A selection survives filter changes.</strong> If you select notes, then change the
+                        domain or color filter, those notes are still selected even though you can no longer see
+                        them. The counter says so — “12 selected (9 hidden by filters)” — and the delete confirmation
+                        repeats the hidden count. Press <kbd>Esc</kbd> to clear a selection.
+                    </div>
+
+                    <h3>Cleaning duplicates</h3>
+                    <p>
+                        <strong>Duplicates</strong> finds notes with the same text and the same address, keeps one of
+                        each, and removes the rest. It asks first and gives you an undo afterwards.
+                    </p>
+
+                    <h3>Which actions can be undone</h3>
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Undo support by action</caption>
+                            <thead>
+                                <tr><th scope="col">Action</th><th scope="col">Confirms first</th><th scope="col">Undo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Delete one note</td><td>No</td><td>Yes, 5 seconds</td></tr>
+                                <tr><td>Bulk delete</td><td>Yes</td><td>Yes, 5 seconds</td></tr>
+                                <tr><td>Clear visible notes</td><td>Yes</td><td>Yes, 5 seconds</td></tr>
+                                <tr><td>Clean duplicates</td><td>Yes</td><td>Yes, 5 seconds</td></tr>
+                                <tr><td>Bulk color, pin, unpin</td><td>No</td><td>No — reapply manually</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="editing">
+                    <p class="eyebrow">Day to day</p>
+                    <h2>Editing and deleting</h2>
+
+                    <h3>Editing in place</h3>
+                    <figure class="manual-figure">
+                        <img src="img/manual/manual-inline-edit.png" alt="A NotePin note card in inline edit mode with an editable URL, a text area, a color picker and Cancel and Save buttons" loading="lazy" decoding="async">
+                        <figcaption>Inline editing: the card becomes the editor, in place.</figcaption>
+                    </figure>
+                    <p>
+                        Click the pencil on any note card. The card turns into an editor with the text, the address,
+                        and a color picker. <kbd>Ctrl</kbd> + <kbd>Enter</kbd> saves,
+                        <kbd>Esc</kbd> cancels.
+                    </p>
+                    <div class="manual-callout info">
+                        While you are editing, NotePin holds back any list refresh — including changes arriving from
+                        another window or another device — until you finish, so nothing you are typing is replaced
+                        underneath you.
+                    </div>
+
+                    <h3>The dedicated editor window</h3>
+                    <p>
+                        Clicking the pencil on an in-page sticky note opens a separate small window for that note.
+                        Clicking the same sticky again brings that window back to the front rather than opening a
+                        second one. It asks before discarding unsaved changes.
+                    </p>
+
+                    <h3>Deleting</h3>
+                    <p>
+                        Deleting a single note happens immediately, with a 5-second <strong>Undo</strong> in the
+                        toast at the bottom. Bulk deletes and clearing the visible list ask first, then also offer
+                        undo.
+                    </p>
+                    <div class="manual-callout warning">
+                        Undo is not history. Once the toast disappears, the delete is final — the only way back is a
+                        <a href="#backup">backup</a>.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="settings">
+                    <p class="eyebrow">Reference</p>
+                    <h2>Settings reference</h2>
+                    <p class="manual-lede">
+                        One settings panel, opened from the gear icon in either the popup or the board. Changes apply
+                        immediately — there is no Save button.
+                    </p>
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-settings-appearance.png"
+                            alt="The Appearance setting in NotePin settings, a dropdown set to Match system"
+                            loading="lazy" decoding="async">
+                        <figcaption>Every setting looks like this: a label, a control, and it saves as you change it.</figcaption>
+                    </figure>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Every setting</caption>
+                            <thead>
+                                <tr><th scope="col">Setting</th><th scope="col">Options</th><th scope="col">What it affects</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Appearance</td><td>Match system, Light, Dark</td><td>All NotePin screens. Applies at once and on next open.</td></tr>
+                                <tr><td>Popup size</td><td>Small, Medium, Large</td><td>Popup width only (360, 420, or 480 pixels). Popup only.</td></tr>
+                                <tr><td>Sort notes</td><td>Six orders</td><td>The board's list. The popup stays newest-first.</td></tr>
+                                <tr><td>Show sticky notes on matching sites</td><td>On / off</td><td>Turns <a href="#stickies">in-page stickies</a> on. Asks for website access.</td></tr>
+                                <tr><td>Only show on the exact matching URL</td><td>On / off</td><td>Stickies show per page instead of per site.</td></tr>
+                                <tr><td>Remove query strings from saved URLs</td><td>On / off</td><td>Strips <code>?tracking=…</code> from addresses you save from now on.</td></tr>
+                                <tr><td>Remove hash fragments from saved URLs</td><td>On / off</td><td>Strips <code>#section</code> from addresses you save from now on.</td></tr>
+                                <tr><td>Color labels</td><td>Eight text fields</td><td>Your own name for each color. Blank restores the default.</td></tr>
+                                <tr><td>Storage</td><td>Read-only meter</td><td>How much of your sync space the notes use. See <a href="#storage">Storage limits</a>.</td></tr>
+                                <tr><td>Export format</td><td>JSON, Markdown, CSV</td><td>The format the Export button produces. Board only.</td></tr>
+                                <tr><td>Replace all notes when importing</td><td>On / off</td><td>Import replaces instead of merging. Board only.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="manual-callout info">
+                        <strong>Privacy settings only affect new saves.</strong> Turning on query-string or hash
+                        stripping changes addresses you save or edit from that point on. Notes you already have are
+                        left exactly as they are.
+                    </div>
+
+                    <p>
+                        Import, export, the sort selector, and the storage meter appear on the board. The popup size
+                        control appears in the popup. Everything else is on both.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="shortcuts">
+                    <p class="eyebrow">Reference</p>
+                    <h2>Keyboard shortcuts</h2>
+
+                    <h3>While writing or editing</h3>
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Note form shortcuts</caption>
+                            <thead><tr><th scope="col">Keys</th><th scope="col">Action</th></tr></thead>
+                            <tbody>
+                                <tr><td><kbd>Ctrl</kbd> + <kbd>Enter</kbd></td><td>Save the note</td></tr>
+                                <tr><td><kbd>Esc</kbd></td><td>Cancel an inline edit, or close a dialog</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>On the board</h3>
+                    <p>These work when you are not typing in a field and no dialog is open.</p>
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Board shortcuts</caption>
+                            <thead><tr><th scope="col">Key</th><th scope="col">Action</th></tr></thead>
+                            <tbody>
+                                <tr><td><kbd>/</kbd></td><td>Jump to the search box</td></tr>
+                                <tr><td><kbd>n</kbd></td><td>New note</td></tr>
+                                <tr><td><kbd>j</kbd> / <kbd>k</kbd></td><td>Move down / up through the notes</td></tr>
+                                <tr><td><kbd>Enter</kbd></td><td>Open the marked note</td></tr>
+                                <tr><td><kbd>x</kbd></td><td>Select or deselect the marked note</td></tr>
+                                <tr><td><kbd>p</kbd></td><td>Pin or unpin the marked note</td></tr>
+                                <tr><td><kbd>e</kbd></td><td>Expand or collapse all note text</td></tr>
+                                <tr><td><kbd>Esc</kbd></td><td>Clear the current selection</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Browser-wide commands</h3>
+                    <p>
+                        Three commands can be given a key combination of your choice. None are assigned by default,
+                        so they never clash with something you already use.
+                    </p>
+                    <ol class="manual-steps">
+                        <li>Open <code>chrome://extensions/shortcuts</code> — on Edge, <code>edge://extensions/shortcuts</code>.</li>
+                        <li>Find NotePin in the list.</li>
+                        <li>Click the pencil beside a command and press the keys you want.</li>
+                    </ol>
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Assignable commands</caption>
+                            <thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead>
+                            <tbody>
+                                <tr><td>Open the NotePin popup</td><td>Same as clicking the toolbar icon</td></tr>
+                                <tr><td>Open the NotePin board</td><td>Opens the board, reusing the tab if one is open</td></tr>
+                                <tr><td>Save the selected text to NotePin</td><td>Captures the current selection without the right-click menu</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="manual-callout info">
+                        No keys assigned yet? Selected text can always be captured with the right-click menu instead —
+                        see <a href="#capture">every way to capture</a>.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="sync">
+                    <p class="eyebrow">Your data</p>
+                    <h2>Sync across devices</h2>
+                    <p class="manual-lede">
+                        NotePin uses your browser's own sync. There is no NotePin account.
+                    </p>
+                    <p>
+                        Sign in to Chrome or Edge with the same profile on another computer, install NotePin, and your
+                        notes arrive. Nothing passes through a NotePin server, because there isn't one.
+                    </p>
+                    <ul class="manual-check-list">
+                        <li>Sign in with the same browser profile on each device.</li>
+                        <li>Make sure extension syncing is enabled in your browser's sync settings.</li>
+                        <li>Install NotePin on both.</li>
+                    </ul>
+
+                    <h3>Editing in two places at once</h3>
+                    <p>
+                        If the same note changes in two windows, NotePin notices and reloads the newer version rather
+                        than letting one overwrite the other. If it ever receives an incomplete set of notes from the
+                        browser — which can happen mid-sync — it shows a warning and refuses to save until the picture
+                        is complete again, rather than writing a half-copy over your notes.
+                    </p>
+                    <div class="manual-callout info">
+                        Some things stay on the device on purpose and never sync: your popup size, appearance choice,
+                        the position of sticky panels, and which sites you have hidden them on.
+                    </div>
+
+                    <p class="manual-related">
+                        <strong>Deep dive:</strong>
+                        <a href="google-keep-alternative.html">A lighter alternative to Keep, OneNote and Evernote</a>
+                        — what having no account and no server buys you, and what it costs.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="storage">
+                    <p class="eyebrow">Your data</p>
+                    <h2>Storage limits</h2>
+                    <p class="manual-lede">
+                        Browser sync gives an extension about 100 kB in total. NotePin stops at 95 kB to stay clear
+                        of the edge.
+                    </p>
+                    <p>
+                        That is the budget for <em>all</em> your notes together, not per note. Roughly speaking, at
+                        typical note lengths that is somewhere around 250 to 300 notes. Longer notes, page titles,
+                        and tags each take a share.
+                    </p>
+
+                    <h3>The storage meter</h3>
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-settings-storage.png" alt="The NotePin storage meter showing a usage bar with kilobytes used out of the total" loading="lazy" decoding="async">
+                        <figcaption>Settings → Storage. The bar turns amber at 80%.</figcaption>
+                    </figure>
+                    <p>
+                        <strong>Settings → Storage</strong> shows a bar with how much you have used. It turns amber at
+                        80% and a warning appears, so you get notice well before anything fails.
+                    </p>
+
+                    <div class="manual-callout warning">
+                        <strong>If you hit the limit</strong>, saving stops with a message about the storage limit.
+                        Nothing you already saved is lost. To make room: export a backup first, then delete notes you
+                        no longer need, shorten very long ones, or clean duplicates.
+                    </div>
+
+                    <h3>What uses space</h3>
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Approximate cost of each part of a note</caption>
+                            <thead><tr><th scope="col">Part</th><th scope="col">Rough cost</th></tr></thead>
+                            <tbody>
+                                <tr><td>The note text</td><td>1 byte per character, more for emoji and accents</td></tr>
+                                <tr><td>The web address</td><td>1 byte per character</td></tr>
+                                <tr><td>The page title</td><td>Up to about 80 bytes</td></tr>
+                                <tr><td>Each tag</td><td>About 16 bytes</td></tr>
+                                <tr><td>Color, pinned, dates</td><td>Around 90 bytes together</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="backup">
+                    <p class="eyebrow">Your data</p>
+                    <h2>Export, import, and backup</h2>
+                    <p class="manual-lede">Everything is on the board, under <strong>Settings → Notes</strong>.</p>
+
+                    <h3>Export</h3>
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-settings-export.png" alt="The Notes section of NotePin settings showing the export format selector, Export and Import buttons, and the replace-all checkbox" loading="lazy" decoding="async">
+                        <figcaption>Settings → Notes, on the board. Export format and the replace-on-import switch.</figcaption>
+                    </figure>
+                    <p>Choose a format, then click <strong>Export Notes</strong>.</p>
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Export formats</caption>
+                            <thead><tr><th scope="col">Format</th><th scope="col">Best for</th><th scope="col">Can be imported back</th></tr></thead>
+                            <tbody>
+                                <tr><td>JSON</td><td>Backups and moving between browsers</td><td>Yes</td></tr>
+                                <tr><td>Markdown</td><td>Obsidian, Notion, any notes app</td><td>No</td></tr>
+                                <tr><td>CSV</td><td>Excel, Google Sheets</td><td>No</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>
+                        Files are named with the date and time, for example
+                        <code>notes-20260813-142530.json</code>. You can also export just the notes you have selected,
+                        using <strong>Export</strong> in the bulk toolbar.
+                    </p>
+
+                    <div class="manual-callout warning">
+                        Only JSON can be imported again. Markdown and CSV are one-way exits. Keep a JSON backup if
+                        you want to be able to restore.
+                    </div>
+
+                    <h3>Import</h3>
+                    <p>Two modes, chosen by the tick box beside the buttons:</p>
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Import modes</caption>
+                            <thead><tr><th scope="col">Mode</th><th scope="col">Behaviour</th></tr></thead>
+                            <tbody>
+                                <tr><td>Merge (default)</td><td>Adds notes from the file. Any note already present is skipped, so importing twice is safe.</td></tr>
+                                <tr><td>Replace all notes when importing</td><td>Your current notes are replaced by the file's. Offers undo afterwards.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="manual-callout info">
+                        Use <strong>Replace</strong> when restoring a backup after something went wrong — merge would
+                        skip the damaged notes rather than repair them, because it matches on identity, not content.
+                    </div>
+
+                    <h3>A sensible backup habit</h3>
+                    <ul class="manual-check-list">
+                        <li>Export a JSON backup before a big clean-up or a bulk delete.</li>
+                        <li>Export before switching browsers or reinstalling.</li>
+                        <li>If you keep a lot of notes, export occasionally and keep the file somewhere safe.</li>
+                    </ul>
+
+                    <p class="manual-related">
+                        <strong>Deep dive:</strong>
+                        <a href="digital-commonplace-book.html">Keeping a collection for years, not weeks</a>
+                        — why Markdown export is the format that matters when notes outlive the tool.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="privacy">
+                    <p class="eyebrow">Your data</p>
+                    <h2>Privacy and permissions</h2>
+                    <p class="manual-lede">
+                        Your notes stay in your browser. There is no NotePin server, no account, and no analytics
+                        inside the extension.
+                    </p>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Permissions NotePin requests</caption>
+                            <thead><tr><th scope="col">Permission</th><th scope="col">Why</th></tr></thead>
+                            <tbody>
+                                <tr><td><code>storage</code></td><td>To save and sync your notes, and to keep local preferences such as popup size.</td></tr>
+                                <tr><td><code>activeTab</code></td><td>To read the address of the tab you are on, for the badge count and to attach to new notes.</td></tr>
+                                <tr><td><code>contextMenus</code></td><td>To add the right-click entries.</td></tr>
+                                <tr><td><code>scripting</code></td><td>To add or remove the in-page sticky note script when you turn that feature on or off.</td></tr>
+                                <tr><td>Website access <em>(optional)</em></td><td>Requested only if you enable in-page sticky notes. Never at install.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Cleaner saved links</h3>
+                    <p>
+                        Two settings strip tracking parameters and section anchors from addresses as you save them.
+                        They apply to new saves and edits only, never retroactively to notes you already have.
+                    </p>
+
+                    <h3>Links that leave NotePin</h3>
+                    <p>
+                        Two optional links open a third-party page, and only if you choose to follow them: uninstalling
+                        opens a Google Forms feedback page, and the one-time rating prompt links to the Chrome Web
+                        Store or Edge Add-ons listing. Your notes are never attached to either.
+                    </p>
+                    <p>The full policy is on the <a href="privacy.html">Privacy page</a>.</p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="languages">
+                    <p class="eyebrow">Reference</p>
+                    <h2>Languages</h2>
+                    <p>
+                        NotePin follows your browser's language automatically. There is no language setting — change
+                        your browser's display language and NotePin follows.
+                    </p>
+                    <ul class="manual-check-list">
+                        <li>English</li>
+                        <li>Spanish (Español)</li>
+                        <li>Portuguese, Brazil (Português do Brasil)</li>
+                        <li>French (Français)</li>
+                        <li>German (Deutsch)</li>
+                        <li>Japanese (日本語)</li>
+                        <li>Norwegian Bokmål (Norsk bokmål)</li>
+                    </ul>
+                    <p>Any other browser language falls back to English.</p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="accessibility">
+                    <p class="eyebrow">Reference</p>
+                    <h2>Accessibility</h2>
+                    <ul class="manual-check-list">
+                        <li>Every control is reachable and operable from the keyboard, with a clearly visible focus ring.</li>
+                        <li>Note text is exposed to screen readers as text, and the actions on each card have their own labels.</li>
+                        <li>Status messages and the undo toast are announced to assistive technology.</li>
+                        <li>Dialogs keep focus inside themselves and return it where it came from when they close.</li>
+                        <li>If your system asks for reduced motion, NotePin turns off its animations and transitions.</li>
+                        <li>Color is never the only signal — pinned state, selection, and color all have a second cue.</li>
+                    </ul>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="troubleshooting">
+                    <p class="eyebrow">Help</p>
+                    <h2>Troubleshooting</h2>
+
+                    <details class="manual-disclosure">
+                        <summary>The badge shows a number but the popup looks empty</summary>
+                        <p>
+                            The <strong>Current Site</strong> box is probably unticked while you are looking at a large
+                            collection, or a search term is still in the box. Clear the search and check the tick box.
+                            The badge counts notes for the current site specifically.
+                        </p>
+                    </details>
+
+                    <details class="manual-disclosure">
+                        <summary>Sticky notes are not showing on a site</summary>
+                        <ol>
+                            <li>Check the feature is on: <strong>Settings → Show sticky notes on matching sites</strong>.</li>
+                            <li>Check you actually have notes for that site — the toolbar badge tells you.</li>
+                            <li>You may have used <strong>Hide site</strong>, which hides the panel there for 24 hours.</li>
+                            <li>If <strong>Only show on the exact matching URL</strong> is on, notes only appear on the exact page they were saved on.</li>
+                            <li>If you refused the website-access prompt, turn the setting off and on again to be asked once more.</li>
+                            <li>Sticky notes cannot appear on browser pages, extension pages, or the Chrome Web Store.</li>
+                        </ol>
+                    </details>
+
+                    <details class="manual-disclosure">
+                        <summary>A note will not save, and I see a storage message</summary>
+                        <p>
+                            You have reached the browser's sync limit. Export a JSON backup first, then delete or
+                            shorten notes, or run <strong>Duplicates</strong> on the board. See
+                            <a href="#storage">Storage limits</a>.
+                        </p>
+                    </details>
+
+                    <details class="manual-disclosure">
+                        <summary>NotePin says it cannot reach its background service</summary>
+                        <p>
+                            The browser puts extensions to sleep to save memory and occasionally is slow to wake one.
+                            Close and reopen the popup. You are seeing your most recent notes from cache in the
+                            meantime, and nothing is lost. If it persists, disable and re-enable NotePin on the
+                            extensions page.
+                        </p>
+                    </details>
+
+                    <details class="manual-disclosure">
+                        <summary>A warning says the note list looks incomplete</summary>
+                        <p>
+                            The browser returned a partial set of notes, usually while sync is catching up. NotePin
+                            deliberately blocks saving in this state so a partial copy cannot overwrite your notes.
+                            Wait a moment and reopen NotePin. Your notes are safe; the extension is being careful.
+                        </p>
+                    </details>
+
+                    <details class="manual-disclosure">
+                        <summary>My notes have not arrived on my other computer</summary>
+                        <ol>
+                            <li>Confirm both browsers are signed in to the same profile.</li>
+                            <li>Confirm extension syncing is enabled in the browser's own sync settings.</li>
+                            <li>Sync is not instant — give it a few minutes.</li>
+                            <li>As a fallback, export JSON on one device and import it on the other.</li>
+                        </ol>
+                    </details>
+
+                    <details class="manual-disclosure">
+                        <summary>I deleted a note by mistake and the undo is gone</summary>
+                        <p>
+                            Undo lasts 5 seconds and there is no history beyond it. If you have a JSON backup, import
+                            it in merge mode — the deleted note comes back and everything else is left alone.
+                        </p>
+                    </details>
+
+                    <details class="manual-disclosure">
+                        <summary>The note was saved but has no link</summary>
+                        <p>
+                            The page was not a normal web address — a browser settings page, an extension page, or a
+                            local file. Notes like these are kept under <strong>No Domain</strong> on the board. You
+                            can add an address yourself by editing the note.
+                        </p>
+                    </details>
+
+                    <details class="manual-disclosure">
+                        <summary>My keyboard shortcut does nothing</summary>
+                        <p>
+                            Shortcuts are not assigned by default. Open
+                            <code>chrome://extensions/shortcuts</code> (or <code>edge://extensions/shortcuts</code>)
+                            and set one. If the combination you chose is already used by the browser or the website,
+                            it will not reach NotePin — pick another.
+                        </p>
+                    </details>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="reference">
+                    <p class="eyebrow">Reference</p>
+                    <h2>Quick reference</h2>
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Limits and defaults at a glance</caption>
+                            <thead><tr><th scope="col">Item</th><th scope="col">Value</th></tr></thead>
+                            <tbody>
+                                <tr><td>Note text</td><td>2,000 characters</td></tr>
+                                <tr><td>Character counter appears</td><td>Past 1,000 characters</td></tr>
+                                <tr><td>Page title stored</td><td>Up to 80 characters</td></tr>
+                                <tr><td>Tags per note</td><td>5, up to 24 characters each</td></tr>
+                                <tr><td>Colors</td><td>8</td></tr>
+                                <tr><td>Sort orders</td><td>6</td></tr>
+                                <tr><td>Total sync storage</td><td>About 95 kB for all notes</td></tr>
+                                <tr><td>Storage warning</td><td>At 80% used</td></tr>
+                                <tr><td>Undo window</td><td>5 seconds</td></tr>
+                                <tr><td>Hide site duration</td><td>24 hours</td></tr>
+                                <tr><td>Sticky filter box appears</td><td>At 5 or more notes on the site</td></tr>
+                                <tr><td>Popup widths</td><td>360 / 420 / 480 pixels</td></tr>
+                                <tr><td>Board drawer breakpoint</td><td>Below about 992 pixels</td></tr>
+                                <tr><td>Languages</td><td>7</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="support">
+                    <p class="eyebrow">Help</p>
+                    <h2>Support</h2>
+                    <p>
+                        If something here did not answer your question, or you have found a bug, get in touch. Telling
+                        us your browser, the NotePin version from the extensions page, and what you were doing makes a
+                        report far easier to act on.
+                    </p>
+                    <div class="cta-buttons">
+                        <a class="btn btn-primary" href="https://fixquotes.com/docs/contact/?category=notepin"
+                            target="_blank" rel="noopener">Feedback &amp; Issues</a>
+                        <a class="btn btn-secondary" href="changelog.html">What changed recently</a>
+                    </div>
+                    <p class="manual-footnote">
+                        There is also a short FAQ inside NotePin itself — the question-mark icon in the board header.
+                    </p>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="manual.html">Manual</a>
+                <a href="guides.html">Guides</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="https://fixquotes.com/docs/contact/?category=notepin">Feedback &amp; Issues</a>
+            </div>
+            <p class="copyright">© 2026 FixQuotes. NotePin is a browser extension by <a href="https://fixquotes.com/docs/about/" target="_blank">FixQuotes</a>.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

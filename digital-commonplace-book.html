@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build a Digital Commonplace Book in Your Browser</title>
+    <meta name="description"
+        content="A commonplace book is a collection of quotes and ideas worth keeping. Here is how to run one in your browser, with every quote still linked to its source.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="canonical" href="https://notepin.fixquotes.com/digital-commonplace-book.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotePin">
+    <meta property="og:title" content="Build a Digital Commonplace Book in Your Browser">
+    <meta property="og:description"
+        content="A commonplace book is a personal collection of quotes and ideas worth keeping. Here is how to run one in your browser, with sources intact.">
+    <meta property="og:url" content="https://notepin.fixquotes.com/digital-commonplace-book.html">
+    <meta property="og:image" content="https://notepin.fixquotes.com/img/screenshots/popup_light_1280x800.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Build a Digital Commonplace Book in Your Browser">
+    <meta name="twitter:description"
+        content="A four-hundred-year-old method for keeping what you read, run in a browser without losing sources.">
+    <meta name="twitter:image" content="https://notepin.fixquotes.com/img/screenshots/popup_light_1280x800.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260813-1">
+    <style>body { opacity: 0; transition: opacity 0.15s ease; } body.fonts-loaded { opacity: 1; }</style>
+    <noscript><style>body { opacity: 1 !important; }</style></noscript>
+    <script src="index.js" defer></script>
+    <script src="manual.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Build a Digital Commonplace Book in Your Browser",
+      "description": "What a commonplace book is, why digital versions lose their sources, and a practical browser-based method for keeping one.",
+      "inLanguage": "en",
+      "url": "https://notepin.fixquotes.com/digital-commonplace-book.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "FixQuotes",
+        "url": "https://fixquotes.com/docs/about/"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a commonplace book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A commonplace book is a personal collection of passages worth keeping — quotations, arguments, definitions, recipes, anything encountered in reading that the keeper wanted to hold on to. The name comes from the Latin locus communis, a general theme or heading under which such passages were gathered. It is a record of what you read, not of what you did."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I start a commonplace book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start by capturing rather than organising. Save passages as you encounter them, always with their source, and resist inventing categories until you have fifty or so entries and can see what themes actually recur. The historical method used broad subject headings; a digital version can use colours or tags for the same purpose, applied after the fact rather than decided in advance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a commonplace book and a journal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A journal records your own life and thoughts, organised by date. A commonplace book records other people's — passages you encountered and wanted to keep, organised by theme. A journal is chronological and personal; a commonplace book is thematic and mostly quotation, with your own commentary alongside rather than instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export a digital commonplace book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With NotePin, yes — in JSON, Markdown, or CSV. Markdown is the useful one here, because it imports cleanly into Obsidian, Notion, or any plain-text system, which means the collection is not trapped. Only JSON can be imported back into NotePin, so keep a JSON file if you want to be able to restore."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="manual-page">
+    <a class="skip-link" href="#guide-content">Skip to the guide</a>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="img/icon48.png" alt="NotePin" class="logo-icon">
+                <span class="logo-text">Note<span>Pin</span></span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav id="site-nav">
+                <a href="index.html#features">Features</a>
+                <a href="manual.html">Manual</a>
+                <a href="guides.html" class="active" aria-current="page">Guides</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="guide-content">
+        <section class="manual-hero">
+            <div class="container">
+                <span class="section-badge"><a href="guides.html">Guides</a></span>
+                <h1>Build a Digital Commonplace Book in Your Browser</h1>
+                <p class="manual-hero-lede">
+                    For four centuries, readers kept a notebook of passages worth remembering. The method survives
+                    perfectly well; what the internet broke is the part where you could always tell where a passage
+                    came from. This is how to put that back.
+                </p>
+                <div class="cta-buttons manual-hero-actions">
+                    <a class="btn btn-primary" href="#setup">Set one up</a>
+                    <a class="btn btn-secondary" href="#what-is">What is a commonplace book?</a>
+                </div>
+                <ul class="manual-facts">
+                    <li>Every entry keeps its source</li>
+                    <li>Exports to Markdown</li>
+                    <li>No account, no server</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="container manual-layout">
+            <aside class="manual-sidebar" aria-label="Guide navigation">
+                <button class="manual-toc-toggle" id="manual-toc-toggle" type="button" aria-controls="manual-toc"
+                    aria-expanded="true">
+                    <span>On this page</span>
+                    <span class="manual-toc-toggle-state">Hide sections</span>
+                </button>
+                <nav class="manual-toc" id="manual-toc" aria-label="Guide sections">
+                    <p>On this page</p>
+                    <ol>
+                        <li><a href="#what-is">What a commonplace book is</a></li>
+                        <li><a href="#history">A short history</a></li>
+                        <li><a href="#why-digital-fails">Why the digital version fails</a></li>
+                        <li><a href="#setup">Setting one up</a></li>
+                        <li><a href="#template">A colour template that works</a></li>
+                        <li><a href="#tags">Tagging by theme</a></li>
+                        <li><a href="#review">Rereading it</a></li>
+                        <li><a href="#export">Keeping it yours</a></li>
+                        <li><a href="#faq">Common questions</a></li>
+                    </ol>
+                </nav>
+            </aside>
+
+            <article class="manual-article">
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="what-is">
+                    <p class="eyebrow">Definition</p>
+                    <h2>What a commonplace book is</h2>
+                    <p class="manual-lede">
+                        A personal collection of passages worth keeping, gathered from whatever you read.
+                    </p>
+                    <p>
+                        Quotations, arguments, definitions, turns of phrase, recipes, remedies, jokes — anything the
+                        keeper encountered and wanted to hold on to. The name comes from the Latin
+                        <em>locus communis</em>, a general theme or heading under which such passages were gathered.
+                    </p>
+                    <p>
+                        The crucial distinction, and the one that makes the format worth reviving: a commonplace book
+                        records <strong>what you read</strong>. A diary records what you did. One is organised by
+                        theme and mostly consists of other people's words; the other is organised by date and consists
+                        of yours. You can keep both, and they do different jobs.
+                    </p>
+                    <div class="manual-callout info">
+                        The point was never collection for its own sake. Passages were gathered so they could be
+                        <em>reused</em> — in argument, in writing, in thinking. A commonplace book you never reread is
+                        just a pile.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="history">
+                    <p class="eyebrow">Background</p>
+                    <h2>A short history</h2>
+                    <p>
+                        Commonplacing was mainstream intellectual practice in early modern Europe, taught in schools
+                        and expected of educated readers. Erasmus recommended it to students in the early sixteenth
+                        century; by the seventeenth and eighteenth it was close to universal among people who wrote
+                        for a living.
+                    </p>
+                    <p>
+                        The most famous refinement belongs to <strong>John Locke</strong>, who devised an indexing
+                        scheme so entries could be found again in a book filled in no particular order — the practical
+                        problem every note-keeper eventually hits. His method was published in English in 1706 as
+                        <em>A New Method of Making Common-Place-Books</em>, and it is essentially a hand-built search
+                        index.
+                    </p>
+                    <p>
+                        The practice never entirely died. W. H. Auden published his own as
+                        <em>A Certain World: A Commonplace Book</em> in 1970, describing it as a kind of
+                        autobiography assembled from other people's writing — which is a fair description of what a
+                        good one becomes.
+                    </p>
+                    <p>
+                        What is worth taking from the history is not the ledger or the leather binding. It is the two
+                        rules that made it work: <strong>capture what struck you</strong>, and
+                        <strong>keep track of where it came from</strong>. Every modern version that fails, fails on
+                        the second one.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="why-digital-fails">
+                    <p class="eyebrow">The problem</p>
+                    <h2>Why the digital version usually fails</h2>
+                    <p class="manual-lede">
+                        Copy, paste, and the source is gone.
+                    </p>
+                    <p>
+                        A physical commonplace book had a built-in advantage nobody noticed at the time: copying a
+                        passage by hand was slow enough that writing "Hume, Enquiry, §4" underneath cost almost
+                        nothing by comparison. The overhead of attribution was invisible against the overhead of
+                        transcription.
+                    </p>
+                    <p>
+                        Digitally, that ratio inverts. Copying is instant; attribution is now the slow part. So it
+                        gets skipped — not through carelessness but through simple economics, and skipped hardest
+                        exactly when you are reading fast and collecting most.
+                    </p>
+                    <p>The result is a familiar file:</p>
+                    <ul class="manual-check-list">
+                        <li>Forty passages, no sources.</li>
+                        <li>No way to tell the peer-reviewed one from the forum comment.</li>
+                        <li>Nothing quotable, because quoting requires attribution.</li>
+                        <li>Search that only finds text you can already remember the wording of.</li>
+                        <li>Half of the original pages rewritten or gone, with no record of what they said.</li>
+                    </ul>
+                    <p>
+                        The fix is not more discipline. It is making attribution cost nothing again, by attaching the
+                        source automatically at the moment of capture.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="setup">
+                    <p class="eyebrow">Method</p>
+                    <h2>Setting one up</h2>
+                    <p>
+                        <a href="index.html">NotePin</a> stores a piece of text with a web address attached, which is
+                        structurally what a commonplace entry is. The setup is short.
+                    </p>
+                    <ol class="manual-steps">
+                        <li>Install NotePin on Chrome or Edge.</li>
+                        <li>When you find a passage worth keeping, select it, right-click, and choose
+                            <strong>Save to NotePin</strong>. The source address is attached automatically.</li>
+                        <li>Before saving, add your own line underneath — why it struck you, or what you disagree with.
+                            This is the single habit that separates a useful commonplace book from a pile of quotes.</li>
+                        <li>Pick a colour. Do not overthink it; see the <a href="#template">template</a> below.</li>
+                        <li>Save. Do not file it anywhere — entries group themselves by the site they came from.</li>
+                    </ol>
+
+                    <figure class="manual-figure">
+                        <img src="img/manual/manual-note-card.png"
+                            alt="A NotePin note card showing the page title as a link, the note text, a tag chip, and the action buttons"
+                            width="1280" height="720" loading="lazy" decoding="async">
+                        <figcaption>An entry: the passage, your comment, and the source as a live link.</figcaption>
+                    </figure>
+
+                    <div class="manual-callout info">
+                        <strong>Capture before you organise.</strong> The historical method used broad headings, but
+                        those were chosen by people who had already read widely. Save fifty entries before inventing a
+                        single category. The themes that actually recur are never the ones you would have guessed.
+                    </div>
+                    <p>
+                        Entries hold up to 2,000 characters, which is roughly three or four paragraphs — enough for a
+                        substantial passage plus your commentary. A counter appears once you pass 1,000. Line breaks
+                        are preserved, so a quoted list stays a list.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="template">
+                    <p class="eyebrow">Method</p>
+                    <h2>A colour template that works</h2>
+                    <p>
+                        Eight colours are available — red, yellow, blue, green, purple, orange, pink, and teal — and
+                        each can be given your own name in <strong>Settings → Color labels</strong>. Those names then
+                        show on the swatches and in the board's filters, so you never have to remember what purple
+                        meant.
+                    </p>
+                    <p>
+                        The scheme below is a starting point rather than a prescription. It sorts by
+                        <em>what you intend to do with an entry</em>, which turns out to be more durable than sorting
+                        by subject.
+                    </p>
+
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-settings-colors.png"
+                            alt="The Color labels section of NotePin settings with four of the eight colors named"
+                            width="820" height="560" loading="lazy" decoding="async">
+                        <figcaption>Settings → Color labels. Blank fields keep the default names.</figcaption>
+                    </figure>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>A starting colour template</caption>
+                            <thead>
+                                <tr><th scope="col">Colour</th><th scope="col">Name it</th><th scope="col">For</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Blue</td><td>Quote</td><td>A passage worth reproducing as written.</td></tr>
+                                <tr><td>Green</td><td>Idea</td><td>Something that changed how you think about a problem.</td></tr>
+                                <tr><td>Red</td><td>Disagree</td><td>Wrong, but usefully wrong. The best entries live here.</td></tr>
+                                <tr><td>Yellow</td><td>Check</td><td>A claim you want to verify before relying on it.</td></tr>
+                                <tr><td>Purple</td><td>Use in writing</td><td>Earmarked for something you are working on.</td></tr>
+                                <tr><td>Teal</td><td>Definition</td><td>A term explained better here than anywhere else.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        Two colours are deliberately left spare. You will discover a category you did not anticipate,
+                        and having somewhere to put it beats reorganising the other six.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="tags">
+                    <p class="eyebrow">Method</p>
+                    <h2>Tagging by theme</h2>
+                    <p>
+                        Colours handle intent. Tags handle subject — and subjects are what Locke's index existed to
+                        solve.
+                    </p>
+                    <p>
+                        Up to five tags per entry, 24 characters each, typed comma-separated in the note form. The
+                        useful discipline is to tag by <strong>theme, not by source</strong>. The site an entry came
+                        from is already recorded and already groups itself; adding <code>wikipedia</code> as a tag
+                        tells you nothing new. Adding <code>attention</code> or <code>rome</code> or
+                        <code>pricing</code> creates the cross-cutting thread that a pile of quotes otherwise lacks.
+                    </p>
+
+                    <figure class="manual-figure">
+                        <img src="img/manual/manual-search-tag.png"
+                            alt="The NotePin board search box containing tag:work with a single matching note below it"
+                            width="1200" height="600" loading="lazy" decoding="async">
+                        <figcaption>A <code>tag:</code> query pulls one theme out of everything.</figcaption>
+                    </figure>
+
+                    <p>
+                        Typing <code>tag:rome</code> filters to that theme; clicking a tag chip on an entry does it
+                        for you. That is Locke's index, without the ruled margins.
+                    </p>
+                    <div class="manual-callout warning">
+                        Tags cost roughly 16 bytes each against your storage budget. On a large collection that adds
+                        up — see <a href="#export">Keeping it yours</a> for the numbers.
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="review">
+                    <p class="eyebrow">Method</p>
+                    <h2>Rereading it</h2>
+                    <p>
+                        A commonplace book you never reopen has failed at its only job. The board is where rereading
+                        happens.
+                    </p>
+                    <ul class="manual-check-list">
+                        <li><strong>Search</strong> covers the passage text, the page title, the full address, the domain, and the tags — so you can find an entry by its wording, its subject, or its source.</li>
+                        <li><strong>Sort by Created, oldest first</strong> to read the collection as it accumulated. This is the closest thing to turning the pages in order, and it is where you notice how your interests moved.</li>
+                        <li><strong>Filter by colour</strong> to reread one intent at a time. Every entry marked <em>Disagree</em>, read in one sitting, is a genuinely useful exercise.</li>
+                        <li><strong>Filter by domain</strong> to see everything you kept from one publication.</li>
+                        <li><strong>Pin</strong> the handful you return to most; pinned entries sort above everything.</li>
+                    </ul>
+                    <p>
+                        A monthly pass sorted oldest-first, deleting what no longer earns its place, keeps the
+                        collection worth having. Deletes are undoable for five seconds, and a JSON backup makes the
+                        whole exercise reversible.
+                    </p>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="export">
+                    <p class="eyebrow">Your data</p>
+                    <h2>Keeping it yours</h2>
+                    <p>
+                        A commonplace book is a long-term object. Some of the entries in Auden's were decades old when
+                        he published them. So the important question is not how good the tool is today but whether you
+                        can leave it.
+                    </p>
+
+                    <figure class="manual-figure manual-figure-narrow">
+                        <img src="img/manual/manual-settings-export.png"
+                            alt="The Notes section of NotePin settings showing the export format selector, Export and Import buttons, and the replace-all checkbox"
+                            width="820" height="480" loading="lazy" decoding="async">
+                        <figcaption>Settings → Notes, on the board.</figcaption>
+                    </figure>
+
+                    <div class="manual-table-wrap">
+                        <table>
+                            <caption>Export formats</caption>
+                            <thead><tr><th scope="col">Format</th><th scope="col">Best for</th><th scope="col">Can be imported back</th></tr></thead>
+                            <tbody>
+                                <tr><td>JSON</td><td>Backups and moving between browsers</td><td>Yes</td></tr>
+                                <tr><td>Markdown</td><td>Obsidian, Notion, any notes app</td><td>No</td></tr>
+                                <tr><td>CSV</td><td>Excel, Google Sheets</td><td>No</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        Markdown is the one that matters for a commonplace book. It is plain text, it will outlive
+                        every application currently installed on your computer, and it drops straight into Obsidian or
+                        any plain-text system if you later want something heavier.
+                    </p>
+                    <div class="manual-callout warning">
+                        Only JSON can be imported back. Markdown and CSV are one-way exits. Keep a JSON file if you
+                        want to be able to restore into NotePin itself.
+                    </div>
+
+                    <h3>The size limit, honestly</h3>
+                    <p>
+                        Browser sync gives an extension about 100 kB in total, and NotePin stops at 95 kB to stay
+                        clear of the edge. At typical entry lengths that is somewhere around 250 to 300 entries. A
+                        meter in settings turns amber at 80%, so you get warning well before anything fails.
+                    </p>
+                    <p>
+                        For a working commonplace book that is usually a few years of genuinely selective collecting,
+                        and the ceiling enforces the selectivity that makes the format work. If you want an unbounded
+                        archive, export to Markdown periodically and keep the long tail in a plain-text system —
+                        capture here, archive there.
+                    </p>
+                    <p>
+                        Your entries stay in your browser throughout. There is no server, no account, and nothing is
+                        sent anywhere. See the <a href="privacy.html">privacy page</a>.
+                    </p>
+
+                    <div class="cta-buttons">
+                        <a href="https://chromewebstore.google.com/detail/notepin-web-page-notes-st/fonaehlalnjinfdkjpicffebenbhhnbj"
+                            class="btn btn-primary" target="_blank" rel="noopener">
+                            <img src="img/chrome.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
+                            Add to Chrome — Free
+                        </a>
+                        <a href="https://microsoftedge.microsoft.com/addons/detail/notepin-web-page-notes-/neeciljnpmmlcfahncjdeffnclconjck"
+                            class="btn btn-secondary" target="_blank" rel="noopener">
+                            <img src="img/edge.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
+                            Add to Edge — Free
+                        </a>
+                    </div>
+                </section>
+
+                <!-- ============================================================ -->
+                <section class="manual-topic" id="faq">
+                    <p class="eyebrow">Answers</p>
+                    <h2>Common questions</h2>
+
+                    <h3>What is a commonplace book?</h3>
+                    <p>
+                        A commonplace book is a personal collection of passages worth keeping — quotations, arguments,
+                        definitions, recipes, anything encountered in reading that the keeper wanted to hold on to.
+                        The name comes from the Latin <em>locus communis</em>, a general theme or heading under which
+                        such passages were gathered. It is a record of what you read, not of what you did.
+                    </p>
+
+                    <h3>How do I start a commonplace book?</h3>
+                    <p>
+                        Start by capturing rather than organising. Save passages as you encounter them, always with
+                        their source, and resist inventing categories until you have fifty or so entries and can see
+                        what themes actually recur. The historical method used broad subject headings; a digital
+                        version can use colours or tags for the same purpose, applied after the fact rather than
+                        decided in advance.
+                    </p>
+
+                    <h3>What is the difference between a commonplace book and a journal?</h3>
+                    <p>
+                        A journal records your own life and thoughts, organised by date. A commonplace book records
+                        other people's — passages you encountered and wanted to keep, organised by theme. A journal is
+                        chronological and personal; a commonplace book is thematic and mostly quotation, with your own
+                        commentary alongside rather than instead.
+                    </p>
+
+                    <h3>Can I export a digital commonplace book?</h3>
+                    <p>
+                        With NotePin, yes — in JSON, Markdown, or CSV. Markdown is the useful one here, because it
+                        imports cleanly into Obsidian, Notion, or any plain-text system, which means the collection is
+                        not trapped. Only JSON can be imported back into NotePin, so keep a JSON file if you want to
+                        be able to restore.
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon">💡</span>
+                        <div>
+                            <h4>Where to go next</h4>
+                            <p>
+                                The capture habit this depends on is covered in
+                                <a href="save-selected-text-chrome-extension.html">saving selected text</a>. If you
+                                are weighing this against a full notes suite, see
+                                <a href="google-keep-alternative.html">the lightweight alternative comparison</a>. The
+                                <a href="manual.html#backup">manual's backup section</a> has the export detail.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="manual.html">Manual</a>
+                <a href="guides.html">Guides</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="https://fixquotes.com/docs/contact/?category=notepin">Feedback &amp; Issues</a>
+            </div>
+            <p class="copyright">© 2026 FixQuotes. NotePin is a browser extension by <a href="https://fixquotes.com/docs/about/" target="_blank">FixQuotes</a>.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
