@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","G-YX08PG386W");(function(){var sent=false;var evts=["pointerdown","keydown","scroll","touchstart"];function load(){if(sent)return;sent=true;evts.forEach(function(e){removeEventListener(e,load,{passive:true})});removeEventListener("load",load);clearTimeout(timer);var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-YX08PG386W";document.head.appendChild(s)}var timer=setTimeout(load,1800);evts.forEach(function(e){addEventListener(e,load,{passive:true})});addEventListener("load",load)})();</script>
     <title>Privacy Policy - NotePin</title>
-    <meta name="description" content="NotePin privacy policy. Notes stay in your browser and sync profile, no analytics are collected, and URL privacy controls can strip query strings or hash fragments before saving.">
+    <meta name="description" content="NotePin privacy policy covering local extension storage, website analytics, and URL privacy controls.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0a0f">
@@ -14,14 +15,14 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="NotePin">
     <meta property="og:title" content="Privacy Policy - NotePin">
-    <meta property="og:description" content="NotePin privacy policy. Notes stay in your browser and sync profile, no analytics are collected, and URL privacy controls can strip query strings or hash fragments before saving.">
+    <meta property="og:description" content="NotePin privacy policy covering local extension storage, website analytics, and URL privacy controls.">
     <meta property="og:url" content="https://notepin.cloud/privacy.html">
     <meta property="og:image" content="https://notepin.cloud/img/screenshots/popup_light_1280x800.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Privacy Policy - NotePin">
-    <meta name="twitter:description" content="NotePin privacy policy. Notes stay in your browser and sync profile, no analytics are collected, and URL privacy controls can strip query strings or hash fragments before saving.">
+    <meta name="twitter:description" content="NotePin privacy policy covering local extension storage, website analytics, and URL privacy controls.">
     <meta name="twitter:image" content="https://notepin.cloud/img/screenshots/popup_light_1280x800.png">
 
     <!-- Favicon -->
@@ -66,26 +67,27 @@
             policy behind that summary.
           </p>
           <ul class="manual-facts">
-            <li>Last updated 13 August 2026</li>
-            <li>No data collection</li>
-            <li><a href="manual.html#privacy">Permissions explained</a></li>
+            <li>Last updated 14 August 2026</li>
+            <li>No analytics inside the extension</li>
+            <li><a href="#website-analytics">Website analytics explained</a></li>
           </ul>
         </div>
       </section>
 
       <div class="content">
       <p>
-        This Privacy Policy describes how NotePin ("we", "us", or "our")
-        handles your information when you use our browser extension.
+        This Privacy Policy describes how NotePin ("we", "us", or "our") handles
+        information when you use our browser extension or visit our website.
       </p>
 
       <div class="highlight">
-        <strong>Summary:</strong> We do not collect, store, or transmit your
-        notes to any external server. All data stays in your browser storage and sync profile, and NotePin includes optional controls to strip query strings or hash fragments from saved URLs.
+        <strong>Summary:</strong> The NotePin extension does not collect, store, or transmit
+        your notes to us. Your extension data stays in your browser storage and sync profile.
+        The public website uses Google Analytics as described below, but it cannot access your notes.
       </div>
 
-      <h2>1. Data Collection</h2>
-      <p><strong>NotePin does not collect any personal data.</strong></p>
+      <h2>1. Browser Extension Data Collection</h2>
+      <p><strong>The NotePin browser extension does not collect personal data for us.</strong></p>
       <p>
         When you create a note, it is saved locally in your browser using
         <code>chrome.storage.sync</code>. This data is synced only across your
@@ -130,7 +132,7 @@
         your browser's extension settings.
       </p>
 
-      <h2>4. Third-Party Services</h2>
+      <h2>4. Third-Party Services Used by the Extension</h2>
       <p>
         The extension uses bundled open-source assets including jQuery 4.0.0
         and Lucide icon files. Shared UI styles and modal behavior are
@@ -145,16 +147,43 @@
         by their own providers' privacy policies.
       </p>
 
-      <h2>5. Website</h2>
+      <h2 id="website-analytics">5. Website Analytics</h2>
       <p>
-        The NotePin website is a static site hosted on GitHub Pages. It does not use analytics, advertising tags, or other third-party tracking scripts. It also does not read or transmit your NotePin notes.
+        The NotePin website is a static site hosted on GitHub Pages. It cannot read or transmit
+        notes stored by the extension. We use Google Analytics 4, a service provided by Google,
+        with measurement ID <code>G-YX08PG386W</code> to understand how the website is used and
+        to improve its content and performance.
+      </p>
+      <p>
+        When you visit the website, Google Analytics may collect page views and other website
+        interactions, session statistics, referring pages, approximate location, and browser and
+        device information. It may set first-party cookies such as <code>_ga</code> and
+        <code>_ga_*</code> to distinguish visitors and sessions. Google states that IP addresses
+        are used during collection to derive approximate location and are discarded before the
+        data is logged.
+      </p>
+      <p>
+        We do not intentionally send names, email addresses, note content, saved note URLs, or
+        other extension data to Google Analytics. Analytics information is processed by Google
+        under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>
+        and its <a href="https://support.google.com/analytics/answer/11593727" target="_blank" rel="noopener">Google Analytics data-collection documentation</a>.
+        Retention and deletion are controlled through our Google Analytics settings and Google's
+        applicable terms and policies.
+      </p>
+      <p>
+        You can limit analytics collection by blocking or deleting cookies in your browser.
+        Google also provides a
+        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.
       </p>
 
-      <h2>6. Your Rights</h2>
+      <h2>6. Your Choices and Rights</h2>
       <p>
-        Since NotePin does not collect or store personal data on external servers, there is no
-        personal data to access, modify, or delete. If you have any questions,
-        you may contact us using the information below.
+        Your extension data remains under your control in your browser and sync profile; we do
+        not hold a copy. Depending on where you live, you may have rights concerning personal data
+        processed through website analytics, including rights to access, delete, restrict, or
+        object to certain processing. Google Analytics uses pseudonymous identifiers, so we may
+        not be able to associate an analytics record with you. To ask a question or make a privacy
+        request, contact us using the information below.
       </p>
 
       <h2>7. Changes to This Policy</h2>
