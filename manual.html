@@ -36,7 +36,7 @@
     <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
     <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=20260814-3">
+    <link rel="stylesheet" href="style.css?v=20260819-3">
     <script src="index.js" defer></script>
     <script src="manual.js" defer></script>
 
@@ -399,6 +399,18 @@
                         <img src="img/manual/manual-note-card.png" alt="A NotePin note card showing the page title as a link, the note text, a tag chip, and the action buttons" loading="lazy" decoding="async" width="992" height="174">
                         <figcaption>One note card: page title as the link, note text, a tag, and the actions.</figcaption>
                     </figure>
+
+                    <h3>Viewing a note</h3>
+                    <p>
+                        Click the note text on a card to open the note viewer in the popup or fullscreen board. The
+                        viewer keeps the note read-only by default, with <strong>Copy</strong>,
+                        <strong>Quick Edit</strong>, and <strong>Close</strong> along the bottom.
+                    </p>
+                    <p>
+                        Any <code>http://</code> or <code>https://</code> web address written inside the note text
+                        becomes a clickable link in the viewer. Clicking it opens that address in a new tab.
+                    </p>
+
                     <h3>Why the page title matters</h3>
                     <p>
                         NotePin stores the title of the page you were on. On a note card the title is shown instead
@@ -739,6 +751,17 @@
                 <section class="manual-topic" id="editing">
                     <p class="eyebrow">Day to day</p>
                     <h2>Editing and deleting</h2>
+
+                    <h3>Quick editing from the viewer</h3>
+                    <p>
+                        Open a note, then click <strong>Quick Edit</strong>. The note text changes into a compact
+                        textarea for small corrections. Click <strong>Save</strong> to store the change and return the
+                        viewer to read-only mode.
+                    </p>
+                    <p>
+                        Quick Edit changes only the note text. Use the pencil on the note card when you need to edit
+                        the saved address, color, or tags.
+                    </p>
 
                     <h3>Editing in place</h3>
                     <figure class="manual-figure">

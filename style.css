@@ -1084,15 +1084,16 @@ section {
     display: flex;
     align-items: center;
     gap: 16px;
+    row-gap: 10px;
     margin-bottom: 24px;
     flex-wrap: wrap;
 }
 
-.version-number {
-    font-size: 1.35rem;
+.content .version-number {
     margin: 0;
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.5rem;
+    line-height: 1;
     font-weight: 700;
     color: var(--heading);
 }
@@ -1127,6 +1128,7 @@ section {
 .version-date {
     color: var(--text-muted);
     font-size: 0.9rem;
+    line-height: 1;
 }
 
 .version-section {
@@ -1148,18 +1150,23 @@ section {
 }
 
 /* Changelog feature list overrides */
-.version-card .feature-list li {
+.version-card .feature-list li,
+.version-card .feature-category li {
     padding: 10px 0;
     padding-left: 28px;
     border-bottom: 1px solid rgba(63, 63, 70, 0.3);
     font-size: 0.95rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
 }
 
-.version-card .feature-list li:last-child {
+.version-card .feature-list li:last-child,
+.version-card .feature-category li:last-child {
     border-bottom: none;
 }
 
-.version-card .feature-list li strong {
+.version-card .feature-list li strong,
+.version-card .feature-category li strong {
     color: var(--text);
 }
 
@@ -1205,7 +1212,13 @@ section {
     content: "•";
     position: absolute;
     left: 0;
+    top: 6px;
+    line-height: inherit;
     color: var(--primary-light);
+}
+
+.version-card .feature-category li::before {
+    top: 10px;
 }
 
 /* ===================================
