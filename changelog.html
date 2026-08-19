@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
     <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=20260814-3">
+    <link rel="stylesheet" href="style.css?v=20260819-3">
     <script src="index.js" defer></script>
 </head>
 <body>
@@ -76,6 +76,32 @@
         </section>
 
         <div class="content">
+
+        <!-- Version 1.0.19 -->
+        <div class="version-card">
+            <div class="version-header">
+                <h2 class="version-number">v1.0.19</h2>
+                <span class="version-badge badge-initial">Update</span>
+                <span class="version-date">August 2026</span>
+            </div>
+
+            <div class="feature-category">
+                <h3>&#10024; Added</h3>
+                <ul>
+                    <li><strong>Quick Edits in the Note Viewer:</strong> Popup and fullscreen note viewing now include a centered <strong>Quick Edit</strong> action between Copy and Close, then return to the read-only view after saving</li>
+                    <li><strong>Clickable Links in Notes:</strong> Web addresses written inside note text are now clickable from the note viewer and open in a new tab</li>
+                </ul>
+            </div>
+
+            <div class="feature-category">
+                <h3>&#128027; Fixes</h3>
+                <ul>
+                    <li><strong>Smooth Note Updates:</strong> Popup and fullscreen no longer fade and rebuild the entire note list after edits, pinning, bulk actions, deletes, undo, filtering, sorting, or sync updates. Cards now update in place while preserving the visible note, scroll position, selection, and keyboard focus</li>
+                    <li><strong>Compact Popup Quick Editing:</strong> Quick-edit textareas in the popup now use a compact height instead of filling the note viewer</li>
+                    <li><strong>Cleaner Notes Without Links:</strong> Notes without a saved URL now start at the top of the card beside the timestamp instead of leaving an awkward empty row, in both popup and fullscreen</li>
+                </ul>
+            </div>
+        </div>
 
         <!-- Version 1.0.18 -->
         <div class="version-card">
