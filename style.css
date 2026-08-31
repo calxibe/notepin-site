@@ -1677,6 +1677,11 @@ body.lightbox-open {
     text-align: center;
 }
 
+/* Contact ends after the hero, so the footer provides the single closing divider. */
+#contact-content .manual-hero {
+    border-bottom: 0;
+}
+
 .manual-hero-lede,
 .manual-hero .section-desc {
     margin-left: auto;
