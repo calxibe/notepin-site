@@ -105,7 +105,7 @@
                     </div>
                     <div class="supported-box">
                         <h2>🔄 Reliable Sync</h2>
-                        <p class="supported-copy">Keep notes across devices with chunked sync storage, safer conflict handling, built-in browser-language support, and privacy controls for cleaner saved URLs.</p>
+                        <p class="supported-copy">Keep notes across devices with checksum-protected new saves, safer conflict handling, built-in browser-language support, and privacy controls for cleaner saved URLs.</p>
                         <div class="format-tags">
                             <span class="format-tag">Cross-Device Sync</span>
                             <span class="format-tag">Sync-Safe Saves</span>
@@ -271,8 +271,9 @@
                         <p>Sync across devices without quietly overwriting data when Chrome sync is incomplete.</p>
                         <ul class="feature-list">
                             <li>Chunked browser sync storage stays within quota limits</li>
-                            <li>Revision-checked saves protect against popup/fullscreen write conflicts</li>
-                            <li>Warning banner blocks writes when sync returns an incomplete snapshot</li>
+                            <li>Revision and fingerprint checks protect against popup/fullscreen write conflicts</li>
+                            <li>Byte counts and checksums reject incomplete or mixed newly saved snapshots</li>
+                            <li>One verified local fallback survives extension restarts and remains read-only while sync is uncertain</li>
                             <li>Settings can still open with cached values when background sync is temporarily unavailable</li>
                             <li>Real-time refresh pulls in note changes from other extension views</li>
                             <li>JSON export/import supports backup and migration</li>

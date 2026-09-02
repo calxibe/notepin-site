@@ -67,7 +67,7 @@
             policy behind that summary.
           </p>
           <ul class="manual-facts">
-            <li>Last updated 14 August 2026</li>
+            <li>Last updated September 2026</li>
             <li>No analytics inside the extension</li>
             <li><a href="#website-analytics">Website analytics explained</a></li>
           </ul>
@@ -89,10 +89,11 @@
       <h2>1. Browser Extension Data Collection</h2>
       <p><strong>The NotePin browser extension does not collect personal data for us.</strong></p>
       <p>
-        When you create a note, it is saved locally in your browser using
-        <code>chrome.storage.sync</code>. This data is synced only across your
-        own signed-in browser instances via your browser's built-in sync mechanism.
-        We have no access to this data.
+        When you create a note, it is saved in your browser using
+        <code>chrome.storage.sync</code>. NotePin also keeps one verified last-good recovery
+        copy in <code>chrome.storage.local</code> on that computer. Synced data travels only
+        through your browser's built-in sync mechanism to your own signed-in browser instances.
+        We have no access to either copy.
       </p>
       <ul>
         <li>We do not send your notes to any external server.</li>
@@ -103,11 +104,15 @@
 
       <h2>2. Data Storage</h2>
       <p>
-        NotePin uses <code>chrome.storage.sync</code> to store your notes. This means:
+        NotePin uses <code>chrome.storage.sync</code> for your shared note list and
+        <code>chrome.storage.local</code> for one device-only recovery copy. This means:
       </p>
       <ul>
         <li>Notes are stored locally in your browser profile</li>
         <li>If sync is enabled in your browser profile, notes sync across your signed-in devices</li>
+        <li>Newly saved synced snapshots include a random commit identifier, byte count, checksum, and storage-schema marker so NotePin can reject incomplete or mixed deliveries; a checksum is an integrity check, not encryption</li>
+        <li>Each computer keeps one checksum-verified last-good snapshot locally so safe recovery can survive the extension being restarted; NotePin never uploads that fallback back to sync automatically</li>
+        <li>A small device-local schema marker remembers if that computer has seen a newer NotePin storage format, preventing an older version from writing over it</li>
         <li>Data is subject to browser sync storage quotas (~100 KB total)</li>
         <li>Privacy settings can strip query strings and hash fragments from newly saved note URLs</li>
         <li>Only valid http(s) note URLs are kept; unsupported schemes are ignored</li>
@@ -119,7 +124,7 @@
         NotePin requests the following browser permissions:
       </p>
       <ul>
-        <li><strong>storage</strong> — To save and sync your notes across devices, and to keep device-local preferences such as popup size and the usage counters behind the one-time rating prompt</li>
+        <li><strong>storage</strong> — To save and sync your notes across devices, keep one device-local verified recovery snapshot, and keep preferences such as popup size and the usage counters behind the one-time rating prompt</li>
         <li><strong>activeTab</strong> — To read the current tab's URL for domain-based note filtering and badge counts</li>
         <li><strong>contextMenus</strong> — To provide the right-click "Save to NotePin" menu item</li>
         <li><strong>scripting</strong> — To register or remove the optional in-page sticky note script when you turn that feature on or off</li>

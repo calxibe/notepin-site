@@ -935,9 +935,22 @@
                         browser — which can happen mid-sync — it shows a warning and refuses to save until the picture
                         is complete again, rather than writing a half-copy over your notes.
                     </p>
+                    <p>
+                        Each new snapshot carries an exact byte count and checksum. That lets NotePin reject a list
+                        assembled from missing or mismatched pieces even if it still looks like valid data. It also
+                        keeps one verified last-good copy on this computer, so the safe fallback survives the browser
+                        restarting the extension. The fallback is never uploaded automatically while sync is uncertain.
+                    </p>
+                    <div class="manual-callout warning">
+                        Version 1.0.21 is the safety layer before NotePin's actor-based sync format. It does not yet
+                        merge two whole note lists edited independently on computers that were both offline. Avoid
+                        making parallel offline changes on multiple computers, or export JSON first if you need a
+                        point-in-time backup.
+                    </div>
                     <div class="manual-callout info">
                         Some things stay on the device on purpose and never sync: your popup size, appearance choice,
-                        the position of sticky panels, and which sites you have hidden them on.
+                        the position of sticky panels, which sites you have hidden them on, and the verified last-good
+                        recovery snapshot.
                     </div>
 
                     <p class="manual-related">
@@ -958,7 +971,7 @@
                     <p>
                         That is the budget for <em>all</em> your notes together, not per note. Roughly speaking, at
                         typical note lengths that is somewhere around 250 to 300 notes. Longer notes, page titles,
-                        and tags each take a share.
+                        tags, and the small integrity record each take a share.
                     </p>
 
                     <h3>The storage meter</h3>
@@ -1180,7 +1193,17 @@
                         <p>
                             The browser returned a partial set of notes, usually while sync is catching up. NotePin
                             deliberately blocks saving in this state so a partial copy cannot overwrite your notes.
-                            Wait a moment and reopen NotePin. Your notes are safe; the extension is being careful.
+                            It shows the last checksum-verified copy available on this computer. Wait a moment and
+                            reopen NotePin; the fallback is read-only and is never pushed into sync automatically.
+                        </p>
+                    </details>
+
+                    <details class="manual-disclosure">
+                        <summary>A warning says the notes use a newer storage version</summary>
+                        <p>
+                            Another computer has upgraded the shared note data with a newer NotePin release. Update
+                            NotePin in this browser before editing. The extension remembers the newer format on this
+                            computer and stays read-only until you update.
                         </p>
                     </details>
 
