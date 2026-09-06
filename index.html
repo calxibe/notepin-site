@@ -5,29 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","G-YX08PG386W");(function(){var sent=false;var evts=["pointerdown","keydown","scroll","touchstart"];function load(){if(sent)return;sent=true;evts.forEach(function(e){removeEventListener(e,load,{passive:true})});removeEventListener("load",load);clearTimeout(timer);var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-YX08PG386W";document.head.appendChild(s)}var timer=setTimeout(load,1800);evts.forEach(function(e){addEventListener(e,load,{passive:true})});addEventListener("load",load)})();</script>
-    <title>NotePin - Save Notes for Any Web Page on Chrome and Edge</title>
+    <title>Web Page Notes Extension for Chrome &amp; Edge | NotePin</title>
     <meta name="description"
-        content="Capture selected text, save notes for any web page or URL, show optional in-page sticky notes, and manage everything in popup or fullscreen with search, bulk actions, privacy controls, and sync-safe storage on Chrome and Edge.">
+        content="Save private notes on web pages with NotePin for Chrome and Edge. Capture selected text, add sticky notes, and search by site or tag. Free, no NotePin account.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0a0f">
-    <link rel="canonical" href="https://notepin.cloud">
+    <link rel="canonical" href="https://notepin.cloud/">
     <meta name="google-site-verification" content="14OfSmxPs5-EXpOJ6Cx9AvpeZSgXMOnxvYtgm21ykQY" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="NotePin">
-    <meta property="og:title" content="NotePin - Save Notes for Any Web Page on Chrome and Edge">
+    <meta property="og:title" content="Web Page Notes Extension for Chrome &amp; Edge | NotePin">
     <meta property="og:description"
-        content="Capture selected text, save notes for any web page or URL, show optional in-page sticky notes, and manage everything in popup or fullscreen with search, bulk actions, privacy controls, and sync-safe storage on Chrome and Edge.">
-    <meta property="og:url" content="https://notepin.cloud">
+        content="Save private notes on web pages with NotePin for Chrome and Edge. Capture selected text, add sticky notes, and search by site or tag. Free, no NotePin account.">
+    <meta property="og:url" content="https://notepin.cloud/">
     <meta property="og:image" content="https://notepin.cloud/img/screenshots/popup_light_1280x800.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="NotePin - Save Notes for Any Web Page on Chrome and Edge">
+    <meta name="twitter:title" content="Web Page Notes Extension for Chrome &amp; Edge | NotePin">
     <meta name="twitter:description"
-        content="Capture selected text, save notes for any web page or URL, show optional in-page sticky notes, and manage everything in popup or fullscreen with search, bulk actions, privacy controls, and sync-safe storage on Chrome and Edge.">
+        content="Save private notes on web pages with NotePin for Chrome and Edge. Capture selected text, add sticky notes, and search by site or tag. Free, no NotePin account.">
     <meta name="twitter:image" content="https://notepin.cloud/img/screenshots/popup_light_1280x800.png">
 
     <!-- Favicon -->
@@ -37,8 +37,57 @@
     <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
     <link rel="apple-touch-icon" sizes="256x256" href="img/icon256.png">
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=20260819-4">
-    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.min.css?v=dac896e6cc90">
+    <script src="index.js?v=507142d2e918" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://notepin.cloud/#publisher",
+          "name": "FixQuotes",
+          "url": "https://fixquotes.com/docs/about/"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://notepin.cloud/#website",
+          "name": "NotePin",
+          "url": "https://notepin.cloud/",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://notepin.cloud/#publisher" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://notepin.cloud/#webpage",
+          "name": "Web Page Notes Extension for Chrome & Edge | NotePin",
+          "url": "https://notepin.cloud/",
+          "isPartOf": { "@id": "https://notepin.cloud/#website" },
+          "mainEntity": { "@id": "https://notepin.cloud/#extension" },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://notepin.cloud/#extension",
+          "name": "NotePin – Private Notes for Web Pages",
+          "url": "https://notepin.cloud/",
+          "description": "A free Chrome and Edge extension for private notes linked to web pages, selected-text capture, optional in-page sticky notes, and search by site, tag, or color.",
+          "applicationCategory": "BrowserApplication",
+          "operatingSystem": "Windows, macOS, Linux",
+          "softwareRequirements": "Google Chrome or Microsoft Edge desktop browser",
+          "isAccessibleForFree": true,
+          "publisher": { "@id": "https://notepin.cloud/#publisher" },
+          "image": "https://notepin.cloud/img/icon256.png",
+          "screenshot": "https://notepin.cloud/img/screenshots/popup_light_1280x800.png",
+          "installUrl": [
+            "https://chromewebstore.google.com/detail/notepin-web-page-notes-st/fonaehlalnjinfdkjpicffebenbhhnbj",
+            "https://microsoftedge.microsoft.com/addons/detail/notepin-web-page-notes-/neeciljnpmmlcfahncjdeffnclconjck"
+          ],
+          "offers": { "@type": "Offer", "price": 0, "priceCurrency": "USD" }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -68,14 +117,12 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Capture Notes for<br>Any Web Page</h1>
+                <h1>Private Notes for<br>Web Pages</h1>
 
                 <p class="subtitle">
-                    Select text on any website, send it to NotePin from the context menu, and save it as a note with
-                    the current page URL already attached. You can also save notes for any URL manually, surface them
-                    as optional in-page stickies, then organize everything in a quick popup or fullscreen workspace with
-                    search, bulk actions, safe sync, privacy controls, and an interface that follows your browser
-                    language.
+                    NotePin is a free notes extension for Chrome and Edge. Save a note with the page you are
+                    visiting, capture selected text with a right-click, or show your notes as optional sticky notes
+                    on the website. Find them again by site, tag, or color. No NotePin account required.
                 </p>
 
                 <div class="cta-buttons" id="install">
@@ -105,7 +152,7 @@
                     </div>
                     <div class="supported-box">
                         <h2>🔄 Reliable Sync</h2>
-                        <p class="supported-copy">Keep notes across devices with checksum-protected new saves, safer conflict handling, built-in browser-language support, and privacy controls for cleaner saved URLs.</p>
+                        <p class="supported-copy">Keep notes across devices when browser sync is enabled, export a backup whenever you need one, and choose which details stay in saved page URLs.</p>
                         <div class="format-tags">
                             <span class="format-tag">Cross-Device Sync</span>
                             <span class="format-tag">Sync-Safe Saves</span>
@@ -137,60 +184,58 @@
                     <button class="screenshot-tab" data-view="fullscreen">Fullscreen</button>
                 </div>
 
-                <p class="screenshot-note">Each preview uses the full 1280 x 800 capture directly, and you can open the same image in the fullscreen preview.</p>
+                <p class="screenshot-note">Explore the popup, page stickies, and note board. Open any preview to see the original full-size screenshot.</p>
 
                 <div class="screenshot-showcase" id="screenshotShowcase">
                     <div class="screenshot-panel screenshot-panel-single active" data-view="popup">
                         <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/screenshots/popup_light_1280x800.png">
                             <span class="screenshot-label">Quick Capture</span>
-                            <img src="img/screenshots/popup_light_1280x800.png"
+                            <img src="img/screenshots/popup_light_1280x800-1280w-e73f3ca03537.webp"
                                 alt="NotePin popup open over a web page, showing saved notes with page titles and tags"
-                                width="1280" height="800" loading="lazy" decoding="async">
+                                width="1280" height="800" loading="lazy" decoding="async" data-image-source="img/screenshots/popup_light_1280x800.png" srcset="img/screenshots/popup_light_1280x800-480w-2607a69e46da.webp 480w, img/screenshots/popup_light_1280x800-800w-f04f37c6d6dd.webp 800w, img/screenshots/popup_light_1280x800-1280w-e73f3ca03537.webp 1280w" sizes="(max-width: 1100px) calc(100vw - 50px), 860px">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
                     </div>
                     <div class="screenshot-panel screenshot-panel-single" data-view="context-menu">
                         <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/screenshots/context_menu_capture_1280x800.png">
                             <span class="screenshot-label">Right-click Capture</span>
-                            <img src="img/screenshots/context_menu_capture_1280x800.png"
+                            <img src="img/screenshots/context_menu_capture_1280x800-1280w-7c286ea0ef8a.webp"
                                 alt="Selected text on a web page with the right-click menu open on Save to NotePin, and the quote already staged in the NotePin popup"
-                                width="1280" height="800" loading="lazy" decoding="async">
+                                width="1280" height="800" loading="lazy" decoding="async" data-image-source="img/screenshots/context_menu_capture_1280x800.png" srcset="img/screenshots/context_menu_capture_1280x800-480w-4b0524b62ea9.webp 480w, img/screenshots/context_menu_capture_1280x800-800w-862b5642b8d8.webp 800w, img/screenshots/context_menu_capture_1280x800-1280w-7c286ea0ef8a.webp 1280w" sizes="(max-width: 1100px) calc(100vw - 50px), 860px">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
                     </div>
                     <div class="screenshot-panel screenshot-panel-single" data-view="stickies">
                         <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/screenshots/sticky_notes_1280x800.png">
                             <span class="screenshot-label">Page Stickies</span>
-                            <img src="img/screenshots/sticky_notes_1280x800.png"
+                            <img src="img/screenshots/sticky_notes_1280x800-1280w-91e7e604cb9c.webp"
                                 alt="NotePin in-page sticky notes overlay showing three saved notes on a product page"
-                                width="1280" height="800" loading="lazy" decoding="async">
+                                width="1280" height="800" loading="lazy" decoding="async" data-image-source="img/screenshots/sticky_notes_1280x800.png" srcset="img/screenshots/sticky_notes_1280x800-480w-47ba73941a37.webp 480w, img/screenshots/sticky_notes_1280x800-800w-747d8d6cd8e1.webp 800w, img/screenshots/sticky_notes_1280x800-1280w-91e7e604cb9c.webp 1280w" sizes="(max-width: 1100px) calc(100vw - 50px), 860px">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
                     </div>
                     <div class="screenshot-panel" data-view="fullscreen">
                         <button class="screenshot-card screenshot-feature" type="button" data-fullsrc="img/screenshots/fullscreen_light_1280x800.png">
                             <span class="screenshot-label">Light</span>
-                            <img src="img/screenshots/fullscreen_light_1280x800.png" alt="NotePin fullscreen in light mode"
-                                width="1280" height="800" loading="lazy" decoding="async">
+                            <img src="img/screenshots/fullscreen_light_1280x800-1280w-51f5c1dcae23.webp" alt="NotePin fullscreen in light mode"
+                                width="1280" height="800" loading="lazy" decoding="async" data-image-source="img/screenshots/fullscreen_light_1280x800.png" srcset="img/screenshots/fullscreen_light_1280x800-480w-43aa01b757f6.webp 480w, img/screenshots/fullscreen_light_1280x800-800w-df2a4132864a.webp 800w, img/screenshots/fullscreen_light_1280x800-1280w-51f5c1dcae23.webp 1280w" sizes="(max-width: 1100px) calc(100vw - 50px), 1100px">
                             <span class="screenshot-hint">Open 1280 x 800</span>
                         </button>
                         <div class="screenshot-variants">
                             <button class="screenshot-variant active" type="button"
-                                data-previewsrc="img/screenshots/fullscreen_light_1280x800.png"
+                                data-previewsrc="img/screenshots/fullscreen_light_1280x800-1280w-51f5c1dcae23.webp"
                                 data-fullsrc="img/screenshots/fullscreen_light_1280x800.png"
                                 data-alt="NotePin fullscreen in light mode"
                                 data-label="Light"
-                                data-
-                                aria-pressed="true">
+                                aria-pressed="true" data-previewsrcset="img/screenshots/fullscreen_light_1280x800-480w-43aa01b757f6.webp 480w, img/screenshots/fullscreen_light_1280x800-800w-df2a4132864a.webp 800w, img/screenshots/fullscreen_light_1280x800-1280w-51f5c1dcae23.webp 1280w">
                                 <span class="screenshot-variant-name">Light</span>
                             </button>
                             <button class="screenshot-variant" type="button"
-                                data-previewsrc="img/screenshots/fullscreen_dark_1280x800.png"
+                                data-previewsrc="img/screenshots/fullscreen_dark_1280x800-1280w-f2fa746e2ba2.webp"
                                 data-fullsrc="img/screenshots/fullscreen_dark_1280x800.png"
                                 data-alt="NotePin fullscreen in dark mode"
                                 data-label="Dark"
-                                data-
-                                aria-pressed="false">
+                                aria-pressed="false" data-previewsrcset="img/screenshots/fullscreen_dark_1280x800-480w-1e774afebfb9.webp 480w, img/screenshots/fullscreen_dark_1280x800-800w-afcc7ccc2182.webp 800w, img/screenshots/fullscreen_dark_1280x800-1280w-f2fa746e2ba2.webp 1280w">
                                 <span class="screenshot-variant-name">Dark</span>
                             </button>
                         </div>
@@ -289,7 +334,7 @@
                             <li>Strip query strings or hash fragments from saved note URLs</li>
                             <li>Bare web addresses get https:// added automatically before validation</li>
                             <li>Unsupported URL schemes are ignored instead of being saved</li>
-                            <li>No note data is sent to third-party servers</li>
+                            <li>No notes are sent to a NotePin server; browser sync uses your browser provider when enabled</li>
                             <li>Accessible labels, pressed states, and live status announcements throughout</li>
                             <li>Minimal permissions: storage, activeTab, contextMenus, scripting — plus website access you grant only if you turn on in-page sticky notes</li>
                         </ul>
@@ -309,6 +354,40 @@
                             <a href="bookmark-manager-alternative.html">replacing bookmark folders</a>,
                             <a href="sticky-notes-chrome-extension.html">sticky notes on any website</a>, and more.
                             Every <a href="manual.html#shortcuts">keyboard shortcut</a> is listed in the user manual.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="getting-started">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Get Started</span>
+                    <h2>How to take notes on a web page</h2>
+                    <p class="section-desc">Install NotePin in Chrome or Edge, open a page, and choose the way you want to save your note.</p>
+                </div>
+                <div class="guides-grid">
+                    <a href="save-selected-text-chrome-extension.html" class="guide-card">
+                        <h3>Save selected text with its source</h3>
+                        <p>Highlight a passage, right-click, and choose Save to NotePin. Review your note and save it with the page address attached.</p>
+                    </a>
+                    <a href="sticky-notes-chrome-extension.html" class="guide-card">
+                        <h3>Add sticky notes to websites</h3>
+                        <p>Enable in-page sticky notes in Settings and grant website access. Your private notes appear when you return to a matching site.</p>
+                    </a>
+                    <a href="manual.html#shortcuts" class="guide-card">
+                        <h3>Keep note-taking close at hand</h3>
+                        <p>Pin NotePin to your browser toolbar, or set a keyboard shortcut to open it and capture text without breaking your flow.</p>
+                    </a>
+                </div>
+                <div class="note-box">
+                    <span class="icon" aria-hidden="true">&#128274;</span>
+                    <div>
+                        <h3>Who can see your web page notes?</h3>
+                        <p>Your notes are private to your browser profile and are not published on the website.
+                            NotePin uses browser storage and, when enabled, your browser's sync service.
+                            The extension has no ads or analytics; this website uses analytics to understand visits.
+                            Read the <a href="privacy.html">privacy policy</a> for details.</p>
                     </div>
                 </div>
             </div>
