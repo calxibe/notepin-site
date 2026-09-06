@@ -96,6 +96,13 @@ document.querySelectorAll('.screenshot-panel').forEach((panel) => {
             // No aria-label here on purpose. The button's accessible name comes from its
             // own visible text plus the image alt; an aria-label that did not repeat that
             // visible text failed Lighthouse's label-content-name-mismatch check.
+            // Swap the responsive candidates too, otherwise the browser can keep
+            // showing the previous light/dark image selected from its old srcset.
+            if (variant.dataset.previewsrcset) {
+                featureImage.srcset = variant.dataset.previewsrcset;
+            } else {
+                featureImage.removeAttribute('srcset');
+            }
             featureImage.src = variant.dataset.previewsrc || featureImage.src;
             featureImage.alt = variant.dataset.alt || featureImage.alt;
 

@@ -713,6 +713,7 @@ code {
 /* Screenshot Tabs (View Switcher) */
 .screenshot-tabs {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
     margin-bottom: 32px;
@@ -801,7 +802,7 @@ code {
     width: 100%;
     height: auto;
     display: block;
-    aspect-ratio: auto;
+    aspect-ratio: 8 / 5;
     object-fit: contain;
     background: var(--surface-light);
 }
@@ -1354,6 +1355,7 @@ footer {
 
 .footer-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 32px;
 }
 
@@ -1609,6 +1611,16 @@ body.lightbox-open {
     .footer-inner {
         flex-direction: column;
         text-align: center;
+    }
+
+    .footer-inner > div {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 16px 24px;
     }
 }
 
@@ -2335,7 +2347,8 @@ body.lightbox-open {
     margin-bottom: 18px;
 }
 
-.guide-card h2 {
+.guide-card h2,
+.guide-card h3 {
     font-size: 1.12rem;
     font-weight: 700;
     line-height: 1.35;
