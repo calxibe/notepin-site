@@ -128,6 +128,7 @@
         <li><strong>activeTab</strong> — To read the current tab's URL for domain-based note filtering and badge counts</li>
         <li><strong>contextMenus</strong> — To provide the right-click "Save to NotePin" menu item</li>
         <li><strong>scripting</strong> — To register or remove the optional in-page sticky note script when you turn that feature on or off</li>
+        <li><strong>sidePanel</strong> — To show NotePin beside the page in the browser's side panel</li>
       </ul>
       <p>
         NotePin also declares <strong>optional website access</strong> (<code>http://*/*</code> and
@@ -135,6 +136,15 @@
         if you enable in-page sticky notes, so that matching notes can be drawn on the pages you visit.
         Turning the feature off removes the script again, and you can revoke the access at any time from
         your browser's extension settings.
+      </p>
+
+      <p>
+        The side panel separately offers <strong>optional tab access</strong> (<code>tabs</code>)
+        through <strong>Allow page following</strong>. This reads tab titles and URLs so the panel
+        can follow the active page as you browse. Your browser describes this access as browsing
+        history, but NotePin does not record a browsing-history log or send it to us. Only the source
+        information attached to your notes and unfinished drafts is saved. Choose
+        <strong>Stop following pages</strong> in the panel to revoke this permission.
       </p>
 
       <h2>4. Third-Party Services Used by the Extension</h2>

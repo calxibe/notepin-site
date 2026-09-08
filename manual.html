@@ -228,8 +228,8 @@
                         </li>
                     </ol>
                     <div class="manual-callout info">
-                        NotePin asks for no permissions beyond the four it needs to work, and it never asks for
-                        website access at install. See <a href="#privacy">Privacy and permissions</a>.
+                        NotePin never asks for website access or continuous tab access at install. Both are optional:
+                        see <a href="#privacy">Privacy and permissions</a>.
                     </div>
                 </section>
 
@@ -333,8 +333,8 @@
                     <p class="manual-lede">The popup is the quick surface. It opens on the toolbar icon.</p>
 
                     <figure class="manual-screenshot">
-                        <img src="img/manual/manual-popup-1280w-b070f30fb60f.webp"
-                            alt="The NotePin popup open beside a web page, with a note being written and saved notes listed below" loading="lazy" decoding="async" width="1280" height="704" data-image-source="img/manual/manual-popup.png" srcset="img/manual/manual-popup-480w-bfd93c2d1418.webp 480w, img/manual/manual-popup-800w-f32b3bfe0a53.webp 800w, img/manual/manual-popup-1280w-b070f30fb60f.webp 1280w" sizes="(max-width: 1000px) min(1280px, calc(100vw - 48px)), (max-width: 1200px) min(1280px, calc(100vw - 364px)), 836px">
+                        <img src="img/manual/manual-popup-1280w-a90da5084fa6.webp"
+                            alt="The NotePin popup open beside a web page, with a note being written and saved notes listed below" loading="lazy" decoding="async" width="1280" height="704" data-image-source="img/manual/manual-popup.png" srcset="img/manual/manual-popup-480w-a172275d87fe.webp 480w, img/manual/manual-popup-800w-9a186c3959e5.webp 800w, img/manual/manual-popup-1280w-a90da5084fa6.webp 1280w" sizes="(max-width: 1000px) min(1280px, calc(100vw - 48px)), (max-width: 1200px) min(1280px, calc(100vw - 364px)), 836px">
                         <figcaption>The popup mid-note. The page you are on is attached automatically.</figcaption>
                     </figure>
 
@@ -347,7 +347,8 @@
                             <tbody>
                                 <tr><th scope="row">Take a new note…</th><td>Opens the note form. The current page is attached when you save.</td></tr>
                                 <tr><th scope="row">Search box</th><td>Filters your notes as you type. See <a href="#search">Search and filters</a>.</td></tr>
-                                <tr><th scope="row">Current Site</th><td>Limits the list to notes for the site you are on. Your choice is remembered.</td></tr>
+                                <tr><th scope="row">This page / This site / All notes</th><td>Choose notes for the exact page, the current site, or your whole collection. Counts show the notes in each scope before text or tag filters; your choice is remembered.</td></tr>
+                                <tr><th scope="row">Open side panel</th><td>Keeps NotePin beside your browsing instead of closing when you return to the page.</td></tr>
                                 <tr><th scope="row">Settings (gear)</th><td>Opens the shared settings panel. See <a href="#settings">Settings reference</a>.</td></tr>
                                 <tr><th scope="row">Expand (arrows)</th><td>Opens the fullscreen board in a tab. An in-progress note comes with you.</td></tr>
                                 <tr><th scope="row">Toolbar badge</th><td>The number of notes you have for the site you are on.</td></tr>
@@ -355,13 +356,27 @@
                         </table>
                     </div>
 
-                    <h3>Current Site matching</h3>
+                    <h3>Page and site matching</h3>
+                    <p><strong>This page</strong> matches the saved URL, respecting your settings for removing query strings and hash fragments.</p>
                     <p>
-                        <strong>Current Site</strong> treats <code>www</code>, the main domain, and its subdomains as
+                        <strong>This site</strong> treats <code>www</code>, the main domain, and its subdomains as
                         one site. A note saved on <code>www.example.com</code> or <code>app.example.com</code> shows
                         when you are on <code>example.com</code>, and the other way round. Two different subdomains —
                         <code>a.example.com</code> and <code>b.example.com</code> — stay separate, and a lookalike
                         domain such as <code>notexample.com</code> never matches. The toolbar badge counts the same way.
+                    </p>
+
+                    <h3>Keep NotePin open in the side panel</h3>
+                    <p>
+                        Click <strong>Open side panel</strong> in the popup header. You can search and write notes
+                        without closing it when you return to a page. Choose <strong>Allow page following</strong>
+                        to let it read tab titles and URLs as you switch tabs; this permission is optional and
+                        <strong>Stop following pages</strong> revokes it. Without access, All notes and manual source URLs still work.
+                    </p>
+                    <p>
+                        The <strong>Save this note to</strong> field shows the source URL. Once you start writing,
+                        that source stays attached even if you switch pages. You can edit it yourself. Popup and
+                        side-panel drafts are saved separately; opening the side panel does not move a popup draft.
                     </p>
 
                     <h3>Popup notes are always newest first</h3>
@@ -396,7 +411,7 @@
                     </div>
 
                     <figure class="manual-figure">
-                        <img src="img/manual/manual-note-card-992w-b786d47681bd.webp" alt="A NotePin note card showing the page title as a link, the note text, a tag chip, and the action buttons" loading="lazy" decoding="async" width="992" height="174" data-image-source="img/manual/manual-note-card.png" srcset="img/manual/manual-note-card-480w-dfdf2457cbd8.webp 480w, img/manual/manual-note-card-800w-3c6351abe6d0.webp 800w, img/manual/manual-note-card-992w-b786d47681bd.webp 992w" sizes="(max-width: 1000px) min(992px, calc(100vw - 48px)), (max-width: 1200px) min(992px, calc(100vw - 364px)), 836px">
+                        <img src="img/manual/manual-note-card-992w-5cb73c79f708.webp" alt="A NotePin note card showing the page title as a link, the note text, a tag chip, and the action buttons" loading="lazy" decoding="async" width="992" height="175" data-image-source="img/manual/manual-note-card.png" srcset="img/manual/manual-note-card-480w-d05a35c303d7.webp 480w, img/manual/manual-note-card-800w-a8ec41deb4be.webp 800w, img/manual/manual-note-card-992w-5cb73c79f708.webp 992w" sizes="(max-width: 1000px) min(992px, calc(100vw - 48px)), (max-width: 1200px) min(992px, calc(100vw - 364px)), 836px">
                         <figcaption>One note card: page title as the link, note text, a tag, and the actions.</figcaption>
                     </figure>
 
@@ -450,7 +465,7 @@
 
                     <h3>Name what a color means</h3>
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-settings-colors-510w-826338eeac8a.webp" alt="The Color labels section of NotePin settings with four of the eight colors named" loading="lazy" decoding="async" width="510" height="223" data-image-source="img/manual/manual-settings-colors.png" srcset="img/manual/manual-settings-colors-480w-e2f7ebbfd050.webp 480w, img/manual/manual-settings-colors-510w-826338eeac8a.webp 510w" sizes="(max-width: 1000px) min(510px, calc(100vw - 48px)), (max-width: 1200px) min(510px, calc(100vw - 364px)), 510px">
+                        <img src="img/manual/manual-settings-colors-510w-68a28e2800a8.webp" alt="The Color labels section of NotePin settings with four of the eight colors named" loading="lazy" decoding="async" width="510" height="222" data-image-source="img/manual/manual-settings-colors.png" srcset="img/manual/manual-settings-colors-480w-151f119acd61.webp 480w, img/manual/manual-settings-colors-510w-68a28e2800a8.webp 510w" sizes="(max-width: 1000px) min(510px, calc(100vw - 48px)), (max-width: 1200px) min(510px, calc(100vw - 364px)), 510px">
                         <figcaption>Settings → Color labels. Blank fields keep the default names.</figcaption>
                     </figure>
                     <p>
@@ -474,18 +489,19 @@
                     </p>
                     <ol class="manual-steps">
                         <li>Open the note form in the popup or on the board.</li>
-                        <li>Type into the <strong>Tags</strong> field, separating tags with commas.</li>
-                        <li>Save. The tags appear as small chips on the note card.</li>
+                        <li>Type into the <strong>Tags</strong> field, choose a suggested existing tag, or enter a new one.</li>
+                        <li>Press Enter or comma to make a chip. Click its × to remove it. Save also adds any tag you are still typing.</li>
+                        <li>Use the pencil on an existing note to change its tags, or select several notes on the board and choose <strong>Tags</strong> to add or remove tags together.</li>
                     </ol>
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-note-form-544w-2e37de3ecfe1.webp"
+                        <img src="img/manual/manual-note-form-544w-77871bab668b.webp"
                             alt="The NotePin New Note dialog with a URL, note text, a tags field, and the color picker"
-                            loading="lazy" decoding="async" width="544" height="606" data-image-source="img/manual/manual-note-form.png" srcset="img/manual/manual-note-form-480w-1909049a3886.webp 480w, img/manual/manual-note-form-544w-2e37de3ecfe1.webp 544w" sizes="(max-width: 1000px) min(544px, calc(100vw - 48px)), (max-width: 1200px) min(544px, calc(100vw - 364px)), 544px">
-                        <figcaption>The note form. Tags go in comma separated.</figcaption>
+                            loading="lazy" decoding="async" width="544" height="658" data-image-source="img/manual/manual-note-form.png" srcset="img/manual/manual-note-form-480w-6d86a21ffac6.webp 480w, img/manual/manual-note-form-544w-77871bab668b.webp 544w" sizes="(max-width: 1000px) min(544px, calc(100vw - 48px)), (max-width: 1200px) min(544px, calc(100vw - 364px)), 544px">
+                        <figcaption>The note form with removable tag chips and suggestions for tags you already use.</figcaption>
                     </figure>
                     <p>
-                        Click any tag chip to filter down to that tag. That fills the search box with
-                        <code>tag:name</code>, which you can also type yourself.
+                        Click any tag chip to add a separate tag filter without changing your search text.
+                        You can also type <code>tag:name</code> in the search box.
                     </p>
                     <div class="manual-callout info">
                         <strong>Colors or tags?</strong> Colors are faster and free. Tags are better when the thing
@@ -513,14 +529,14 @@
                     </p>
 
                     <figure class="manual-screenshot">
-                        <img src="img/manual/manual-stickies-page-1280w-865fece088f9.webp"
-                            alt="Three NotePin sticky notes floating on a product page, showing price, screen, and return window notes" loading="lazy" decoding="async" width="1280" height="704" data-image-source="img/manual/manual-stickies-page.png" srcset="img/manual/manual-stickies-page-480w-417ac33ef336.webp 480w, img/manual/manual-stickies-page-800w-98e34d2cd135.webp 800w, img/manual/manual-stickies-page-1280w-865fece088f9.webp 1280w" sizes="(max-width: 1000px) min(1280px, calc(100vw - 48px)), (max-width: 1200px) min(1280px, calc(100vw - 364px)), 836px">
+                        <img src="img/manual/manual-stickies-page-1280w-e1ed5ae8b4d6.webp"
+                            alt="Three NotePin sticky notes floating on a product page, showing price, screen, and return window notes" loading="lazy" decoding="async" width="1280" height="704" data-image-source="img/manual/manual-stickies-page.png" srcset="img/manual/manual-stickies-page-480w-592dbb611dbf.webp 480w, img/manual/manual-stickies-page-800w-04288d127946.webp 800w, img/manual/manual-stickies-page-1280w-e1ed5ae8b4d6.webp 1280w" sizes="(max-width: 1000px) min(1280px, calc(100vw - 48px)), (max-width: 1200px) min(1280px, calc(100vw - 364px)), 836px">
                         <figcaption>Sticky notes on the page they were written about.</figcaption>
                     </figure>
 
                     <h3>Turning them on</h3>
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-settings-stickies-510w-6fb8e9b492a3.webp" alt="The in-page sticky notes section of NotePin settings with both checkboxes" loading="lazy" decoding="async" width="510" height="201" data-image-source="img/manual/manual-settings-stickies.png" srcset="img/manual/manual-settings-stickies-480w-ef4e45d81851.webp 480w, img/manual/manual-settings-stickies-510w-6fb8e9b492a3.webp 510w" sizes="(max-width: 1000px) min(510px, calc(100vw - 48px)), (max-width: 1200px) min(510px, calc(100vw - 364px)), 510px">
+                        <img src="img/manual/manual-settings-stickies-510w-2626b8e627a6.webp" alt="The in-page sticky notes section of NotePin settings with both checkboxes" loading="lazy" decoding="async" width="510" height="200" data-image-source="img/manual/manual-settings-stickies.png" srcset="img/manual/manual-settings-stickies-480w-5ea0bd666427.webp 480w, img/manual/manual-settings-stickies-510w-2626b8e627a6.webp 510w" sizes="(max-width: 1000px) min(510px, calc(100vw - 48px)), (max-width: 1200px) min(510px, calc(100vw - 364px)), 510px">
                         <figcaption>Settings → In-page sticky notes. Both options live here.</figcaption>
                     </figure>
                     <ol class="manual-steps">
@@ -540,7 +556,7 @@
 
                     <h3>Using the panel</h3>
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-sticky-panel-352w-077b4f28b9d9.webp" alt="The NotePin sticky note panel showing three notes with color labels, dates, and edit buttons" loading="lazy" decoding="async" width="352" height="446" data-image-source="img/manual/manual-sticky-panel.png" srcset="img/manual/manual-sticky-panel-352w-077b4f28b9d9.webp 352w" sizes="(max-width: 1000px) min(352px, calc(100vw - 48px)), (max-width: 1200px) min(352px, calc(100vw - 364px)), 352px">
+                        <img src="img/manual/manual-sticky-panel-352w-3d08f88ad21d.webp" alt="The NotePin sticky note panel showing three notes with color labels, dates, and edit buttons" loading="lazy" decoding="async" width="352" height="443" data-image-source="img/manual/manual-sticky-panel.png" srcset="img/manual/manual-sticky-panel-352w-3d08f88ad21d.webp 352w" sizes="(max-width: 1000px) min(352px, calc(100vw - 48px)), (max-width: 1200px) min(352px, calc(100vw - 364px)), 352px">
                         <figcaption>The panel itself: a header with Hide site and collapse, then one card per note.</figcaption>
                     </figure>
                     <div class="manual-table-wrap">
@@ -562,7 +578,7 @@
                     <h3>Whole site or one exact page</h3>
                     <p>
                         By default the panel shows notes for the whole site, matched the same way as
-                        <a href="#popup">Current Site</a>. Turn on
+                        <a href="#popup">This site</a>. Turn on
                         <strong>Only show on the exact matching URL</strong> in Settings if you would rather each page
                         show only its own notes — useful on sites where every page is a different topic.
                     </p>
@@ -589,8 +605,8 @@
                     <p>Open it with the expand button in the popup header, or with a keyboard shortcut you assign.</p>
 
                     <figure class="manual-screenshot">
-                        <img src="img/manual/manual-board-1280w-3a318cb595c1.webp"
-                            alt="The NotePin board showing the domain and color sidebar beside a list of notes" loading="lazy" decoding="async" width="1280" height="704" data-image-source="img/manual/manual-board.png" srcset="img/manual/manual-board-480w-a6dd73ebd78e.webp 480w, img/manual/manual-board-800w-f37bdd3cb02b.webp 800w, img/manual/manual-board-1280w-3a318cb595c1.webp 1280w" sizes="(max-width: 1000px) min(1280px, calc(100vw - 48px)), (max-width: 1200px) min(1280px, calc(100vw - 364px)), 836px">
+                        <img src="img/manual/manual-board-1280w-a56931893bcd.webp"
+                            alt="The NotePin board showing the domain and color sidebar beside a list of notes" loading="lazy" decoding="async" width="1280" height="704" data-image-source="img/manual/manual-board.png" srcset="img/manual/manual-board-480w-aa44c4d8ff2e.webp 480w, img/manual/manual-board-800w-bd3a19627ca9.webp 800w, img/manual/manual-board-1280w-a56931893bcd.webp 1280w" sizes="(max-width: 1000px) min(1280px, calc(100vw - 48px)), (max-width: 1200px) min(1280px, calc(100vw - 364px)), 836px">
                         <figcaption>The board, with the domain list and color filters in the sidebar.</figcaption>
                     </figure>
 
@@ -611,7 +627,7 @@
                     </div>
 
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-sidebar-filters-280w-d0dd7d5f612e.webp" alt="The NotePin board sidebar showing the domain list with counts and the color filter grid" loading="lazy" decoding="async" width="280" height="800" data-image-source="img/manual/manual-sidebar-filters.png" srcset="img/manual/manual-sidebar-filters-280w-d0dd7d5f612e.webp 280w" sizes="(max-width: 1000px) min(280px, calc(100vw - 48px)), (max-width: 1200px) min(280px, calc(100vw - 364px)), 280px">
+                        <img src="img/manual/manual-sidebar-filters-280w-e491c390d17d.webp" alt="The NotePin board sidebar showing the domain list with counts and the color filter grid" loading="lazy" decoding="async" width="280" height="800" data-image-source="img/manual/manual-sidebar-filters.png" srcset="img/manual/manual-sidebar-filters-280w-e491c390d17d.webp 280w" sizes="(max-width: 1000px) min(280px, calc(100vw - 48px)), (max-width: 1200px) min(280px, calc(100vw - 364px)), 280px">
                         <figcaption>The sidebar: domains with counts on top, color filters underneath.</figcaption>
                     </figure>
                     <h3>No Domain</h3>
@@ -659,17 +675,20 @@
 
                     <h3>Searching by tag</h3>
                     <figure class="manual-figure">
-                        <img src="img/manual/manual-search-tag-996w-13912087d2a7.webp" alt="The NotePin board search box containing tag:work with a single matching note below it" loading="lazy" decoding="async" width="996" height="300" data-image-source="img/manual/manual-search-tag.png" srcset="img/manual/manual-search-tag-480w-8a65adfe8359.webp 480w, img/manual/manual-search-tag-800w-68257839c036.webp 800w, img/manual/manual-search-tag-996w-13912087d2a7.webp 996w" sizes="(max-width: 1000px) min(996px, calc(100vw - 48px)), (max-width: 1200px) min(996px, calc(100vw - 364px)), 836px">
+                        <img src="img/manual/manual-search-tag-996w-3ad11230c4ad.webp" alt="The NotePin board search box containing tag:work with a single matching note below it" loading="lazy" decoding="async" width="996" height="334" data-image-source="img/manual/manual-search-tag.png" srcset="img/manual/manual-search-tag-480w-4dfbff4cd460.webp 480w, img/manual/manual-search-tag-800w-9e042c893251.webp 800w, img/manual/manual-search-tag-996w-3ad11230c4ad.webp 996w" sizes="(max-width: 1000px) min(996px, calc(100vw - 48px)), (max-width: 1200px) min(996px, calc(100vw - 364px)), 836px">
                         <figcaption>A tag: query narrows the board to one tag.</figcaption>
                     </figure>
                     <p>
-                        Type <code>tag:work</code> to show only notes carrying that exact tag. Clicking a tag chip on
-                        a note does this for you.
+                        Type <code>tag:work</code> to show only notes carrying that exact tag. Alternatively, use
+                        <strong>Filter by tag</strong> or click a tag on a note: a removable filter chip appears
+                        beside the search controls, leaving your text search intact. Multiple tag filters require all selected tags.
                     </p>
+                    <p>Text search highlights matches in note text and page links, and shows a passage around a match deep inside a long note.</p>
+                    <p>On the board, choose <strong>Comfortable</strong> or <strong>Compact</strong> beside the filters. NotePin remembers the layout; matching search passages remain readable in either layout.</p>
 
                     <h3>Combining filters on the board</h3>
                     <p>
-                        Domain, colors, the sidebar's domain filter box, and search all apply at once. A note has to
+                        Domain, colors, tags, the sidebar's domain filter box, and search all apply at once. A note has to
                         satisfy every active filter to appear.
                     </p>
                     <div class="manual-callout info">
@@ -699,8 +718,8 @@
                     </p>
 
                     <figure class="manual-screenshot">
-                        <img src="img/manual/manual-board-dark-1280w-a3c4f2be25f4.webp"
-                            alt="The NotePin board in dark mode with several notes selected and the bulk action toolbar visible" loading="lazy" decoding="async" width="1280" height="704" data-image-source="img/manual/manual-board-dark.png" srcset="img/manual/manual-board-dark-480w-b154ece0159a.webp 480w, img/manual/manual-board-dark-800w-6697f06e5f45.webp 800w, img/manual/manual-board-dark-1280w-a3c4f2be25f4.webp 1280w" sizes="(max-width: 1000px) min(1280px, calc(100vw - 48px)), (max-width: 1200px) min(1280px, calc(100vw - 364px)), 836px">
+                        <img src="img/manual/manual-board-dark-1280w-a3286e236fed.webp"
+                            alt="The NotePin board in dark mode with several notes selected and the bulk action toolbar visible" loading="lazy" decoding="async" width="1280" height="704" data-image-source="img/manual/manual-board-dark.png" srcset="img/manual/manual-board-dark-480w-4d9f9302a48b.webp 480w, img/manual/manual-board-dark-800w-02eef5f7d164.webp 800w, img/manual/manual-board-dark-1280w-a3286e236fed.webp 1280w" sizes="(max-width: 1000px) min(1280px, calc(100vw - 48px)), (max-width: 1200px) min(1280px, calc(100vw - 364px)), 836px">
                         <figcaption>The bulk toolbar, shown here in dark mode.</figcaption>
                     </figure>
 
@@ -710,9 +729,9 @@
                         <li>Choose an action: apply a color, pin, unpin, export, delete, or clean duplicates.</li>
                     </ol>
                     <figure class="manual-figure">
-                        <img src="img/manual/manual-bulk-toolbar-996w-88cb70db1217.webp"
+                        <img src="img/manual/manual-bulk-toolbar-996w-d1b7d5838961.webp"
                             alt="The NotePin bulk action toolbar showing 9 selected with 8 hidden by filters, and the color, pin, unpin, export, delete and duplicates buttons"
-                            loading="lazy" decoding="async" width="996" height="87" data-image-source="img/manual/manual-bulk-toolbar.png" srcset="img/manual/manual-bulk-toolbar-480w-b8dd008465a4.webp 480w, img/manual/manual-bulk-toolbar-800w-06d69394e8a3.webp 800w, img/manual/manual-bulk-toolbar-996w-88cb70db1217.webp 996w" sizes="(max-width: 1000px) min(996px, calc(100vw - 48px)), (max-width: 1200px) min(996px, calc(100vw - 364px)), 836px">
+                            loading="lazy" decoding="async" width="996" height="118" data-image-source="img/manual/manual-bulk-toolbar.png" srcset="img/manual/manual-bulk-toolbar-480w-0a91772fe19a.webp 480w, img/manual/manual-bulk-toolbar-800w-3bfbcf4cf871.webp 800w, img/manual/manual-bulk-toolbar-996w-d1b7d5838961.webp 996w" sizes="(max-width: 1000px) min(996px, calc(100vw - 48px)), (max-width: 1200px) min(996px, calc(100vw - 364px)), 836px">
                         <figcaption>The bulk toolbar. The amber pill appears when the selection includes notes you cannot see.</figcaption>
                     </figure>
 
@@ -729,6 +748,14 @@
                         each, and removes the rest. It asks first and gives you an undo afterwards.
                     </p>
 
+                    <h3>Change tags on selected notes</h3>
+                    <p>
+                        Select notes, click <strong>Tags</strong>, choose <strong>Add tags</strong> or
+                        <strong>Remove tags</strong>, and then <strong>Apply tags</strong>. Other tags stay intact.
+                        If adding would put any selected note over five tags, nothing changes and the dialog stays
+                        open so you can adjust the operation. Bulk tagging has no automatic undo.
+                    </p>
+
                     <h3>Which actions can be undone</h3>
                     <div class="manual-table-wrap">
                         <table>
@@ -741,7 +768,7 @@
                                 <tr><th scope="row">Bulk delete</th><td>Yes</td><td>Yes, 5 seconds</td></tr>
                                 <tr><th scope="row">Clear visible notes</th><td>Yes</td><td>Yes, 5 seconds</td></tr>
                                 <tr><th scope="row">Clean duplicates</th><td>Yes</td><td>Yes, 5 seconds</td></tr>
-                                <tr><th scope="row">Bulk color, pin, unpin</th><td>No</td><td>No — reapply manually</td></tr>
+                                <tr><th scope="row">Bulk color, tags, pin, unpin</th><td>No</td><td>No — reapply manually</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -765,12 +792,12 @@
 
                     <h3>Editing in place</h3>
                     <figure class="manual-figure">
-                        <img src="img/manual/manual-inline-edit-992w-f279e6081dbb.webp" alt="A NotePin note card in inline edit mode with an editable URL, a text area, a color picker and Cancel and Save buttons" loading="lazy" decoding="async" width="992" height="292" data-image-source="img/manual/manual-inline-edit.png" srcset="img/manual/manual-inline-edit-480w-7295cf62bba3.webp 480w, img/manual/manual-inline-edit-800w-c9fbd94bf41d.webp 800w, img/manual/manual-inline-edit-992w-f279e6081dbb.webp 992w" sizes="(max-width: 1000px) min(992px, calc(100vw - 48px)), (max-width: 1200px) min(992px, calc(100vw - 364px)), 836px">
+                        <img src="img/manual/manual-inline-edit-992w-ad70cd714d42.webp" alt="A NotePin note card in inline edit mode with an editable URL, a text area, a color picker and Cancel and Save buttons" loading="lazy" decoding="async" width="992" height="364" data-image-source="img/manual/manual-inline-edit.png" srcset="img/manual/manual-inline-edit-480w-5bf8726b8815.webp 480w, img/manual/manual-inline-edit-800w-69acf8c58150.webp 800w, img/manual/manual-inline-edit-992w-ad70cd714d42.webp 992w" sizes="(max-width: 1000px) min(992px, calc(100vw - 48px)), (max-width: 1200px) min(992px, calc(100vw - 364px)), 836px">
                         <figcaption>Inline editing: the card becomes the editor, in place.</figcaption>
                     </figure>
                     <p>
                         Click the pencil on any note card. The card turns into an editor with the text, the address,
-                        and a color picker. <kbd>Ctrl</kbd> + <kbd>Enter</kbd> saves,
+                        tags, and a color picker. <kbd>Ctrl</kbd> + <kbd>Enter</kbd> saves,
                         <kbd>Esc</kbd> cancels.
                     </p>
                     <div class="manual-callout info">
@@ -788,7 +815,8 @@
 
                     <h3>Deleting</h3>
                     <p>
-                        Deleting a single note happens immediately, with a 5-second <strong>Undo</strong> in the
+                        Open a card's <strong>More actions</strong> (…) menu to find <strong>View</strong> and
+                        <strong>Delete</strong>; Edit, Copy, and Pin stay visible. Deleting a single note happens immediately, with a 5-second <strong>Undo</strong> in the
                         toast at the bottom. Bulk deletes and clearing the visible list ask first, then also offer
                         undo.
                     </p>
@@ -807,9 +835,9 @@
                         immediately — there is no Save button.
                     </p>
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-settings-appearance-510w-139c9aa76e93.webp"
+                        <img src="img/manual/manual-settings-appearance-510w-ec0adb2295ad.webp"
                             alt="The Appearance setting in NotePin settings, a dropdown set to Match system"
-                            loading="lazy" decoding="async" width="510" height="97" data-image-source="img/manual/manual-settings-appearance.png" srcset="img/manual/manual-settings-appearance-480w-01b3b284b0d4.webp 480w, img/manual/manual-settings-appearance-510w-139c9aa76e93.webp 510w" sizes="(max-width: 1000px) min(510px, calc(100vw - 48px)), (max-width: 1200px) min(510px, calc(100vw - 364px)), 510px">
+                            loading="lazy" decoding="async" width="510" height="96" data-image-source="img/manual/manual-settings-appearance.png" srcset="img/manual/manual-settings-appearance-480w-f3bcbdfba06c.webp 480w, img/manual/manual-settings-appearance-510w-ec0adb2295ad.webp 510w" sizes="(max-width: 1000px) min(510px, calc(100vw - 48px)), (max-width: 1200px) min(510px, calc(100vw - 364px)), 510px">
                         <figcaption>Every setting looks like this: a label, a control, and it saves as you change it.</figcaption>
                     </figure>
 
@@ -976,7 +1004,7 @@
 
                     <h3>The storage meter</h3>
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-settings-storage-510w-ac31bc9fe3f1.webp" alt="The NotePin storage meter showing a usage bar with kilobytes used out of the total" loading="lazy" decoding="async" width="510" height="135" data-image-source="img/manual/manual-settings-storage.png" srcset="img/manual/manual-settings-storage-480w-8e6cbdbd18b3.webp 480w, img/manual/manual-settings-storage-510w-ac31bc9fe3f1.webp 510w" sizes="(max-width: 1000px) min(510px, calc(100vw - 48px)), (max-width: 1200px) min(510px, calc(100vw - 364px)), 510px">
+                        <img src="img/manual/manual-settings-storage-510w-d24ee1e3ae55.webp" alt="The NotePin storage meter showing a usage bar with kilobytes used out of the total" loading="lazy" decoding="async" width="510" height="135" data-image-source="img/manual/manual-settings-storage.png" srcset="img/manual/manual-settings-storage-480w-e31a947cd7e5.webp 480w, img/manual/manual-settings-storage-510w-d24ee1e3ae55.webp 510w" sizes="(max-width: 1000px) min(510px, calc(100vw - 48px)), (max-width: 1200px) min(510px, calc(100vw - 364px)), 510px">
                         <figcaption>Settings → Storage. The bar turns amber at 80%.</figcaption>
                     </figure>
                     <p>
@@ -1014,7 +1042,7 @@
 
                     <h3>Export</h3>
                     <figure class="manual-figure manual-figure-narrow">
-                        <img src="img/manual/manual-settings-export-510w-9133462603ac.webp" alt="The Notes section of NotePin settings showing the export format selector, Export and Import buttons, and the replace-all checkbox" loading="lazy" decoding="async" width="510" height="310" data-image-source="img/manual/manual-settings-export.png" srcset="img/manual/manual-settings-export-480w-e1a5c8026561.webp 480w, img/manual/manual-settings-export-510w-9133462603ac.webp 510w" sizes="(max-width: 1000px) min(510px, calc(100vw - 48px)), (max-width: 1200px) min(510px, calc(100vw - 364px)), 510px">
+                        <img src="img/manual/manual-settings-export-510w-fa95120fcd91.webp" alt="The Notes section of NotePin settings showing the export format selector, Export and Import buttons, and the replace-all checkbox" loading="lazy" decoding="async" width="510" height="307" data-image-source="img/manual/manual-settings-export.png" srcset="img/manual/manual-settings-export-480w-b485297c0d92.webp 480w, img/manual/manual-settings-export-510w-fa95120fcd91.webp 510w" sizes="(max-width: 1000px) min(510px, calc(100vw - 48px)), (max-width: 1200px) min(510px, calc(100vw - 364px)), 510px">
                         <figcaption>Settings → Notes, on the board. Export format and the replace-on-import switch.</figcaption>
                     </figure>
                     <p>Choose a format, then click <strong>Export Notes</strong>.</p>
@@ -1089,6 +1117,8 @@
                                 <tr><th scope="row"><code>activeTab</code></th><td>To read the address of the tab you are on, for the badge count and to attach to new notes.</td></tr>
                                 <tr><th scope="row"><code>contextMenus</code></th><td>To add the right-click entries.</td></tr>
                                 <tr><th scope="row"><code>scripting</code></th><td>To add or remove the in-page sticky note script when you turn that feature on or off.</td></tr>
+                                <tr><th scope="row"><code>sidePanel</code></th><td>To display NotePin in the browser side panel.</td></tr>
+                                <tr><th scope="row"><code>tabs</code> <em>(optional)</em></th><td>Requested only by Allow page following, to read active tab titles and URLs. The browser calls this browsing-history access, but NotePin does not record a history log. Stop following pages revokes it.</td></tr>
                                 <tr><th scope="row">Website access <em>(optional)</em></th><td>Requested only if you enable in-page sticky notes. Never at install.</td></tr>
                             </tbody>
                         </table>
@@ -1151,8 +1181,8 @@
                     <details class="manual-disclosure">
                         <summary>The badge shows a number but the popup looks empty</summary>
                         <p>
-                            The <strong>Current Site</strong> box is probably unticked while you are looking at a large
-                            collection, or a search term is still in the box. Clear the search and check the tick box.
+                            A text or tag filter may be hiding matching notes, or <strong>This page</strong> may be
+                            narrower than the site-wide badge count. Clear those filters and choose <strong>This site</strong>.
                             The badge counts notes for the current site specifically.
                         </p>
                     </details>
