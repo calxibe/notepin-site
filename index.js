@@ -53,7 +53,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
         const target = document.querySelector(targetSelector);
         if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            target.scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth', block: 'start' });
         }
     });
 });
@@ -63,10 +64,10 @@ document.querySelectorAll('.screenshot-tab').forEach((button) => {
         const { view } = button.dataset;
 
         document.querySelectorAll('.screenshot-tab').forEach((tab) => {
-            tab.classList.remove('active');
+            const isActive = tab === button;
+            tab.classList.toggle('active', isActive);
+            tab.setAttribute('aria-pressed', String(isActive));
         });
-
-        button.classList.add('active');
 
         document.querySelectorAll('.screenshot-panel').forEach((panel) => {
             panel.classList.toggle('active', panel.dataset.view === view);
@@ -115,6 +116,8 @@ document.querySelectorAll('.screenshot-panel').forEach((panel) => {
 
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
+let lightboxTrigger = null;
+const lightboxBackground = document.querySelectorAll('body > header, body > main, body > footer, body > .skip-link');
 
 function closeLightbox() {
     if (!lightbox || !lightbox.classList.contains('active')) {
@@ -124,6 +127,8 @@ function closeLightbox() {
     lightbox.classList.remove('active');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('lightbox-open');
+    lightboxBackground.forEach(element => { element.inert = false; });
+    lightboxTrigger?.focus({ preventScroll: true });
 }
 
 if (lightbox && lightboxImg) {
@@ -133,9 +138,12 @@ if (lightbox && lightboxImg) {
 
             lightboxImg.src = card.dataset.fullsrc;
             lightboxImg.alt = preview.alt;
+            lightboxTrigger = card;
             lightbox.classList.add('active');
             lightbox.setAttribute('aria-hidden', 'false');
             document.body.classList.add('lightbox-open');
+            lightboxBackground.forEach(element => { element.inert = true; });
+            lightbox.querySelector('.lightbox-close')?.focus({ preventScroll: true });
         });
     });
 
@@ -143,6 +151,10 @@ if (lightbox && lightboxImg) {
 }
 
 document.addEventListener('keydown', (event) => {
+    if (event.key === 'Tab' && lightbox?.classList.contains('active')) {
+        event.preventDefault();
+        lightbox.querySelector('.lightbox-close')?.focus();
+    }
     if (event.key === 'Escape') {
         closeSiteNav();
         closeLightbox();

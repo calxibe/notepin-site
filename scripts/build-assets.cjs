@@ -75,8 +75,11 @@ async function buildAssets() {
             // The slot never exceeds the source's natural width; the browser also
             // accounts for device pixel density when choosing a srcset candidate.
             const fullScreen = source.includes('/fullscreen_');
+            const heroPreview = attribute(tag, 'data-image-slot') === 'hero';
             const maxWidth = file === 'index.html' ? (fullScreen ? 1100 : 860) : Math.min(image.width, 836);
-            const sizes = file === 'index.html'
+            const sizes = heroPreview
+                ? '(max-width: 900px) calc(100vw - 48px), (max-width: 1200px) 55vw, 680px'
+                : file === 'index.html'
                 ? `(max-width: 1100px) calc(100vw - 50px), ${maxWidth}px`
                 : `(max-width: 1000px) min(${image.width}px, calc(100vw - 48px)), (max-width: 1200px) min(${image.width}px, calc(100vw - 364px)), ${maxWidth}px`;
             for (const [name, value] of Object.entries({
@@ -86,7 +89,7 @@ async function buildAssets() {
             return tag;
         });
         html = html.replace(/<button\b[^>]*\bdata-previewsrc="[^\"]*"[^>]*>/gs, tag => {
-            const source = attribute(tag, 'data-fullsrc');
+            const source = attribute(tag, 'data-preview-source') || attribute(tag, 'data-fullsrc');
             const image = images.get(source);
             if (!image) return tag;
             tag = setAttribute(tag, 'data-previewsrc', image.src);
